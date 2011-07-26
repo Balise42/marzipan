@@ -33,6 +33,7 @@
     var cxt = mandel.backbuffer.getContext("2d");
     var img = cxt.getImageData(0, 0, mandel.width, mandel.height);
     index = 0;
+    var maxiter = 1000;
     //Calculating the mandel set
     for (var y=0; y<mandel.height; y++){
       for(var x = 0; x<mandel.width; x++){
@@ -40,7 +41,6 @@
         var re = (x-600)/300;
         var zi = im;
         var zr = re;
-        var maxiter =1000;
         var i = 0;
         while(zi*zi+zr+zr <= 4 && i < maxiter){ 
           var zrtmp = zr*zr-zi*zi + re;
@@ -48,17 +48,19 @@
           zr = zrtmp;
           i += 1;
         }
-     //and rendering. For now, simple black/white : in the set, not in the set
+     //and rendering. With psychedelic colors.
+        //maybe in the set
         if (i == maxiter){
           img.data[index] = 0;
           img.data[index+1] = 0; 
           img.data[index+2] = 0;
           img.data[index+3] = 255;
         }
+        //not in the set
         else{
-          img.data[index] = 255;
-          img.data[index+1] = 255;
-          img.data[index+2] = 255;
+          img.data[index] = Math.sin(zr*3)*255;
+          img.data[index+1] = Math.sin(zr*5)*255;
+          img.data[index+2] = Math.sin(zr*7)*255;
           img.data[index+3] = 255;
         }
         index += 4;
