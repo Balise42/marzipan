@@ -1,0 +1,100 @@
+
+<html> 
+<head> 
+  <!-- Base canvas code from http://pierre.palats.com/fire.html -->
+  <title>Mandelbrot generator</title> 
+  <style type="text/css"> 
+    html, body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+ 
+    #backbuffer {
+      visibility: hidden;
+      display: none;
+    }
+ 
+    #info {
+      position: absolute;
+      background-color: black;
+      color: white;
+      left: 0;
+      top: 0;
+    }
+  </style> 
+  <script type="text/javascript"> 
+ 
+  mandel = {};
+  mandel.height = 600;
+  mandel.width = 900;
+ 
+  mandel.render = function() {
+    var cxt = mandel.backbuffer.getContext("2d");
+    var img = cxt.getImageData(0, 0, mandel.width, mandel.height);
+    index = 0;
+    //Calculating the mandel set
+    for (var y=0; y<mandel.height; y++){
+      for(var x = 0; x<mandel.width; x++){
+        var im = (y-300)/300;
+        var re = (x-600)/300;
+        var zi = im;
+        var zr = re;
+        var maxiter =1000;
+        var i = 0;
+        while(zi*zi+zr+zr <= 4 && i < maxiter){ 
+          var zrtmp = zr*zr-zi*zi + re;
+          zi = 2*zr*zi + im;
+          zr = zrtmp;
+          i += 1;
+        }
+     //and rendering. For now, simple black/white : in the set, not in the set
+        if (i == maxiter){
+          img.data[index] = 0;
+          img.data[index+1] = 0; 
+          img.data[index+2] = 0;
+          img.data[index+3] = 255;
+        }
+        else{
+          img.data[index] = 255;
+          img.data[index+1] = 255;
+          img.data[index+2] = 255;
+          img.data[index+3] = 255;
+        }
+        index += 4;
+      }
+    }
+ 
+    // Now that it's rendered, put those pixels on the backbuffer, a hidden
+    // canvas of the exact size of the image
+    cxt.putImageData(img, 0, 0);
+   
+    // Now that we have our picture on a proper canvas, we can draw it on the
+    // real canvas. Having this 2 steps process allows to easily scale the image
+    // (of fixed size) to the actual size of the page, while taking advantage
+    // of the browser scaling methods.
+    if ((mandel.canvas.width != document.width) || (mandel.canvas.height != document.height)) {
+      mandel.canvas.width = document.width;
+      mandel.canvas.height = document.height;
+    }
+    var display = mandel.canvas.getContext("2d");
+    display.drawImage(mandel.backbuffer, 0, 0, mandel.canvas.width, mandel.canvas.height);
+  };
+ 
+ 
+  // Misc. initialization, and rendering
+  mandel.main = function() {
+    mandel.canvas = document.getElementById("zeCanvas");
+    
+    mandel.backbuffer = document.getElementById("backbuffer");
+    mandel.backbuffer.width = mandel.width;
+    mandel.backbuffer.height = mandel.height;
+    mandel.render();
+  };
+  </script> 
+</head> 
+<body onLoad="mandel.main()"> 
+<canvas id="backbuffer"></canvas> 
+<canvas id="zeCanvas"></canvas> 
+</body> 
+</html> 
