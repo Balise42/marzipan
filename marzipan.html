@@ -33,10 +33,33 @@
     var cxt = mandel.backbuffer.getContext("2d");
     var img = cxt.getImageData(0, 0, mandel.width, mandel.height);
     index = 0;
-    var maxiter = 1000;
+    // Now that we have our picture on a proper canvas, we can draw it on the
+    // real canvas. Having this 2 steps process allows to easily scale the image
+    // (of fixed size) to the actual size of the page, while taking advantage
+    // of the browser scaling methods.
+    if ((mandel.canvas.width != document.width) || (mandel.canvas.height != document.height)) {
+      mandel.canvas.width = document.width;
+      mandel.canvas.height = document.height;
+    }
+    var display = mandel.canvas.getContext("2d");
+
     //Calculating the mandel set
-    for (var y=0; y<mandel.height; y++){
-      for(var x = 0; x<mandel.width; x++){
+    var y = 0;
+    var x = 0;
+    var maxiter = 2 
+    var myRender = setInterval(function() {
+      document.getElementById("info").innerHTML = x + " " + y;
+
+      if(y==mandel.height){
+        maxiter = maxiter * 4;
+        y = 0;
+        x = 0;
+        index = 0
+        if (maxiter > 1000){
+          clearInterval(myRender);
+        }
+      }
+      for (var j = 0; j<10000; j++){
         var im = (y-300)/300;
         var re = (x-600)/300;
         var zi = im;
@@ -48,38 +71,44 @@
           zr = zrtmp;
           i += 1;
         }
-     //and rendering. With psychedelic colors.
+        //and rendering. With psychedelic colors.
         //maybe in the set
         if (i == maxiter){
           img.data[index] = 0;
-          img.data[index+1] = 0; 
+          img.data[index+1] = 0;
           img.data[index+2] = 0;
           img.data[index+3] = 255;
         }
         //not in the set
         else{
-          img.data[index] = Math.sin(zr*3)*255;
-          img.data[index+1] = Math.sin(zr*5)*255;
-          img.data[index+2] = Math.sin(zr*7)*255;
+          img.data[index] = Math.sin(i*3)*255;
+          img.data[index+1] = Math.sin(i*5)*255;
+          img.data[index+2] = Math.sin(i*7)*255;
           img.data[index+3] = 255;
         }
         index += 4;
+        x = x+1;
+        if (x == mandel.width){
+          y = y + 1
+          x = 0
+        }
       }
-    }
- 
+      document.getElementById("info").innerHTML = x + " " + y + " " + maxiter;
+      cxt.putImageData(img, 0, 0);
+             
+      display.drawImage(mandel.backbuffer, 0, 0, mandel.canvas.width, mandel.canvas.height);
+
+    }, 1000/250);
+    // Now that it's rendered, put those pixels on the backbuffer, a hidden
+    // canvas of the exact size of the image
+ //   cxt.putImageData(img, 0, 0);
+   
+ //   display.drawImage(mandel.backbuffer, 0, 0, mandel.canvas.width, mandel.canvas.height);
+
     // Now that it's rendered, put those pixels on the backbuffer, a hidden
     // canvas of the exact size of the image
     cxt.putImageData(img, 0, 0);
    
-    // Now that we have our picture on a proper canvas, we can draw it on the
-    // real canvas. Having this 2 steps process allows to easily scale the image
-    // (of fixed size) to the actual size of the page, while taking advantage
-    // of the browser scaling methods.
-    if ((mandel.canvas.width != document.width) || (mandel.canvas.height != document.height)) {
-      mandel.canvas.width = document.width;
-      mandel.canvas.height = document.height;
-    }
-    var display = mandel.canvas.getContext("2d");
     display.drawImage(mandel.backbuffer, 0, 0, mandel.canvas.width, mandel.canvas.height);
   };
  
@@ -96,6 +125,7 @@
   </script> 
 </head> 
 <body onLoad="mandel.main()"> 
+<div id="info">plop</div> 
 <canvas id="backbuffer"></canvas> 
 <canvas id="zeCanvas"></canvas> 
 </body> 
