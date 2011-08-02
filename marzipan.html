@@ -38,8 +38,17 @@
     // (of fixed size) to the actual size of the page, while taking advantage
     // of the browser scaling methods.
     if ((mandel.canvas.width != document.width) || (mandel.canvas.height != document.height)) {
-      mandel.canvas.width = document.width;
-      mandel.canvas.height = document.height;
+      if (document.height*3/2 < document.width){
+        mandel.canvas.height = document.height;
+        mandel.canvas.width = document.height*3/2;
+      }
+      else{
+        mandel.canvas.width = document.width;
+        mandel.canvas.height = document.width*2/3;
+      }
+//      var dim = Math.min(document.width*3/2, document.height);
+//      mandel.canvas.width = dim;
+//      mandel.canvas.height = dim;
     }
     var display = mandel.canvas.getContext("2d");
 
