@@ -1,11 +1,20 @@
-#include <iostream>
-#include "CImg.h"
+#include "Canvas.h"
 
-using namespace cimg_library;
 
 int main() {
 
-    CImg<unsigned char> canvas(500, 400, 1, 3, 0);
-    canvas.save_bmp("plop.bmp");
+    auto canvas = new Canvas();
+    Color col(255, 120, 40);
+
+    for (unsigned int i = 100; i<200; i++) {
+        for (unsigned int j = 100; j<200; j++) {
+            canvas->paint(i, j, col);
+        }
+    }
+
+    canvas->write("plop.bmp");
+
+    delete canvas;
+
     return 0;
 }
