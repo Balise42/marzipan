@@ -9,6 +9,7 @@ public:
     unsigned char B;
 
     Color(unsigned char R, unsigned char G, unsigned char B);
+    Color();
 };
 
 bool operator==(Color lhs, Color rhs);

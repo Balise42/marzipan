@@ -1,16 +1,17 @@
 #include "Canvas.h"
+#include "GradientPalette.h"
+#include "Mandelbrot.h"
 
 
 int main() {
 
     auto canvas = new Canvas();
-    Color col(255, 120, 40);
+    Color black(0,0,0);
+    Color white(255,255,255);
+    auto palette = new GradientPalette(0,1,black, white);
 
-    for (unsigned int i = 100; i<200; i++) {
-        for (unsigned int j = 100; j<200; j++) {
-            canvas->paint(i, j, col);
-        }
-    }
+    auto mandel = new Mandelbrot();
+    mandel->render(canvas, palette);
 
     canvas->write("plop.bmp");
 

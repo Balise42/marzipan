@@ -7,6 +7,8 @@ Canvas::Canvas() : Canvas(800, 600) {
 
 Canvas::Canvas(unsigned int width, unsigned int height) {
     img = new CImg<unsigned char>(width, height, 1, 3, 0);
+    this->width = width;
+    this->height = height;
 }
 
 Canvas::~Canvas() {

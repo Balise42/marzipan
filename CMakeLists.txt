@@ -7,7 +7,7 @@ include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(marzipan main.cpp Canvas.cpp Canvas.h Color.cpp Color.h)
+add_executable(marzipan main.cpp Canvas.cpp Canvas.h Color.cpp Color.h Mandelbrot.cpp Mandelbrot.h Palette.h GradientPalette.cpp GradientPalette.h)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)

@@ -20,6 +20,9 @@ public:
 
     void write(const char * filename);
 
+
+    unsigned int width;
+    unsigned int height;
 private:
     CImg<unsigned char> *img;
 };
