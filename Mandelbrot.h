@@ -2,6 +2,7 @@
 #define MARZIPAN_MANDELBROT_H
 
 
+#include <complex>
 #include "Canvas.h"
 #include "GradientPalette.h"
 
@@ -9,11 +10,13 @@ class Mandelbrot {
 
 public:
     void render(Canvas * canvas, GradientPalette * palette);
+    std::complex<double> scale(unsigned int x, unsigned int y, unsigned int sizex, unsigned int sizey);
 
 private:
-    double computeValue(double x, double y);
 
-    double scale(unsigned int coord, unsigned int size);
+
+
+    double computeValue(std::complex<double> z);
 };
 
 

@@ -14,6 +14,6 @@ find_package(Threads REQUIRED)
 find_package(X11 REQUIRED)
 target_link_libraries(marzipan Threads::Threads X11)
 
-add_executable(runTests canvas_test.cpp Canvas.cpp Color.cpp)
+add_executable(runTests canvas_test.cpp Canvas.cpp Color.cpp mandelbrot_test.cpp Mandelbrot.cpp)
 target_link_libraries(runTests gtest gtest_main Threads::Threads X11)
 add_test(runTests runTests)

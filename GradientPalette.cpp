@@ -22,9 +22,9 @@ GradientPalette::GradientPalette() {
 unsigned char GradientPalette::computeComponent(double value, unsigned char v1, unsigned char v2) {
     double normalized = (value - min)/(max - min);
     if (normalized < 0.0001) {
-        return 0;
+        return 50;
     }
-    return 255;
+    return 150;
     /*if (v1 < v2) {
         return (unsigned char)(normalized * v1/(v2-v1));
     } else {

@@ -2,7 +2,7 @@
 
 using namespace cimg_library;
 
-Canvas::Canvas() : Canvas(800, 600) {
+Canvas::Canvas() : Canvas(900, 600) {
 }
 
 Canvas::Canvas(unsigned int width, unsigned int height) {
