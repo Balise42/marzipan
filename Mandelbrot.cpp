@@ -11,22 +11,18 @@ void Mandelbrot::render(Canvas * canvas, GradientPalette * palette) {
     }
 }
 
-double Mandelbrot::computeValue(std::complex<double> z) {
-    /*int i = 0;
+double Mandelbrot::computeValue(std::complex<double> c) {
+    int i = 0;
     int maxiter = 100;
-
-    double zr = x;
-    double zi = y;
-    while(zi*zi+zr+zr <= 4 && i < maxiter){
-        double zrtmp = zr*zr-zi*zi + x;
-        zi = 2*zr*zi + y;
-        zr = zrtmp;
-        i += 1;
+    std::complex<double> z = 0 + 0i;
+    while (std::norm(std::pow(z, 2) + c) < 2 && i < maxiter) {
+        z = std::pow(z, 2) + c;
+        i = i+1;
     }
 
     if (i == maxiter) {
         return 0;
-    }*/
+    }
     return 1;
 }
 
