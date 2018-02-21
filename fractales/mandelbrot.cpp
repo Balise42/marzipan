@@ -27,10 +27,7 @@ double mandelbrot::computeValue(std::complex<double> c) {
         i = i+1;
     }
 
-    if (i == maxiter) {
-        return 0;
-    }
-    return 1;
+    return i;
 }
 
 std::complex<double> mandelbrot::scale(unsigned int x, unsigned int y) {
