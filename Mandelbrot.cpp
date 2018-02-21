@@ -15,7 +15,7 @@ double Mandelbrot::computeValue(std::complex<double> c) {
     int i = 0;
     int maxiter = 100;
     std::complex<double> z = 0 + 0i;
-    while (std::norm(std::pow(z, 2) + c) < 2 && i < maxiter) {
+    while (std::norm(std::pow(z, 2) + c) < 4 && i < maxiter) {
         z = std::pow(z, 2) + c;
         i = i+1;
     }
