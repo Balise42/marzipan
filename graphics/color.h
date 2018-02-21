@@ -2,16 +2,16 @@
 #define MARZIPAN_COLOR_H
 
 
-class Color {
+class color {
 public:
     unsigned char R;
     unsigned char G;
     unsigned char B;
 
-    Color(unsigned char R, unsigned char G, unsigned char B);
-    Color();
+    color(unsigned char R, unsigned char G, unsigned char B);
+    color();
 };
 
-bool operator==(Color lhs, Color rhs);
+bool operator==(color lhs, color rhs);
 
 #endif //MARZIPAN_COLOR_H

@@ -1,21 +1,18 @@
-#include "Canvas.h"
-#include "GradientPalette.h"
-#include "Mandelbrot.h"
+#include "graphics/canvas.h"
+#include "graphics/palette/gradient_palette.h"
+#include "fractales/mandelbrot.h"
 
 
 int main() {
 
-    auto canvas = new Canvas();
-    Color black(0,0,0);
-    Color white(255,255,255);
-    auto palette = new GradientPalette(0,1,black, white);
+    color black(0,0,0);
+    color white(255,255,255);
+    auto palette = new gradient_palette(0,1,black, white);
 
-    auto mandel = new Mandelbrot();
-    mandel->render(canvas, palette);
+    auto mandel = new mandelbrot();
+    canvas canvas = mandel->renderToCanvas(palette);
 
-    canvas->write("plop.bmp");
-
-    delete canvas;
+    canvas.write("plop.bmp");
 
     return 0;
 }

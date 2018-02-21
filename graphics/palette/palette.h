@@ -1,11 +1,11 @@
 #ifndef MARZIPAN_PALETTE_H
 #define MARZIPAN_PALETTE_H
 
-#include "Color.h"
+#include "../color.h"
 
-class Palette {
+class palette {
 public:
-    virtual Color computeColor(double value) = 0;
+    virtual color compute_color(double value) = 0;
 };
 
 
