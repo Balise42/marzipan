@@ -11,12 +11,22 @@ class mandelbrot {
 public:
     mandelbrot();
     mandelbrot(unsigned int width, unsigned int height);
+    mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom);
     canvas renderToCanvas(gradient_palette * palette);
     std::complex<double> scale(unsigned int x, unsigned int y);
+
+    void set_maxiter(int iter) {
+        this->maxiter = iter;
+    }
 
 private:
     unsigned int width = 900;
     unsigned int height = 600;
+    double left = -2;
+    double right = 1;
+    double top = 1;
+    double bottom = -1;
+    int maxiter = 100;
 
     double computeValue(std::complex<double> z);
 };

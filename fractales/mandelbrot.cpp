@@ -4,9 +4,8 @@
 mandelbrot::mandelbrot() : mandelbrot(900, 600) {
 }
 
-mandelbrot::mandelbrot(unsigned int width, unsigned int height) {
-    this->width = width;
-    this->height = height;
+mandelbrot::mandelbrot(unsigned int width, unsigned int height) : mandelbrot(width, height, -2, 1, 1, -1) {
+
 }
 
 canvas mandelbrot::renderToCanvas(gradient_palette * palette) {
@@ -22,7 +21,6 @@ canvas mandelbrot::renderToCanvas(gradient_palette * palette) {
 
 double mandelbrot::computeValue(std::complex<double> c) {
     int i = 0;
-    int maxiter = 100;
     std::complex<double> z = 0 + 0i;
     while (std::norm(std::pow(z, 2) + c) < 4 && i < maxiter) {
         z = std::pow(z, 2) + c;
@@ -36,7 +34,16 @@ double mandelbrot::computeValue(std::complex<double> c) {
 }
 
 std::complex<double> mandelbrot::scale(unsigned int x, unsigned int y) {
-    double re = 3*double(x)/double(width) - 2;
-    double im = -(2*double(y)/double(height) - 1);
+    double re = (right - left)*double(x)/double(width) + left;
+    double im = -((top - bottom)*double(y)/double(height) + bottom);
     return re + im*1i;
+}
+
+mandelbrot::mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom) {
+    this->width = width;
+    this->height = height;
+    this->left = left;
+    this->right = right;
+    this->top = top;
+    this->bottom = bottom;
 }
