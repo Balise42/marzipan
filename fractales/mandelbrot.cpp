@@ -21,18 +21,18 @@ mandelbrot::mandelbrot() {
     this->maxiter = FLAGS_iter;
 }
 
-canvas mandelbrot::renderToCanvas(gradient_palette * palette) {
+canvas mandelbrot::renderToCanvas(palette * palette) {
     canvas c(width, height);
     for (unsigned int x = 0; x<width; x++) {
         for (unsigned int y = 0; y<height; y++) {
-            double value = computeValue(scale(x, y));
+            int value = computeValue(scale(x, y));
             c.paint(x, y, palette->compute_color(value));
         }
     }
     return c;
 }
 
-double mandelbrot::computeValue(std::complex<double> c) {
+int mandelbrot::computeValue(std::complex<double> c) {
     int i = 0;
     std::complex<double> z = 0 + 0i;
     while (std::norm(std::pow(z, 2) + c) < 4 && i < maxiter) {

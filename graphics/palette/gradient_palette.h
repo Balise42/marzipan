@@ -5,10 +5,10 @@
 #include "../color.h"
 #include "palette.h"
 
-class gradient_palette : palette {
+class gradient_palette : public palette {
 public:
     gradient_palette(double min, double max, color cmin, color cmax);
-    color compute_color(double value);
+    color compute_color(int value);
 private:
     double min;
     double max;
@@ -16,7 +16,7 @@ private:
     color cmax;
     gradient_palette();
 
-    unsigned char compute_component(double value, unsigned char v1, unsigned char v2);
+    unsigned char compute_component(int value, unsigned char v1, unsigned char v2);
 };
 
 

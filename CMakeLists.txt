@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_FLAGS -Wall)
 
 
-add_executable(marzipan main.cpp graphics/canvas.cpp graphics/canvas.h graphics/color.cpp graphics/color.h fractales/mandelbrot.cpp fractales/mandelbrot.h graphics/palette/palette.h graphics/palette/gradient_palette.cpp graphics/palette/gradient_palette.h)
+add_executable(marzipan main.cpp graphics/canvas.cpp graphics/canvas.h graphics/color.cpp graphics/color.h fractales/mandelbrot.cpp fractales/mandelbrot.h graphics/palette/palette.h graphics/palette/gradient_palette.cpp graphics/palette/gradient_palette.h graphics/palette/random_palette.cpp graphics/palette/random_palette.h)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)

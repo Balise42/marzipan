@@ -12,7 +12,7 @@ public:
     mandelbrot();
     mandelbrot(unsigned int width, unsigned int height);
     mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom);
-    canvas renderToCanvas(gradient_palette * palette);
+    canvas renderToCanvas(palette * palette);
     std::complex<double> scale(unsigned int x, unsigned int y);
 
     void set_maxiter(int iter) {
@@ -28,7 +28,7 @@ private:
     double bottom = -1;
     int maxiter = 100;
 
-    double computeValue(std::complex<double> z);
+    int computeValue(std::complex<double> z);
 };
 
 

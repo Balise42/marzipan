@@ -5,7 +5,7 @@
 
 class palette {
 public:
-    virtual color compute_color(double value) = 0;
+    virtual color compute_color(int value) = 0;
 };
 
 
