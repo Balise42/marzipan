@@ -1,4 +1,7 @@
 #include "canvas.h"
+#include <gflags/gflags.h>
+
+DEFINE_string(output, "plop.bmp", "Image file to write");
 
 using namespace cimg_library;
 
@@ -23,7 +26,7 @@ color canvas::read_color(unsigned int x, unsigned int y) {
     return {(*img)(x, y, 0), (*img)(x, y, 1), (*img)(x, y, 2)};
 }
 
-void canvas::write(const char *filename) {
-    img->save_bmp(filename);
+void canvas::write() {
+    img->save_bmp(FLAGS_output.c_str());
 }
 

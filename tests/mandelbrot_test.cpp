@@ -2,7 +2,7 @@
 #include "../fractales/mandelbrot.h"
 
 TEST(MandelbrotTest, ScaleTest) {
-    mandelbrot m(900, 600);
+    mandelbrot m{};
     std::complex<double> expected;
 
     expected = 0 + 0*1i;

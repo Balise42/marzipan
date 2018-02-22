@@ -18,7 +18,7 @@ public:
 
     color read_color(unsigned int x, unsigned int y);
 
-    void write(const char * filename);
+    void write();
 
 private:
     CImg<unsigned char> *img;
