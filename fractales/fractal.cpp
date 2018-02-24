@@ -1,4 +1,4 @@
-#include "fractale.h"
+#include "fractal.h"
 #include <gflags/gflags.h>
 
 DEFINE_uint32(width, 900, "Width of the generated image");
@@ -9,19 +9,19 @@ DEFINE_double(top, 1, "Top-most coordinate");
 DEFINE_double(bottom, -1, "Bottom-most coordinate");
 DEFINE_uint32(iter, 100, "Number of iterations");
 
-fractale::fractale(unsigned int width, unsigned int height) : fractale() {
+fractal::fractal(unsigned int width, unsigned int height) : fractal() {
     this->width = width;
     this->height = height;
 }
 
-fractale::fractale(unsigned int width, unsigned int height, double left, double right, double top, double bottom) : fractale(width, height){
+fractal::fractal(unsigned int width, unsigned int height, double left, double right, double top, double bottom) : fractal(width, height){
     this->left = left;
     this->right = right;
     this->top = top;
     this->bottom = bottom;
 }
 
-fractale::fractale() {
+fractal::fractal() {
     this->width = FLAGS_width;
     this->height = FLAGS_height;
     this->left = FLAGS_left;
@@ -31,13 +31,13 @@ fractale::fractale() {
     this->maxiter = FLAGS_iter;
 }
 
-std::complex<double> fractale::scale(unsigned int x, unsigned int y) {
+std::complex<double> fractal::scale(unsigned int x, unsigned int y) {
     double re = (right - left)*double(x)/double(width) + left;
     double im = -((top - bottom)*double(y)/double(height) + bottom);
     return re + im*1i;
 }
 
-void fractale::zoom(unsigned int width, unsigned int height, int startx, int starty, int endx, int endy) {
+void fractal::zoom(unsigned int width, unsigned int height, int startx, int starty, int endx, int endy) {
     this->width = width;
     this->height = height;
     std::complex<double> topleft = scale(startx, endy);

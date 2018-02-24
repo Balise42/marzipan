@@ -19,3 +19,11 @@ color random_palette::compute_color(int value) {
     }
     return colors[value - min];
 }
+
+bool random_palette::is_iteration_dependent() {
+    return false;
+}
+
+void random_palette::set_iteration_dependent(int iter) {
+    //nop
+}

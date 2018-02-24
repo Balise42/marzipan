@@ -5,26 +5,26 @@
 #include <complex>
 #include "../graphics/canvas.h"
 #include "../graphics/palette/palette.h"
-#include "fractale.h"
+#include "fractal.h"
 
-class mandelbrot : public fractale {
+class mandelbrot : public fractal {
 
 public:
-    mandelbrot() : fractale() {}
+    mandelbrot() : fractal() {}
 
-    mandelbrot(unsigned int width, unsigned int height) : fractale(width, height) {}
+    mandelbrot(unsigned int width, unsigned int height) : fractal(width, height) {}
 
     mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom)
-            : fractale(width, height, left, right, top, bottom) {}
+            : fractal(width, height, left, right, top, bottom) {}
 
     canvas renderToCanvas();
 
-    void set_maxiter(int iter) {
-        this->maxiter = iter;
-    }
-
     void set_palette(palette * pal) {
         this->pal = pal;
+    }
+
+    palette * get_palette() {
+        return pal;
     }
 
     void renderToFile();

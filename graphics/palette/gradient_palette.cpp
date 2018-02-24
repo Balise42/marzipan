@@ -1,6 +1,6 @@
 #include "gradient_palette.h"
 
-gradient_palette::gradient_palette(double min, double max, color cmin, color cmax) {
+gradient_palette::gradient_palette(int min, int max, color cmin, color cmax) {
     this->min = min;
     this->max = max;
     this->cmin = cmin;
@@ -20,6 +20,14 @@ gradient_palette::gradient_palette() {
 }
 
 unsigned char gradient_palette::compute_component(int value, unsigned char v1, unsigned char v2) {
-    double normalized = (value - min)/(max - min);
+    double normalized = (double(value) - min)/(max - min);
     return v1 + (unsigned char)(normalized * (v2-v1));
+}
+
+bool gradient_palette::is_iteration_dependent() {
+    return true;
+}
+
+void gradient_palette::set_iteration_dependent(int iter) {
+    this->max = iter;
 }

@@ -2,7 +2,7 @@
 #define MARZIPAN_RASTERWINDOW_H
 
 #include <qt5/QtGui/QtGui>
-#include <fractales/fractale.h>
+#include <fractales/fractal.h>
 #include <fractales/mandelbrot.h>
 
 class RasterWindow : public QWindow {

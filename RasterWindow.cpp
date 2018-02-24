@@ -1,12 +1,12 @@
 #include "RasterWindow.h"
-#include <qt5/QtGui/QtGui>
-#include <graphics/palette/random_palette.h>
+#include <graphics/palette/gradient_palette.h>
 
 
-RasterWindow::RasterWindow(QWindow *parent) :QWindow(parent), m_backingStore(new QBackingStore(this)) {
-    setGeometry(100, 100, 900,600);
+RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), m_backingStore(new QBackingStore(this)) {
+    setGeometry(100, 100, 900, 600);
     mandel = mandelbrot(900, 600);
-    auto palette = new random_palette(0, 1000);
+    //auto palette = new random_palette(0, 1000);
+    auto palette = new gradient_palette(0,  100, color{255,0,120}, color{255,255,255});
     mandel.set_palette(palette);
     mandel.renderToFile();
 }
@@ -32,7 +32,7 @@ void RasterWindow::renderNow() {
     QRect rect(0, 0, width(), height());
     m_backingStore->beginPaint(rect);
 
-    QPaintDevice * device = m_backingStore->paintDevice();
+    QPaintDevice *device = m_backingStore->paintDevice();
     QPainter painter(device);
 
     painter.fillRect(0, 0, width(), height(), Qt::white);
@@ -43,7 +43,7 @@ void RasterWindow::renderNow() {
     m_backingStore->flush(rect);
 }
 
-void RasterWindow::render(QPainter * painter) {
+void RasterWindow::render(QPainter *painter) {
     QPixmap pixmap("plop.bmp");
     painter->drawPixmap(QRect(0, 0, width(), height()), pixmap);
 }
@@ -52,7 +52,7 @@ void RasterWindow::renderLater() {
     requestUpdate();
 }
 
-bool RasterWindow::event(QEvent * event) {
+bool RasterWindow::event(QEvent *event) {
     if (event->type() == QEvent::UpdateRequest) {
         renderNow();
         return true;
@@ -65,7 +65,7 @@ void RasterWindow::mousePressEvent(QMouseEvent *event) {
     ystart = event->y();
 }
 
-void RasterWindow::mouseReleaseEvent(QMouseEvent * event) {
+void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int xend = event->x();
     int yend = event->y();
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
@@ -75,6 +75,26 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent * event) {
     renderNow();
 }
 
-void RasterWindow::keyReleaseEvent(QKeyEvent * event) {
-    if (event->text)
+void RasterWindow::keyReleaseEvent(QKeyEvent *event) {
+    switch (event->key()) {
+        case Qt::Key_R:
+            mandel.set_width(width());
+            mandel.set_height(height());
+            break;
+
+        case Qt::Key_M:
+            mandel.set_maxiter(mandel.get_maxiter() * 2);
+            break;
+
+        case Qt::Key_D:
+            mandel.set_maxiter(mandel.get_maxiter() / 2);
+            break;
+        default:
+            return;
+    }
+    if (mandel.get_palette()->is_iteration_dependent()) {
+            mandel.get_palette()->set_iteration_dependent(mandel.get_maxiter());
+    }
+    mandel.renderToFile();
+    renderNow();
 }

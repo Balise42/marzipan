@@ -13,6 +13,10 @@ public:
     random_palette(int min, int max);
     ~random_palette();
     color compute_color(int value);
+
+    bool is_iteration_dependent();
+
+    void set_iteration_dependent(int iter);
 };
 
 
