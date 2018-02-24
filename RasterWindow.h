@@ -17,9 +17,15 @@ protected:
     bool event(QEvent * event) override;
     void resizeEvent(QResizeEvent *event) override;
     void exposeEvent(QExposeEvent *event) override;
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 
 private:
     QBackingStore *m_backingStore;
+
+    //TODO move this away from this class
+    int xstart = -1;
+    int ystart = -1;
 };
 
 

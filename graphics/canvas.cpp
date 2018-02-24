@@ -27,6 +27,10 @@ color canvas::read_color(unsigned int x, unsigned int y) {
 }
 
 void canvas::write() {
-    img->save_bmp(FLAGS_output.c_str());
+    write(FLAGS_output.c_str());
+}
+
+void canvas::write(const char *filename) {
+    img->save_bmp(filename);
 }
 

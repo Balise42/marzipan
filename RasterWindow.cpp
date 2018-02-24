@@ -1,5 +1,7 @@
 #include "RasterWindow.h"
 #include <qt5/QtGui/QtGui>
+#include <fractales/mandelbrot.h>
+#include <graphics/palette/random_palette.h>
 
 
 RasterWindow::RasterWindow(QWindow *parent) :QWindow(parent), m_backingStore(new QBackingStore(this)) {
@@ -53,4 +55,26 @@ bool RasterWindow::event(QEvent * event) {
         return true;
     }
     return QWindow::event(event);
+}
+
+void RasterWindow::mousePressEvent(QMouseEvent *event) {
+    xstart = event->x();
+    ystart = event->y();
+}
+
+void RasterWindow::mouseReleaseEvent(QMouseEvent * event) {
+    int xend = event->x();
+    int yend = event->y();
+    if (xstart > 0 && ystart > 0 && xend > xstart & yend > ystart) {
+        double left = double(xstart)/width();
+        double right = double(xend)/width();
+        double top = double(ystart)/height();
+        double bottom = double(yend)/height();
+        mandelbrot m(width(), height(), left, right, top, bottom);
+        m.set_maxiter(10);
+        random_palette * palette = new random_palette(0, 50);
+        canvas c = m.renderToCanvas(palette);
+        c.write();
+    }
+    renderNow();
 }
