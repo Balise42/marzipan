@@ -1,14 +1,16 @@
 #include "RasterWindow.h"
 #include <graphics/palette/gradient_palette.h>
+#include <graphics/palette/random_palette.h>
+#include <fractales/julia.h>
 
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), m_backingStore(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
-    mandel = mandelbrot(900, 600);
+    frac = julia(900, 600);
     //auto palette = new random_palette(0, 1000);
-    auto palette = new gradient_palette(0,  100, color{255,0,120}, color{255,255,255});
-    mandel.set_palette(palette);
-    mandel.renderToFile();
+    auto palette = new gradient_palette(0,  100, color{255,255,255}, color{255,0,120});
+    frac.set_palette(palette);
+    frac.renderToFile();
 }
 
 void RasterWindow::exposeEvent(QExposeEvent *event) {
@@ -69,8 +71,8 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int xend = event->x();
     int yend = event->y();
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
-        mandel.zoom(width(), height(), xstart, ystart, xend, yend);
-        mandel.renderToFile();
+        frac.zoom(width(), height(), xstart, ystart, xend, yend);
+        frac.renderToFile();
     }
     renderNow();
 }
@@ -78,23 +80,23 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
 void RasterWindow::keyReleaseEvent(QKeyEvent *event) {
     switch (event->key()) {
         case Qt::Key_R:
-            mandel.set_width(width());
-            mandel.set_height(height());
+            frac.set_width(width());
+            frac.set_height(height());
             break;
 
         case Qt::Key_M:
-            mandel.set_maxiter(mandel.get_maxiter() * 2);
+            frac.set_maxiter(frac.get_maxiter() * 2);
             break;
 
         case Qt::Key_D:
-            mandel.set_maxiter(mandel.get_maxiter() / 2);
+            frac.set_maxiter(frac.get_maxiter() / 2);
             break;
         default:
             return;
     }
-    if (mandel.get_palette()->is_iteration_dependent()) {
-            mandel.get_palette()->set_iteration_dependent(mandel.get_maxiter());
+    if (frac.get_palette()->is_iteration_dependent()) {
+            frac.get_palette()->set_iteration_dependent(frac.get_maxiter());
     }
-    mandel.renderToFile();
+    frac.renderToFile();
     renderNow();
 }
