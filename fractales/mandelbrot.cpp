@@ -48,3 +48,15 @@ std::complex<double> mandelbrot::scale(unsigned int x, unsigned int y) {
     double im = -((top - bottom)*double(y)/double(height) + bottom);
     return re + im*1i;
 }
+
+mandelbrot::mandelbrot(unsigned int width, unsigned int height) : mandelbrot() {
+    this->width = width;
+    this->height = height;
+}
+
+mandelbrot::mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom) : mandelbrot(width, height){
+    this->left = left;
+    this->right = right;
+    this->top = top;
+    this->bottom = bottom;
+}

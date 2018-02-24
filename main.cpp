@@ -16,7 +16,7 @@ int main(int argc, char** argv) {
 
     gflags::ParseCommandLineFlags(&argc, &argv, true);
 
-    auto palette = new random_palette(0,1000);
+    auto palette = new random_palette(0,4000);
 
     auto mandel = new mandelbrot();
     canvas canvas = mandel->renderToCanvas(palette);

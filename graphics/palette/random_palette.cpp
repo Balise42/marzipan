@@ -8,6 +8,10 @@ random_palette::random_palette(int min, int max) {
     this->min = min;
 }
 
+random_palette::~random_palette() {
+    delete colors;
+};
+
 color random_palette::compute_color(int value) {
     if (colors[value-min] == color{0,0,0}) {
         colors[value - min] = color((unsigned char) (std::rand() % 256), (unsigned char) (std::rand() % 256),
