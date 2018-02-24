@@ -1,7 +1,9 @@
 #ifndef MARZIPAN_RASTERWINDOW_H
 #define MARZIPAN_RASTERWINDOW_H
 
-#include <qt5/QtGui/QWindow>
+#include <qt5/QtGui/QtGui>
+#include <fractales/fractale.h>
+#include <fractales/mandelbrot.h>
 
 class RasterWindow : public QWindow {
     Q_OBJECT
@@ -19,13 +21,18 @@ protected:
     void exposeEvent(QExposeEvent *event) override;
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+    void keyReleaseEvent(QKeyEvent *) override;
 
 private:
     QBackingStore *m_backingStore;
 
+    mandelbrot mandel;
+
     //TODO move this away from this class
     int xstart = -1;
     int ystart = -1;
+
+
 };
 
 

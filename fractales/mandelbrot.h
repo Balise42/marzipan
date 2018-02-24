@@ -4,30 +4,33 @@
 
 #include <complex>
 #include "../graphics/canvas.h"
-#include "../graphics/palette/gradient_palette.h"
+#include "../graphics/palette/palette.h"
+#include "fractale.h"
 
-class mandelbrot {
+class mandelbrot : public fractale {
 
 public:
-    mandelbrot();
-    mandelbrot(unsigned int width, unsigned int height);
-    mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom);
-    canvas renderToCanvas(palette * palette);
-    std::complex<double> scale(unsigned int x, unsigned int y);
+    mandelbrot() : fractale() {}
+
+    mandelbrot(unsigned int width, unsigned int height) : fractale(width, height) {}
+
+    mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom)
+            : fractale(width, height, left, right, top, bottom) {}
+
+    canvas renderToCanvas();
 
     void set_maxiter(int iter) {
         this->maxiter = iter;
     }
 
-private:
-    unsigned int width = 900;
-    unsigned int height = 600;
-    double left = -2;
-    double right = 1;
-    double top = 1;
-    double bottom = -1;
-    int maxiter = 100;
+    void set_palette(palette * pal) {
+        this->pal = pal;
+    }
 
+    void renderToFile();
+
+private:
+    palette * pal;
     int computeValue(std::complex<double> z);
 };
 

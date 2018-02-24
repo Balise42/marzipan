@@ -1,11 +1,14 @@
 #include "RasterWindow.h"
 #include <qt5/QtGui/QtGui>
-#include <fractales/mandelbrot.h>
 #include <graphics/palette/random_palette.h>
 
 
 RasterWindow::RasterWindow(QWindow *parent) :QWindow(parent), m_backingStore(new QBackingStore(this)) {
-    setGeometry(100, 100, 300,200);
+    setGeometry(100, 100, 900,600);
+    mandel = mandelbrot(900, 600);
+    auto palette = new random_palette(0, 1000);
+    mandel.set_palette(palette);
+    mandel.renderToFile();
 }
 
 void RasterWindow::exposeEvent(QExposeEvent *event) {
@@ -65,16 +68,13 @@ void RasterWindow::mousePressEvent(QMouseEvent *event) {
 void RasterWindow::mouseReleaseEvent(QMouseEvent * event) {
     int xend = event->x();
     int yend = event->y();
-    if (xstart > 0 && ystart > 0 && xend > xstart & yend > ystart) {
-        double left = double(xstart)/width();
-        double right = double(xend)/width();
-        double top = double(ystart)/height();
-        double bottom = double(yend)/height();
-        mandelbrot m(width(), height(), left, right, top, bottom);
-        m.set_maxiter(10);
-        random_palette * palette = new random_palette(0, 50);
-        canvas c = m.renderToCanvas(palette);
-        c.write();
+    if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
+        mandel.zoom(width(), height(), xstart, ystart, xend, yend);
+        mandel.renderToFile();
     }
     renderNow();
+}
+
+void RasterWindow::keyReleaseEvent(QKeyEvent * event) {
+    if (event->text)
 }

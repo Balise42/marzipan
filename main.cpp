@@ -19,7 +19,8 @@ int main(int argc, char** argv) {
     auto palette = new random_palette(0,4000);
 
     auto mandel = new mandelbrot();
-    canvas canvas = mandel->renderToCanvas(palette);
+    mandel->set_palette(palette);
+    canvas canvas = mandel->renderToCanvas();
 
     canvas.write();
 
