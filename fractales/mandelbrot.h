@@ -17,7 +17,7 @@ public:
     mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom)
             : fractal(width, height, left, right, top, bottom) {}
 
-    canvas renderToCanvas();
+    virtual canvas renderToCanvas();
 
     void set_palette(palette * pal) {
         this->pal = pal;
@@ -29,9 +29,10 @@ public:
 
     void renderToFile();
 
-private:
+protected:
+    int compute_value(std::complex<double> z);
+
     palette * pal;
-    int computeValue(std::complex<double> z);
 };
 
 

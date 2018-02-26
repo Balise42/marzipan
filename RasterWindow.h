@@ -5,6 +5,7 @@
 #include <fractales/fractal.h>
 #include <fractales/mandelbrot.h>
 #include <fractales/julia.h>
+#include <fractales/mandelbrot_quadtree.h>
 
 class RasterWindow : public QWindow {
     Q_OBJECT
@@ -27,7 +28,7 @@ protected:
 private:
     QBackingStore *m_backingStore;
 
-    julia frac;
+    mandelbrot_quadtree frac;
 
     //TODO move this away from this class
     int xstart = -1;

@@ -2,14 +2,16 @@
 #include <graphics/palette/gradient_palette.h>
 #include <graphics/palette/random_palette.h>
 #include <fractales/julia.h>
+#include <fractales/mandelbrot_quadtree.h>
 
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), m_backingStore(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
-    frac = julia(900, 600);
-    //auto palette = new random_palette(0, 1000);
+    //frac = julia(900, 600);
+    auto palette = new random_palette(0, 1000);
+    frac = mandelbrot_quadtree(512,512);
     //auto palette = new repeating_gradient_palette(0,  100, color{255,255,0}, color{0,0,255}, 30);
-    auto palette = new gradient_palette(0, 100, color{255, 255, 255}, color{255,0,120});
+    //auto palette = new gradient_palette(0, 100, color{255, 255, 255}, color{255,0,120});
     frac.set_palette(palette);
     frac.renderToFile();
 }
