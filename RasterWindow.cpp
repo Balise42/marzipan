@@ -8,7 +8,8 @@ RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), m_backingStore(ne
     setGeometry(100, 100, 900, 600);
     frac = julia(900, 600);
     //auto palette = new random_palette(0, 1000);
-    auto palette = new gradient_palette(0,  100, color{255,255,255}, color{255,0,120});
+    //auto palette = new repeating_gradient_palette(0,  100, color{255,255,0}, color{0,0,255}, 30);
+    auto palette = new gradient_palette(0, 100, color{255, 255, 255}, color{255,0,120});
     frac.set_palette(palette);
     frac.renderToFile();
 }
