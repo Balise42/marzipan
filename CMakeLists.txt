@@ -6,7 +6,7 @@ enable_testing()
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
 set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_FLAGS -Wall)
+set(CMAKE_CXX_FLAGS "-Wall")
 
 
 add_executable(marzipan main.cpp graphics/canvas.cpp graphics/canvas.h graphics/color.cpp graphics/color.h fractales/mandelbrot.cpp fractales/mandelbrot.h graphics/palette/palette.h graphics/palette/gradient_palette.cpp graphics/palette/gradient_palette.h graphics/palette/random_palette.cpp graphics/palette/random_palette.h fractales/fractal.cpp fractales/fractal.h fractales/julia.h fractales/julia.cpp graphics/palette/repeating_gradient_palette.cpp graphics/palette/repeating_gradient_palette.h fractales/mandelbrot_quadtree.cpp fractales/mandelbrot_quadtree.h)

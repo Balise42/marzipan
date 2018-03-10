@@ -1,4 +1,5 @@
 #include <gflags/gflags.h>
+#include <fractales/mandelbrot_quadtree.h>
 #include "graphics/canvas.h"
 #include "graphics/palette/gradient_palette.h"
 #include "fractales/mandelbrot.h"
@@ -18,7 +19,7 @@ int main(int argc, char** argv) {
 
     auto palette = new random_palette(0,4000);
 
-    auto mandel = new mandelbrot();
+    mandelbrot_quadtree * mandel = new mandelbrot_quadtree();
     mandel->set_palette(palette);
     canvas canvas = mandel->renderToCanvas();
 

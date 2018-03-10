@@ -1,5 +1,6 @@
 #include "canvas.h"
 #include <gflags/gflags.h>
+#include <stdexcept>
 
 DEFINE_string(output, "plop.bmp", "Image file to write");
 
@@ -10,6 +11,8 @@ canvas::canvas() : canvas(900, 600) {
 
 canvas::canvas(unsigned int width, unsigned int height) {
     img = new CImg<unsigned char>(width, height, 1, 3, 0);
+    this->width = width;
+    this->height = height;
 }
 
 canvas::~canvas() {

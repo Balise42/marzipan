@@ -22,6 +22,8 @@ public:
 
     void write(const char * filename);
 
+    unsigned int width, height;
+
 private:
     CImg<unsigned char> *img;
 };
