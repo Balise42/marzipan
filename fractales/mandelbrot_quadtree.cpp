@@ -8,7 +8,7 @@ canvas mandelbrot_quadtree::renderToCanvas() {
 }
 
 void mandelbrot_quadtree::fill_rectangle(unsigned int xstart, unsigned int xend, unsigned  int ystart, unsigned int yend, canvas * pCanvas) {
-    if (xstart >= pCanvas->width || xend < 0 || ystart >= pCanvas->height || yend < 0) {
+    if (xstart >= pCanvas->width || xend < 0 || ystart >= pCanvas->height || yend < 0 || ystart > yend || xstart > xendm) {
         return;
     }
 
@@ -46,7 +46,7 @@ void mandelbrot_quadtree::fill_rectangle(unsigned int xstart, unsigned int xend,
 bool mandelbrot_quadtree::compute_border(unsigned int xstart, unsigned int xend, unsigned int ystart, unsigned int yend, canvas *pCanvas) {
     int init = compute_value(scale(xstart, ystart));
 
-    if (xstart == xend && ystart == yend) {
+    if (xstart >= xend && ystart >= yend) {
         return true;
     }
 
