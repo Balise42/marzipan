@@ -2,8 +2,8 @@
 #include "julia.h"
 
 
-canvas julia::renderToCanvas() {
-    canvas c(width, height);
+image_canvas julia::renderToCanvas() {
+    image_canvas c(width, height);
     for (unsigned int x = 0; x<width; x++) {
         for (unsigned int y = 0; y<height; y++) {
             int value = computeValue(scale(x, y));
@@ -24,6 +24,6 @@ int julia::computeValue(std::complex<double> z) {
 }
 
 void julia::renderToFile() {
-    canvas c = renderToCanvas();
+    image_canvas c = renderToCanvas();
     c.write();
 }

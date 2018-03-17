@@ -3,7 +3,8 @@
 
 
 #include <complex>
-#include "../graphics/canvas.h"
+#include <vector>
+#include "graphics/image_canvas.h"
 #include "../graphics/palette/palette.h"
 #include "fractal.h"
 
@@ -17,7 +18,9 @@ public:
     mandelbrot(unsigned int width, unsigned int height, double left, double right, double top, double bottom)
             : fractal(width, height, left, right, top, bottom) {}
 
-    virtual canvas renderToCanvas();
+    virtual image_canvas renderToCanvas();
+
+    std::vector<int> compute_histo();
 
     void set_palette(palette * pal) {
         this->pal = pal;

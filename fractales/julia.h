@@ -3,7 +3,7 @@
 
 
 #include <complex>
-#include "../graphics/canvas.h"
+#include "graphics/image_canvas.h"
 #include "../graphics/palette/palette.h"
 #include "fractal.h"
 
@@ -17,7 +17,7 @@ public:
     julia(unsigned int width, unsigned int height, double left, double right, double top, double bottom)
             : fractal(width, height, left, right, top, bottom) {}
 
-    canvas renderToCanvas();
+    image_canvas renderToCanvas();
 
     void set_palette(palette * pal) {
         this->pal = pal;

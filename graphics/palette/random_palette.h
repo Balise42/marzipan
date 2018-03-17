@@ -11,10 +11,11 @@ private:
 
 public:
     random_palette(int min, int max);
+    random_palette(int min, int max, color inner_color);
     ~random_palette();
-    color compute_color(int value);
+    color compute_color(int value) override;
 
-    bool is_iteration_dependent();
+    bool is_iteration_dependent() override;
 
     void set_iteration_dependent(int iter);
 };

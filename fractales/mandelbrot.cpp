@@ -2,8 +2,8 @@
 #include "mandelbrot.h"
 
 
-canvas mandelbrot::renderToCanvas() {
-    canvas c(width, height);
+image_canvas mandelbrot::renderToCanvas() {
+    image_canvas c(width, height);
     for (unsigned int x = 0; x<width; x++) {
         for (unsigned int y = 0; y<height; y++) {
             int value = compute_value(scale(x, y));
@@ -20,10 +20,26 @@ int mandelbrot::compute_value(std::complex<double> c) {
         z = std::pow(z, 2) + c;
         i = i+1;
     }
+    if (i == maxiter) {
+        i = INT_MAX;
+    }
     return i;
 }
 
 void mandelbrot::renderToFile() {
-    canvas c = renderToCanvas();
+    image_canvas c = renderToCanvas();
     c.write();
+}
+
+std::vector<int> mandelbrot::compute_histo() {
+    std::vector<int> v(maxiter, 0);
+    for (unsigned int x = 0; x<width; x++) {
+        for (unsigned int y = 0; y < height; y++) {
+            int value = compute_value(scale(x, y));
+            if (value != INT_MAX) {
+                v[value] = v[value] + 1;
+            }
+        }
+    }
+    return v;
 }

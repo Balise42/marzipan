@@ -1,14 +1,15 @@
-#include <graphics/canvas.h>
+//#include <graphics/qpainter_canvas.h>
 #include "mandelbrot_quadtree.h"
+#include <graphics/image_canvas.h>
 
-canvas mandelbrot_quadtree::renderToCanvas() {
-    canvas c(width, height);
+image_canvas mandelbrot_quadtree::renderToCanvas() {
+    image_canvas c(width, height);
     fill_rectangle(0, width, 0, height, &c);
     return c;
 }
 
 void mandelbrot_quadtree::fill_rectangle(unsigned int xstart, unsigned int xend, unsigned  int ystart, unsigned int yend, canvas * pCanvas) {
-    if (xstart >= pCanvas->width || xend < 0 || ystart >= pCanvas->height || yend < 0 || ystart > yend || xstart > xendm) {
+    if (xstart >= pCanvas->width || xend < 0 || ystart >= pCanvas->height || yend < 0 || ystart > yend || xstart > xend) {
         return;
     }
 
@@ -30,9 +31,10 @@ void mandelbrot_quadtree::fill_rectangle(unsigned int xstart, unsigned int xend,
 
     bool fillable = compute_border(xstart, xend, ystart, yend, pCanvas);
     if (fillable) {
-        for (int x = xstart+1; x<xend-1; x++) {
-            for (int y = ystart+1; y<yend-1; y++) {
-                pCanvas->paint(x, y, pCanvas->read_color(xstart, ystart));
+        color c = pal->compute_color(compute_value(scale(xstart, ystart)));
+        for (unsigned int x = xstart+1; x<xend-1; x++) {
+            for (unsigned int y = ystart+1; y<yend-1; y++) {
+                pCanvas->paint(x, y, c);
             }
         }
     } else {
@@ -75,3 +77,8 @@ bool mandelbrot_quadtree::compute_border(unsigned int xstart, unsigned int xend,
     }
     return ret;
 }
+
+/*void mandelbrot_quadtree::renderToPainter(QPainter *pPainter) {
+    qpainter_canvas c(pPainter, width, height);
+    fill_rectangle(0, width, 0, height, &c);
+}*/

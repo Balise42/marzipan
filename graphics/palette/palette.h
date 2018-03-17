@@ -8,6 +8,8 @@ public:
     virtual color compute_color(int value) = 0;
     virtual bool is_iteration_dependent() = 0;
     virtual void set_iteration_dependent(int iter) = 0;
+
+    color inner_color;
 };
 
 

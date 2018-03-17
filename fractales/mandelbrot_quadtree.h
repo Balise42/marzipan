@@ -5,6 +5,7 @@
 #ifndef MARZIPAN_MANDELBROT_QUADTREE_H
 #define MARZIPAN_MANDELBROT_QUADTREE_H
 
+//#include <QtGui/QPainter>
 #include "mandelbrot.h"
 
 class mandelbrot_quadtree : public mandelbrot {
@@ -17,11 +18,13 @@ public:
     mandelbrot_quadtree(unsigned int width, unsigned int height, double left, double right, double top, double bottom)
             : mandelbrot(width, height, left, right, top, bottom) {}
 
-    virtual canvas renderToCanvas() override;
+    virtual image_canvas renderToCanvas() override;
 
     void fill_rectangle(unsigned int xstart, unsigned int xend, unsigned int ystart, unsigned int yend, canvas *pCanvas);
 
     bool compute_border(unsigned int xstart, unsigned int xend, unsigned int ystart, unsigned int yend, canvas *pCanvas);
+
+    //void renderToPainter(QPainter *pPainter);
 };
 
 #endif //MARZIPAN_MANDELBROT_QUADTREE_H

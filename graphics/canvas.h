@@ -1,31 +1,16 @@
 #ifndef MARZIPAN_CANVAS_H
 #define MARZIPAN_CANVAS_H
 
-#include "CImg.h"
-#include "color.h"
 
-using namespace cimg_library;
+#include "color.h"
 
 class canvas {
 public:
-    canvas();
+    virtual void paint(unsigned int x, unsigned int y, color c) = 0;
 
-    canvas(unsigned int width, unsigned int height);
-
-    ~canvas();
-
-    void paint(unsigned int x, unsigned int y, color c);
-
-    color read_color(unsigned int x, unsigned int y);
-
-    void write();
-
-    void write(const char * filename);
+    virtual color read_color(unsigned int x, unsigned int y) = 0;
 
     unsigned int width, height;
-
-private:
-    CImg<unsigned char> *img;
 };
 
 

@@ -13,7 +13,7 @@ RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), m_backingStore(ne
     //auto palette = new repeating_gradient_palette(0,  100, color{255,255,0}, color{0,0,255}, 30);
     //auto palette = new gradient_palette(0, 100, color{255, 255, 255}, color{255,0,120});
     frac.set_palette(palette);
-    frac.renderToFile();
+    //frac.renderToFile();
 }
 
 void RasterWindow::exposeEvent(QExposeEvent *event) {
@@ -49,8 +49,8 @@ void RasterWindow::renderNow() {
 }
 
 void RasterWindow::render(QPainter *painter) {
-    QPixmap pixmap("plop.bmp");
-    painter->drawPixmap(QRect(0, 0, width(), height()), pixmap);
+    //frac.renderToPainter(painter);
+    frac.renderToPainter(painter);
 }
 
 void RasterWindow::renderLater() {
@@ -75,7 +75,7 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int yend = event->y();
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
         frac.zoom(width(), height(), xstart, ystart, xend, yend);
-        frac.renderToFile();
+        //frac.renderToFile();
     }
     renderNow();
 }
@@ -100,6 +100,6 @@ void RasterWindow::keyReleaseEvent(QKeyEvent *event) {
     if (frac.get_palette()->is_iteration_dependent()) {
             frac.get_palette()->set_iteration_dependent(frac.get_maxiter());
     }
-    frac.renderToFile();
+    //frac.renderToFile();
     renderNow();
 }
