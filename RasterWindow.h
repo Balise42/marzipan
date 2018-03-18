@@ -2,10 +2,9 @@
 #define MARZIPAN_RASTERWINDOW_H
 
 #include <qt5/QtGui/QtGui>
-#include <fractales/fractal.h>
-#include <fractales/mandelbrot.h>
-#include <fractales/julia.h>
-#include <fractales/mandelbrot_quadtree.h>
+#include <fractales/Fractal.h>
+#include <fractales/Mandelbrot.h>
+#include <graphics/Renderer.h>
 
 class RasterWindow : public QWindow {
     Q_OBJECT
@@ -26,15 +25,16 @@ protected:
     void keyReleaseEvent(QKeyEvent *) override;
 
 private:
-    QBackingStore *m_backingStore;
+    QBackingStore *backing_store;
 
-    mandelbrot_quadtree frac;
+    Fractal * fractal;
+    Palette * palette;
 
     //TODO move this away from this class
     int xstart = -1;
     int ystart = -1;
 
-
+    Renderer *renderer;
 };
 
 

@@ -1,18 +1,18 @@
 #include <gflags/gflags.h>
-#include <fractales/mandelbrot_quadtree.h>
-#include <graphics/palette/histo_palette.h>
-#include "graphics/image_canvas.h"
-#include "graphics/palette/gradient_palette.h"
-#include "fractales/mandelbrot.h"
-#include "graphics/palette/random_palette.h"
+#include <graphics/palette/HistoPalette.h>
+#include <graphics/QuadtreeRenderer.h>
+#include "graphics/ImageCanvas.h"
+#include "graphics/palette/GradientPalette.h"
+#include "fractales/Mandelbrot.h"
+#include "graphics/palette/RandomPalette.h"
 
-color black(0,0,0);
-color yellow(255,255,0);
-color red(255,0,0);
-color white(255,255,255);
-color blue(0,0,255);
-color green(0,100,0);
-color pink(255,0,255);
+Color black(0,0,0);
+Color yellow(255,255,0);
+Color red(255,0,0);
+Color white(255,255,255);
+Color blue(0,0,255);
+Color green(0,100,0);
+Color pink(255,0,255);
 
 int main(int argc, char** argv) {
 
@@ -20,13 +20,13 @@ int main(int argc, char** argv) {
 
     //auto palette = new random_palette(0,4000);
 
-    auto mandel = new mandelbrot_quadtree();
-    auto palette = new histo_palette(mandel->compute_histo(), white, green, 430, black);
+    auto mandel = new Mandelbrot();
+    auto palette = new HistoPalette(mandel->compute_histo(), white, green, 430, black);
     //auto palette = new repeating_gradient_palette(0, 400, pink, white, 64, white);
-    mandel->set_palette(palette);
-    image_canvas canvas = mandel->renderToCanvas();
-
-    canvas.write();
+    auto renderer = new QuadtreeRenderer();
+    auto canvas = new ImageCanvas(mandel->width, mandel->height);
+    renderer->render(mandel, palette, canvas);
+    canvas->write();
 
     return 0;
 }

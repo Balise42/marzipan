@@ -1,19 +1,16 @@
 #include "RasterWindow.h"
-#include <graphics/palette/gradient_palette.h>
-#include <graphics/palette/random_palette.h>
-#include <fractales/julia.h>
-#include <fractales/mandelbrot_quadtree.h>
+#include <graphics/palette/GradientPalette.h>
+#include <graphics/palette/RandomPalette.h>
+#include <fractales/Julia.h>
+#include <graphics/QPainterCanvas.h>
+#include <graphics/QuadtreeRenderer.h>
 
 
-RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), m_backingStore(new QBackingStore(this)) {
+RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
-    //frac = julia(900, 600);
-    auto palette = new random_palette(0, 1000);
-    frac = mandelbrot_quadtree(128,128);
-    //auto palette = new repeating_gradient_palette(0,  100, color{255,255,0}, color{0,0,255}, 30);
-    //auto palette = new gradient_palette(0, 100, color{255, 255, 255}, color{255,0,120});
-    frac.set_palette(palette);
-    //frac.renderToFile();
+    palette = new RandomPalette(0, 1000);
+    fractal = new Mandelbrot(128,128);
+    renderer = new QuadtreeRenderer();
 }
 
 void RasterWindow::exposeEvent(QExposeEvent *event) {
@@ -23,7 +20,7 @@ void RasterWindow::exposeEvent(QExposeEvent *event) {
 }
 
 void RasterWindow::resizeEvent(QResizeEvent *resizeEvent) {
-    m_backingStore->resize(resizeEvent->size());
+    backing_store->resize(resizeEvent->size());
     if (isExposed()) {
         renderNow();
     }
@@ -35,22 +32,24 @@ void RasterWindow::renderNow() {
     }
 
     QRect rect(0, 0, width(), height());
-    m_backingStore->beginPaint(rect);
+    backing_store->beginPaint(rect);
 
-    QPaintDevice *device = m_backingStore->paintDevice();
+    QPaintDevice *device = backing_store->paintDevice();
     QPainter painter(device);
 
     painter.fillRect(0, 0, width(), height(), Qt::white);
     render(&painter);
     painter.end();
 
-    m_backingStore->endPaint();
-    m_backingStore->flush(rect);
+    backing_store->endPaint();
+    backing_store->flush(rect);
 }
 
 void RasterWindow::render(QPainter *painter) {
     //frac.renderToPainter(painter);
-    frac.renderToPainter(painter);
+    auto canvas = new QPainterCanvas(painter, width(), height());
+    renderer->render(fractal, palette, canvas);
+
 }
 
 void RasterWindow::renderLater() {
@@ -74,8 +73,7 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int xend = event->x();
     int yend = event->y();
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
-        frac.zoom(width(), height(), xstart, ystart, xend, yend);
-        //frac.renderToFile();
+        fractal->zoom(width(), height(), xstart, ystart, xend, yend);
     }
     renderNow();
 }
@@ -83,23 +81,22 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
 void RasterWindow::keyReleaseEvent(QKeyEvent *event) {
     switch (event->key()) {
         case Qt::Key_R:
-            frac.set_width(width());
-            frac.set_height(height());
+            fractal->set_width(width());
+            fractal->set_height(height());
             break;
 
         case Qt::Key_M:
-            frac.set_maxiter(frac.get_maxiter() * 2);
+            fractal->set_maxiter(fractal->get_maxiter() * 2);
             break;
 
         case Qt::Key_D:
-            frac.set_maxiter(frac.get_maxiter() / 2);
+            fractal->set_maxiter(fractal->get_maxiter() / 2);
             break;
         default:
             return;
     }
-    if (frac.get_palette()->is_iteration_dependent()) {
-            frac.get_palette()->set_iteration_dependent(frac.get_maxiter());
+    if (palette->is_iteration_dependent()) {
+            palette->set_iteration_dependent(fractal->get_maxiter());
     }
-    //frac.renderToFile();
     renderNow();
 }

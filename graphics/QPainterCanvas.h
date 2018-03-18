@@ -2,20 +2,20 @@
 #define MARZIPAN_QPAINTER_CANVAS_H
 
 #include <qt5/QtGui/QtGui>
-#include "canvas.h"
+#include "Canvas.h"
 
-class qpainter_canvas : public canvas {
+class QPainterCanvas : public Canvas {
 
 public:
 
-    qpainter_canvas(QPainter * qPainter, unsigned int width, unsigned int height) : canvas() {
+    QPainterCanvas(QPainter * qPainter, unsigned int width, unsigned int height) : Canvas() {
         this->qPainter = qPainter;
         this->width = width;
         this->height = height;
     }
 
-    void paint(unsigned int x, unsigned int y, color c) override;
-    color read_color(unsigned int x, unsigned int y) override;
+    void paint(unsigned int x, unsigned int y, Color c) override;
+    Color read_color(unsigned int x, unsigned int y) override;
 
 private:
     QPainter * qPainter;

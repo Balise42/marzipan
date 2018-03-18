@@ -1,17 +1,17 @@
-#include "color.h"
+#include "Color.h"
 
-color::color() {
+Color::Color() {
     this->R = 0;
     this->G = 0;
     this->B = 0;
 }
 
-color::color(unsigned char R, unsigned char G, unsigned char B) {
+Color::Color(unsigned char R, unsigned char G, unsigned char B) {
     this->R = R;
     this->G = G;
     this->B = B;
 }
 
-bool operator==(const color lhs, const color rhs) {
+bool operator==(const Color lhs, const Color rhs) {
     return lhs.R == rhs.R && lhs.B == rhs.B && lhs.G == rhs.G;
 }

@@ -1,8 +1,8 @@
 #include "gtest/gtest.h"
-#include "../fractales/mandelbrot.h"
+#include "fractales/Mandelbrot.h"
 
 TEST(MandelbrotTest, ScaleTest) {
-    mandelbrot m{};
+    Mandelbrot m{};
     std::complex<double> expected;
 
     expected = 0 + 0*1i;
