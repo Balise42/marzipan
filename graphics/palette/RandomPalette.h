@@ -17,7 +17,7 @@ public:
 
     bool is_iteration_dependent() override;
 
-    void set_iteration_dependent(int iter) override;
+    void recompute(Fractal * fractal) override;
 };
 
 

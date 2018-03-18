@@ -17,14 +17,15 @@ public slots:
     void renderNow();
 
 protected:
-    bool event(QEvent * event) override;
-    void resizeEvent(QResizeEvent *event) override;
-    void exposeEvent(QExposeEvent *event) override;
-    void mousePressEvent(QMouseEvent *event) override;
-    void mouseReleaseEvent(QMouseEvent *event) override;
-    void keyReleaseEvent(QKeyEvent *) override;
+    bool event(QEvent *event);
+    void resizeEvent(QResizeEvent *event);
+    void exposeEvent(QExposeEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void keyReleaseEvent(QKeyEvent *);
 
 private:
+    QRect rect;
     QBackingStore *backing_store;
 
     Fractal * fractal;
@@ -35,6 +36,8 @@ private:
     int ystart = -1;
 
     Renderer *renderer;
+
+    void paintEvent(QEvent *event);
 };
 
 

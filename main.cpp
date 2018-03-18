@@ -6,6 +6,7 @@
 #include "fractales/Mandelbrot.h"
 #include "graphics/palette/RandomPalette.h"
 
+
 Color black(0,0,0);
 Color yellow(255,255,0);
 Color red(255,0,0);

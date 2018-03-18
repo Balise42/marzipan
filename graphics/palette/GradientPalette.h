@@ -10,7 +10,7 @@ class GradientPalette : public RepeatingGradientPalette {
 public:
     GradientPalette(int min, int max, Color cmin, Color cmax);
 
-    void set_iteration_dependent(int iter);
+    void recompute(Fractal * fractal) override;
 };
 
 

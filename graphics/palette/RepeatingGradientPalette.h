@@ -14,12 +14,12 @@ public:
     ~RepeatingGradientPalette();
     virtual Color compute_color(int value) override;
     bool is_iteration_dependent() override;
-    void set_iteration_dependent(int iter) override;
+    void recompute(Fractal * fractal) override;
 
 protected:
     int min, max, num_cols;
     Color * colors;
-    void generate_palette();
+    virtual void generate_palette();
 
 private:
     Color cmin, cmax;

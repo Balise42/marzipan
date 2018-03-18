@@ -25,7 +25,7 @@ bool RandomPalette::is_iteration_dependent() {
     return false;
 }
 
-void RandomPalette::set_iteration_dependent(int iter) {
+void RandomPalette::recompute(Fractal * fractal) {
     //nop
 }
 

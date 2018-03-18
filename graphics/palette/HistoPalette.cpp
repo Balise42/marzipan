@@ -1,13 +1,17 @@
-//
-// Created by isa on 3/17/18.
-//
-
 #include <numeric>
 #include <climits>
+#include <fractales/Mandelbrot.h>
 #include "HistoPalette.h"
 
 bool HistoPalette::is_iteration_dependent() {
-    return false;
+    return true;
+}
+
+void HistoPalette::recompute(Fractal * fractal) {
+    this->num_cols =  fractal->get_maxiter() / 2;
+    RepeatingGradientPalette::recompute(fractal);
+    this->histo = ((Mandelbrot *)fractal)->compute_histo();
+    this->total = std::accumulate(histo.begin(), histo.end(), 0);
 }
 
 HistoPalette::HistoPalette(std::vector<int> histo, Color cmin, Color cmax, int num_cols, Color inner_color) : RepeatingGradientPalette(

@@ -1,7 +1,7 @@
 #include "QPainterCanvas.h"
 
 void QPainterCanvas::paint(unsigned int x, unsigned int y, Color c) {
-    QColor qColor(c.R, c.B, c.G);
+    QColor qColor(c.R, c.G, c.B);
     qPainter->setPen(qColor);
     qPainter->drawPoint(x, y);
 }

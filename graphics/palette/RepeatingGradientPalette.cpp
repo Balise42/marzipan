@@ -44,8 +44,8 @@ bool RepeatingGradientPalette::is_iteration_dependent() {
     return true;
 }
 
-void RepeatingGradientPalette::set_iteration_dependent(int iter) {
-    this->max = iter;
+void RepeatingGradientPalette::recompute(Fractal * fractal) {
+    this->max = fractal->get_maxiter();
     generate_palette();
 }
 

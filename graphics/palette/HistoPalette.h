@@ -15,9 +15,7 @@ public:
 
     bool is_iteration_dependent() override;
 
-    void set_iteration_dependent(int iter) override {
-        //nop
-    }
+    void recompute(Fractal * fractal) override;
 
     Color compute_color(int value) override;
 

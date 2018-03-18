@@ -4,12 +4,22 @@
 #include <fractales/Julia.h>
 #include <graphics/QPainterCanvas.h>
 #include <graphics/QuadtreeRenderer.h>
+#include <graphics/palette/HistoPalette.h>
+#include <QtGui/QWindow>
 
+
+Color black(0,0,0);
+Color yellow(255,255,0);
+Color red(255,0,0);
+Color white(255,255,255);
+Color blue(0,0,255);
+Color green(0,100,0);
+Color pink(255,0,255);
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
-    palette = new RandomPalette(0, 1000);
-    fractal = new Mandelbrot(128,128);
+    fractal = new Mandelbrot();
+    palette = new HistoPalette(((Mandelbrot *)fractal)->compute_histo(), pink, white, 100, black);
     renderer = new QuadtreeRenderer();
 }
 
@@ -21,9 +31,6 @@ void RasterWindow::exposeEvent(QExposeEvent *event) {
 
 void RasterWindow::resizeEvent(QResizeEvent *resizeEvent) {
     backing_store->resize(resizeEvent->size());
-    if (isExposed()) {
-        renderNow();
-    }
 }
 
 void RasterWindow::renderNow() {
@@ -38,6 +45,7 @@ void RasterWindow::renderNow() {
     QPainter painter(device);
 
     painter.fillRect(0, 0, width(), height(), Qt::white);
+
     render(&painter);
     painter.end();
 
@@ -46,10 +54,10 @@ void RasterWindow::renderNow() {
 }
 
 void RasterWindow::render(QPainter *painter) {
-    //frac.renderToPainter(painter);
     auto canvas = new QPainterCanvas(painter, width(), height());
+    fractal->height = height();
+    fractal->width = width();
     renderer->render(fractal, palette, canvas);
-
 }
 
 void RasterWindow::renderLater() {
@@ -74,6 +82,9 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int yend = event->y();
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
         fractal->zoom(width(), height(), xstart, ystart, xend, yend);
+        if (palette->is_iteration_dependent()) {
+            palette->recompute(fractal);
+        }
     }
     renderNow();
 }
@@ -96,7 +107,7 @@ void RasterWindow::keyReleaseEvent(QKeyEvent *event) {
             return;
     }
     if (palette->is_iteration_dependent()) {
-            palette->set_iteration_dependent(fractal->get_maxiter());
+        palette->recompute(fractal);
     }
     renderNow();
 }

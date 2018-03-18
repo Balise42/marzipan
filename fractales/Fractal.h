@@ -1,7 +1,3 @@
-//
-// Created by isa on 2/24/18.
-//
-
 #ifndef MARZIPAN_FRACTALE_H
 #define MARZIPAN_FRACTALE_H
 
