@@ -2,7 +2,6 @@
 #include <graphics/palette/GradientPalette.h>
 #include <graphics/palette/RandomPalette.h>
 #include <fractales/Julia.h>
-#include <graphics/QPainterCanvas.h>
 #include <graphics/QuadtreeRenderer.h>
 #include <graphics/palette/HistoPalette.h>
 #include <QtGui/QWindow>
@@ -21,6 +20,7 @@ RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new
     fractal = new Mandelbrot();
     palette = new HistoPalette(((Mandelbrot *)fractal)->compute_histo(), pink, white, 100, black);
     renderer = new QuadtreeRenderer();
+    computeFractal();
 }
 
 void RasterWindow::exposeEvent(QExposeEvent *event) {
@@ -54,10 +54,8 @@ void RasterWindow::renderNow() {
 }
 
 void RasterWindow::render(QPainter *painter) {
-    auto canvas = new QPainterCanvas(painter, width(), height());
-    fractal->height = height();
-    fractal->width = width();
-    renderer->render(fractal, palette, canvas);
+    QPixmap pixmap("plop.bmp");
+    painter->drawPixmap(QRect(0, 0, width(), height()), pixmap);
 }
 
 void RasterWindow::renderLater() {
@@ -86,6 +84,7 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
             palette->recompute(fractal);
         }
     }
+    computeFractal();
     renderNow();
 }
 
@@ -109,5 +108,15 @@ void RasterWindow::keyReleaseEvent(QKeyEvent *event) {
     if (palette->is_iteration_dependent()) {
         palette->recompute(fractal);
     }
+    computeFractal();
     renderNow();
+}
+
+void RasterWindow::computeFractal() {
+    fractal->set_width(width());
+    fractal->set_height(height());
+    auto canvas = new ImageCanvas(width(), height());
+    renderer->render(fractal, palette, canvas);
+    canvas->write();
+    delete canvas;
 }

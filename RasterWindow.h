@@ -38,6 +38,7 @@ private:
     Renderer *renderer;
 
     void paintEvent(QEvent *event);
+    void computeFractal();
 };
 
 
