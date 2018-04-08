@@ -8,6 +8,7 @@
 #include <fractales/MartinMandelbrot.h>
 #include <graphics/LinearRenderer.h>
 #include <fractales/ContinuousMandelbrot.h>
+#include <graphics/palette/ContinuousPalette.h>
 
 
 Color black(0,0,0);
@@ -22,7 +23,7 @@ RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new
     setGeometry(100, 100, 900, 600);
     fractal = new ContinuousMandelbrot();
     fractal->set_maxiter(100);
-    palette = new RepeatingGradientPalette(0, 400, pink, white, 30, black);
+    palette = new ContinuousPalette(0, 100, blue, yellow, black, 50);
     renderer = new LinearRenderer();
     computeFractal();
 }
