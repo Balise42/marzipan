@@ -13,7 +13,7 @@ public:
     RandomPalette(int min, int max);
     RandomPalette(int min, int max, Color inner_color);
     ~RandomPalette();
-    Color compute_color(int value) override;
+    Color compute_color(double value) override;
 
     bool is_iteration_dependent() override;
 

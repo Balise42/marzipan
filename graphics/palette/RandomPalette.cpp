@@ -10,15 +10,17 @@ RandomPalette::~RandomPalette() {
     delete colors;
 };
 
-Color RandomPalette::compute_color(int value) {
-    if (value == INT_MAX) {
+Color RandomPalette::compute_color(double value) {
+    auto valuei = (int) value;
+
+    if (valuei == INT_MAX) {
         return inner_color;
     }
-    if (colors[value-min] == Color{0,0,0}) {
-        colors[value - min] = Color((unsigned char) (std::rand() % 256), (unsigned char) (std::rand() % 256),
+    if (colors[valuei-min] == Color{0,0,0}) {
+        colors[valuei - min] = Color((unsigned char) (std::rand() % 256), (unsigned char) (std::rand() % 256),
                                         (unsigned char) (std::rand() % 256));
     }
-    return colors[value - min];
+    return colors[valuei - min];
 }
 
 bool RandomPalette::is_iteration_dependent() {

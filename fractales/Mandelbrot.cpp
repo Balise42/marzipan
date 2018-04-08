@@ -2,7 +2,7 @@
 #include "Mandelbrot.h"
 
 
-int Mandelbrot::compute_value(std::complex<double> c) {
+double Mandelbrot::compute_value(std::complex<double> c) {
     int i = 0;
     std::complex<double> z = 0 + 0i;
     while (std::norm(std::pow(z, 2) + c) < 4 && i < maxiter) {
@@ -19,7 +19,7 @@ std::vector<int> Mandelbrot::compute_histo() {
     std::vector<int> v(maxiter, 0);
     for (unsigned int x = 0; x<width; x++) {
         for (unsigned int y = 0; y < height; y++) {
-            int value = compute_value(scale(x, y));
+            int value = (int) compute_value(scale(x, y));
             if (value != INT_MAX) {
                 v[value] = v[value] + 1;
             }

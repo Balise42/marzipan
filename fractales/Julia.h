@@ -17,7 +17,7 @@ public:
     Julia(unsigned int width, unsigned int height, double left, double right, double top, double bottom)
             : Fractal(width, height, left, right, top, bottom) {}
 
-    int compute_value(std::complex<double> z) override;
+    double compute_value(std::complex<double> z) override;
 };
 
 

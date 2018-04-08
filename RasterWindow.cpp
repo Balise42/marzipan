@@ -7,6 +7,7 @@
 #include <QtGui/QWindow>
 #include <fractales/MartinMandelbrot.h>
 #include <graphics/LinearRenderer.h>
+#include <fractales/ContinuousMandelbrot.h>
 
 
 Color black(0,0,0);
@@ -19,10 +20,9 @@ Color pink(255,0,255);
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
-    fractal = new MartinMandelbrot();
-    fractal->set_maxiter(5);
-    palette = new GradientPalette(0, 5, pink, white);
-    //palette = new RandomPalette(0, 400, black);
+    fractal = new ContinuousMandelbrot();
+    fractal->set_maxiter(100);
+    palette = new RepeatingGradientPalette(0, 400, pink, white, 30, black);
     renderer = new LinearRenderer();
     computeFractal();
 }

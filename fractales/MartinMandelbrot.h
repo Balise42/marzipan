@@ -19,7 +19,7 @@ public:
         compute_seed(std::complex<double>((left + right)/2, (top+bottom)/2));
     }
 
-    int compute_value(std::complex<double> z) override;
+    double compute_value(std::complex<double> z) override;
 
     void zoom(unsigned int width, unsigned int height, int startx, int starty, int endx, int endy) {
         Fractal::zoom(width, height, startx, starty, endx, endy);

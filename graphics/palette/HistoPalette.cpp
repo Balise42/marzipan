@@ -20,12 +20,13 @@ HistoPalette::HistoPalette(std::vector<int> histo, Color cmin, Color cmax, int n
     this->total = std::accumulate(histo.begin(), histo.end(), 0);
 }
 
-Color HistoPalette::compute_color(int value) {
-    if (value == INT_MAX) {
+Color HistoPalette::compute_color(double value) {
+    auto valuei = (int) value;
+    if (valuei == INT_MAX) {
         return inner_color;
     }
     double percentile = 0.0;
-    for (int i = 0; i<value; i++) {
+    for (int i = 0; i<valuei; i++) {
         percentile += (double)histo[i] / (double)total;
     }
     return colors[int(percentile * (max - min + 1))];

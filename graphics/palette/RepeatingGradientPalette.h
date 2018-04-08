@@ -12,7 +12,7 @@ public:
     RepeatingGradientPalette(int min, int max, Color cmin, Color cmax, int num_cols, Color inner_color);
 
     ~RepeatingGradientPalette();
-    virtual Color compute_color(int value) override;
+    virtual Color compute_color(double value) override;
     bool is_iteration_dependent() override;
     void recompute(Fractal * fractal) override;
 

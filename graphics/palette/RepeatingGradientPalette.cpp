@@ -17,11 +17,12 @@ RepeatingGradientPalette::RepeatingGradientPalette(int min, int max, Color cmin,
     generate_palette();
 }
 
-Color RepeatingGradientPalette::compute_color(int value) {
-    if (value == INT_MAX) {
+Color RepeatingGradientPalette::compute_color(double value) {
+    auto valuei = (int) value;
+    if (valuei == INT_MAX) {
         return inner_color;
     }
-    return colors[value + min];
+    return colors[valuei + min];
 }
 
 void RepeatingGradientPalette::generate_palette() {

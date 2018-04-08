@@ -15,7 +15,7 @@ void QuadtreeRenderer::fill_rectangle(unsigned int xstart, unsigned int xend, un
 
     if (xstart == xend) {
         for (unsigned int y = ystart+1; y < yend-1; y++) {
-            int value = f->compute_value(f->scale(xstart, y));
+            int value = (int) f->compute_value(f->scale(xstart, y));
             pCanvas->paint(xstart, y, p->compute_color(value));
         }
         return;
@@ -23,7 +23,7 @@ void QuadtreeRenderer::fill_rectangle(unsigned int xstart, unsigned int xend, un
 
     if (ystart == yend) {
         for (unsigned int x = xstart+1; x<xend-1; x++) {
-            int value = f->compute_value(f->scale(x, ystart));
+            int value = (int) f->compute_value(f->scale(x, ystart));
             pCanvas->paint(x, ystart, p->compute_color(value));
         }
         return;
@@ -31,7 +31,7 @@ void QuadtreeRenderer::fill_rectangle(unsigned int xstart, unsigned int xend, un
 
     bool fillable = compute_border(xstart, xend, ystart, yend, pCanvas, f, p);
     if (fillable) {
-        Color c = p->compute_color(f->compute_value(f->scale(xstart, ystart)));
+        Color c = p->compute_color((int) f->compute_value(f->scale(xstart, ystart)));
         for (unsigned int x = xstart+1; x<xend-1; x++) {
             for (unsigned int y = ystart+1; y<yend-1; y++) {
                 pCanvas->paint(x, y, c);
@@ -46,7 +46,7 @@ void QuadtreeRenderer::fill_rectangle(unsigned int xstart, unsigned int xend, un
 }
 
 bool QuadtreeRenderer::compute_border(unsigned int xstart, unsigned int xend, unsigned int ystart, unsigned int yend, Canvas *pCanvas, Fractal * f, Palette * p) {
-    int init = f->compute_value(f->scale(xstart, ystart));
+    int init = (int) f->compute_value(f->scale(xstart, ystart));
 
     if (xstart >= xend && ystart >= yend) {
         return true;
@@ -55,22 +55,22 @@ bool QuadtreeRenderer::compute_border(unsigned int xstart, unsigned int xend, un
     bool ret = true;
 
     for (unsigned int x = xstart; x<xend; x++) {
-        int value = f->compute_value(f->scale(x, ystart));
+        int value = (int) f->compute_value(f->scale(x, ystart));
         pCanvas->paint(x, ystart, p->compute_color(value));
         ret = ret & (value == init);
         if (ystart != yend - 1) {
-            value = f->compute_value(f->scale(x, yend - 1));
+            value = (int) f->compute_value(f->scale(x, yend - 1));
             pCanvas->paint(x, yend - 1, p->compute_color(value));
             ret = ret & (value == init);
         }
     }
 
     for (unsigned int y = ystart+1; y<yend-1; y++) {
-        int value = f->compute_value(f->scale(xstart, y));
+        int value = (int) f->compute_value(f->scale(xstart, y));
         pCanvas->paint(xstart, y, p->compute_color(value));
         ret = ret & (value == init);
         if (ystart != yend - 1) {
-            value = f->compute_value(f->scale(xend - 1, y));
+            value = (int) f->compute_value(f->scale(xend - 1, y));
             pCanvas->paint(xend - 1, y, p->compute_color(value));
             ret = ret & (value == init);
         }

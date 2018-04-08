@@ -6,7 +6,7 @@
 
 class Palette {
 public:
-    virtual Color compute_color(int value) = 0;
+    virtual Color compute_color(double value) = 0;
     virtual bool is_iteration_dependent() = 0;
     virtual void recompute(Fractal * fractal) = 0;
 

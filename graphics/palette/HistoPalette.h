@@ -17,7 +17,7 @@ public:
 
     void recompute(Fractal * fractal) override;
 
-    Color compute_color(int value) override;
+    Color compute_color(double value) override;
 
 private:
     int total = 0;

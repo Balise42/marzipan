@@ -20,7 +20,7 @@ public:
 
     std::vector<int> compute_histo();
 
-    int compute_value(std::complex<double> z) override;
+    double compute_value(std::complex<double> z) override;
 };
 
 

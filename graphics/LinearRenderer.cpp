@@ -8,7 +8,7 @@ void LinearRenderer::render(Fractal * f, Palette * p, Canvas * c) {
 
     for (unsigned int x = 0; x<f->width; x++) {
         for (unsigned int y = 0; y<f->height; y++) {
-            int value = f->compute_value(f->scale(x, y));
+            double value = f->compute_value(f->scale(x, y));
             c->paint(x, y, p->compute_color(value));
         }
     }

@@ -24,7 +24,7 @@ public:
     int get_maxiter() {
         return maxiter;
     }
-    virtual int compute_value(std::complex<double> z) = 0;
+    virtual double compute_value(std::complex<double> z) = 0;
 
     unsigned int width = 900;
     unsigned int height = 600;
