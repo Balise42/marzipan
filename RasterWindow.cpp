@@ -5,6 +5,8 @@
 #include <graphics/QuadtreeRenderer.h>
 #include <graphics/palette/HistoPalette.h>
 #include <QtGui/QWindow>
+#include <fractales/MartinMandelbrot.h>
+#include <graphics/LinearRenderer.h>
 
 
 Color black(0,0,0);
@@ -17,9 +19,11 @@ Color pink(255,0,255);
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
-    fractal = new Mandelbrot();
-    palette = new HistoPalette(((Mandelbrot *)fractal)->compute_histo(), pink, white, 100, black);
-    renderer = new QuadtreeRenderer();
+    fractal = new MartinMandelbrot();
+    fractal->set_maxiter(5);
+    palette = new GradientPalette(0, 5, pink, white);
+    //palette = new RandomPalette(0, 400, black);
+    renderer = new LinearRenderer();
     computeFractal();
 }
 

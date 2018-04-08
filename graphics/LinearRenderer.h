@@ -5,7 +5,7 @@
 
 #include "Renderer.h"
 
-class LinearRenderer : Renderer {
+class LinearRenderer : public Renderer {
 public:
     void render(Fractal * f, Palette * p, Canvas * c) override;
 };
