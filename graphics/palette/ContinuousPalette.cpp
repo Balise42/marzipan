@@ -22,12 +22,15 @@ Color ContinuousPalette::compute_color(double value) {
     unsigned char G = compute_component(value, cmin.G, cmax.G);
     unsigned char B = compute_component(value, cmin.B, cmax.B);
 
+
     return Color(R, G, B);
 }
 
 unsigned char ContinuousPalette::compute_component(double value, unsigned char v1, unsigned char v2) {
-    double normalized = (value - min) / num_cols;
-    return v1 + (unsigned char) (normalized * (v2 - v1));
+    double normalized = (value - min) / (max - min);
+    normalized = (std::pow(normalized - 0.5, 3) + 0.125)/0.250;
+    unsigned char val = v1 + (unsigned char) (normalized * (v2 - v1));
+    return val;
 }
 
 bool ContinuousPalette::is_iteration_dependent() {
