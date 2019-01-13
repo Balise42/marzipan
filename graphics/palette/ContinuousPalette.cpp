@@ -18,6 +18,10 @@ Color ContinuousPalette::compute_color(double value) {
         return inner_color;
     }
 
+    while (value > max) {
+        value -= max;
+    };
+
     unsigned char R = compute_component(value, cmin.R, cmax.R);
     unsigned char G = compute_component(value, cmin.G, cmax.G);
     unsigned char B = compute_component(value, cmin.B, cmax.B);
@@ -34,7 +38,7 @@ unsigned char ContinuousPalette::compute_component(double value, unsigned char v
 }
 
 bool ContinuousPalette::is_iteration_dependent() {
-    return true;
+    return false;
 }
 
 void ContinuousPalette::recompute(Fractal * fractal) {

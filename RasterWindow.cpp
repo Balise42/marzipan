@@ -11,6 +11,7 @@
 #include <graphics/palette/ContinuousPalette.h>
 #include <fractales/OrbitMandelbrot.h>
 #include <graphics/palette/ContinuousFixedPalette.h>
+#include <fractales/MandelbrotExperiments.h>
 
 
 Color black(0,0,0);
@@ -25,10 +26,10 @@ Color dark_champagne(41 ,25, 0);
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
-    fractal = new OrbitMandelbrot();
+    fractal = new MandelbrotExperiments();
     fractal->set_maxiter(100);
-    ((OrbitMandelbrot *)fractal)->set_orbit(-0.25, 0.5, 100);
-    palette = new ContinuousFixedPalette(0, 100, champagne, dark_champagne, dark_champagne, 50);
+    //((OrbitMandelbrot *)fractal)->set_orbit(-0.25, 0.5, 100);
+    palette = new ContinuousFixedPalette(0, 100, champagne, black, black, 50);
     renderer = new LinearRenderer();
     computeFractal();
 }
