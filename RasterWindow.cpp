@@ -97,6 +97,16 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int xend = event->x();
     int yend = event->y();
 
+
+    int xtmp = xstart + int((yend - ystart)*((double)width())/((double)height()));
+    int ytmp = ystart + int((xend - xstart)*((double)height())/((double)width()));
+
+    if (xtmp > xend) {
+        xend = xtmp;
+    } else {
+        yend = ytmp;
+    }
+
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
         fractal->zoom(width(), height(), xstart, ystart, xend, yend);
         if (palette->is_iteration_dependent()) {
