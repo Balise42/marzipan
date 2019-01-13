@@ -8,10 +8,11 @@
 class ContinuousFixedPalette : public ContinuousPalette {
 
 public:
-    ContinuousFixedPalette(int min, int max, const Color &cmin, const Color &cmax, const Color &inner_color,
-                           int num_cols);
+    ContinuousFixedPalette(int min, int max, const std::vector<Color *> &colors, const Color &inner_color);
 
 private:
+
+
     bool is_iteration_dependent() override ;
 };
 

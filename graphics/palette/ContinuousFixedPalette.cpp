@@ -5,8 +5,7 @@ bool ContinuousFixedPalette::is_iteration_dependent() {
     return false;
 }
 
-ContinuousFixedPalette::ContinuousFixedPalette(int min, int max, const Color &cmin, const Color &cmax,
-                                               const Color &inner_color, int num_cols) : ContinuousPalette(min, max,
-                                                                                                           cmin, cmax,
-                                                                                                           inner_color,
-                                                                                                           num_cols) {}
+ContinuousFixedPalette::ContinuousFixedPalette(int min, int max, const std::vector<Color *> &colors,
+                                               const Color &inner_color) : ContinuousPalette(min, max,
+                                                                                             colors,
+                                                                                             inner_color) {}

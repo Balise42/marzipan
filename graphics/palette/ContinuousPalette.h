@@ -3,27 +3,28 @@
 #define MARZIPAN_CONTINUOUSPALETTE_H
 
 
+#include <vector>
 #include "Palette.h"
 
 class ContinuousPalette : public Palette {
 public:
 
-    ContinuousPalette(int min, int max, Color cmin, Color cmax, Color inner_color, int num_cols);
+    ContinuousPalette(int min, int max, std::vector<Color *> colors, Color inner_color);
 
     Color compute_color(double value) override;
 
 private:
     int min;
     int max;
-    Color cmin;
-    Color cmax;
-    int num_cols;
+    std::vector<unsigned char> R;
+    std::vector<unsigned char> G;
+    std::vector<unsigned char> B;
 
-    unsigned char compute_component(double value, unsigned char v1, unsigned char v2);
+    unsigned char compute_component(double value, std::vector<unsigned char> v);
 
-    bool is_iteration_dependent();
+    bool is_iteration_dependent() override;
 
-    void recompute(Fractal *fractal);
+    void recompute(Fractal *fractal) override;
 
 };
 

@@ -28,11 +28,15 @@ Color dark_champagne(41 ,25, 0);
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
-    Orbit * o = new LineOrbit(1, 0, -2, 100);
-    //Orbit * o = new PointOrbit(-0.25, 0.25, 100);
+    //Orbit * o = new LineOrbit(1, 0, -2, 100);
+    Orbit * o = new PointOrbit(-0.25, 0.25, 100);
     fractal = new OrbitMandelbrot(o);
+    //fractal = new ContinuousMandelbrot();
     fractal->set_maxiter(100);
-    palette = new ContinuousFixedPalette(0, 100, yellow, black, black, 50);
+
+    std::vector<Color*> colors = {&green, &red, &yellow, &black, &white, &blue, &pink};
+
+    palette = new ContinuousFixedPalette(0, 100, colors, black);
     renderer = new LinearRenderer();
     computeFractal();
 }
@@ -92,6 +96,7 @@ void RasterWindow::mousePressEvent(QMouseEvent *event) {
 void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int xend = event->x();
     int yend = event->y();
+
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
         fractal->zoom(width(), height(), xstart, ystart, xend, yend);
         if (palette->is_iteration_dependent()) {
