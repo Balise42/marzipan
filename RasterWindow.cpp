@@ -25,16 +25,20 @@ Color green(0,100,0);
 Color pink(255,0,255);
 Color champagne(247,231,206);
 Color dark_champagne(41 ,25, 0);
+Color orange(255, 127, 0);
+Color violet(139,0,255);
+
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
     //Orbit * o = new LineOrbit(1, 0, -2, 100);
-    Orbit * o = new PointOrbit(-0.25, 0.25, 100);
+    std::vector<Orbit *> o = {new PointOrbit(-0.25, 0.25, 400), new LineOrbit(1, 0, 0, 400), new LineOrbit(0, 1, 0, 400), new LineOrbit(1, 0, 0.5, 400), new LineOrbit(1, 0, -0.25, 400),
+    new PointOrbit(0,0,400), new PointOrbit(0.25, -0.25, 400)};
     fractal = new OrbitMandelbrot(o);
     //fractal = new ContinuousMandelbrot();
     fractal->set_maxiter(100);
 
-    std::vector<Color*> colors = {&green, &red, &yellow, &black, &white, &blue, &pink};
+    std::vector<Color*> colors = {&red, &orange, &yellow, &green, &blue, &violet, &blue, &green, &yellow, &orange, &red};
 
     palette = new ContinuousFixedPalette(0, 100, colors, black);
     renderer = new LinearRenderer();

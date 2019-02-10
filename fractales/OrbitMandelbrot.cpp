@@ -7,13 +7,15 @@ double OrbitMandelbrot::compute_value(std::complex<double> c) {
     std::complex<double> z = 0 + 0i;
     while (std::norm(std::pow(z, 2) + c) < 4 && i < maxiter) {
         z = std::pow(z, 2) + c;
-        dist = std::min(dist, orbit->getOrbitFastValue(z));
+        for (auto orbit : orbits) {
+            dist = std::min(dist, orbit->getOrbitValue(orbit->getOrbitFastValue(z)));
+        }
         i = i+1;
     }
     if (i == maxiter || dist == INT_MAX) {
         return INT_MAX;
     }
-    dist  = orbit->getOrbitValue(dist);
+    //dist  = orbit->getOrbitValue(dist);
 
     return dist;
 }

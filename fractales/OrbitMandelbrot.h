@@ -3,27 +3,28 @@
 
 
 #include <fractales/orbits/Orbit.h>
+#include <vector>
 #include "ContinuousMandelbrot.h"
 
 class OrbitMandelbrot : public ContinuousMandelbrot {
 public:
     double compute_value(std::complex<double> c) override;
 
-    explicit OrbitMandelbrot(Orbit * o) : ContinuousMandelbrot() {
-        this->orbit = o;
+    explicit OrbitMandelbrot(std::vector<Orbit *> o) : ContinuousMandelbrot() {
+        this->orbits = o;
     }
 
-    OrbitMandelbrot(Orbit * o, unsigned int width, unsigned int height) : ContinuousMandelbrot(width, height) {
-        this->orbit = o;
+    OrbitMandelbrot(std::vector<Orbit *> o, unsigned int width, unsigned int height) : ContinuousMandelbrot(width, height) {
+        this->orbits = o;
     }
 
-    OrbitMandelbrot(Orbit * o, unsigned int width, unsigned int height, double left, double right, double top, double bottom)
+    OrbitMandelbrot(std::vector<Orbit *> o, unsigned int width, unsigned int height, double left, double right, double top, double bottom)
             : ContinuousMandelbrot(width, height, left, right, top, bottom) {
-        this->orbit = o;
+        this->orbits = o;
     }
 
 private:
-    Orbit * orbit;
+    std::vector<Orbit *> orbits;
 };
 
 
