@@ -14,6 +14,7 @@
 #include <fractales/MandelbrotExperiments.h>
 #include <fractales/orbits/PointOrbit.h>
 #include <fractales/orbits/LineOrbit.h>
+#include <fractales/orbits/BitmapOrbit.h>
 
 
 Color black(0,0,0);
@@ -27,20 +28,24 @@ Color champagne(247,231,206);
 Color dark_champagne(41 ,25, 0);
 Color orange(255, 127, 0);
 Color violet(139,0,255);
+Color lightpink(255, 182, 193);
+Color lightgreen(172, 225, 175);
 
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
     setGeometry(100, 100, 900, 600);
     //Orbit * o = new LineOrbit(1, 0, -2, 100);
-    std::vector<Orbit *> o = {new PointOrbit(-0.25, 0.25, 400), new LineOrbit(1, 0, 0, 400), new LineOrbit(0, 1, 0, 400), new LineOrbit(1, 0, 0.5, 400), new LineOrbit(1, 0, -0.25, 400),
-    new PointOrbit(0,0,400), new PointOrbit(0.25, -0.25, 400)};
+    CImg<unsigned char> img("/home/isa/projets/marzipan/marzipan.bmp");
+    std::vector<Orbit *> o = {new BitmapOrbit(&img, 100)};
+    //std::vector<Orbit *> o = {new PointOrbit(0.5, -0.25, 100)};
     fractal = new OrbitMandelbrot(o);
     //fractal = new ContinuousMandelbrot();
     fractal->set_maxiter(100);
 
-    std::vector<Color*> colors = {&red, &orange, &yellow, &green, &blue, &violet, &blue, &green, &yellow, &orange, &red};
+    std::vector<Color*> colors = {&white, &lightpink, &white, &lightgreen, &white, &lightpink, &white};
 
     palette = new ContinuousFixedPalette(0, 100, colors, black);
+    //palette = new RandomPalette(0, 100, black);
     renderer = new LinearRenderer();
     computeFractal();
 }
@@ -102,14 +107,14 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int yend = event->y();
 
 
-    int xtmp = xstart + int((yend - ystart)*((double)width())/((double)height()));
+/*    int xtmp = xstart + int((yend - ystart)*((double)width())/((double)height()));
     int ytmp = ystart + int((xend - xstart)*((double)height())/((double)width()));
 
     if (xtmp > xend) {
         xend = xtmp;
     } else {
         yend = ytmp;
-    }
+    }*/
 
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
         fractal->zoom(width(), height(), xstart, ystart, xend, yend);

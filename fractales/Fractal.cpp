@@ -46,6 +46,6 @@ void Fractal::zoom(unsigned int width, unsigned int height, int startx, int star
     top = topleft.imag();
     right = bottomright.real();
     bottom = bottomright.imag();
-    this->width = 900;
-    this->height = 600;
+    /*this->width = 900;
+    this->height = 600;*/
 }
