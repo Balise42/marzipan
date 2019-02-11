@@ -22,7 +22,7 @@ Color yellow(255,255,0);
 Color red(255,0,0);
 Color white(255,255,255);
 Color blue(0,0,255);
-Color green(0,100,0);
+Color darkgreen(0,100,0);
 Color pink(255,0,255);
 Color champagne(247,231,206);
 Color dark_champagne(41 ,25, 0);
@@ -30,6 +30,14 @@ Color orange(255, 127, 0);
 Color violet(139,0,255);
 Color lightpink(255, 182, 193);
 Color lightgreen(172, 225, 175);
+
+Color purple(148,0,211);
+Color indigo(75, 0, 130);
+Color green(0,255,0);
+Color teal(0,128,128);
+Color darkblue(0,0,128);
+Color softpink(255,221,244);
+
 
 
 RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new QBackingStore(this)) {
@@ -42,7 +50,9 @@ RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new
     //fractal = new ContinuousMandelbrot();
     fractal->set_maxiter(100);
 
-    std::vector<Color*> colors = {&black, &violet, &pink, &yellow, &white};
+    //std::vector<Color*> colors = {&black, &yellow, &white, &yellow, &black};
+    //std::vector<Color*> colors = {&green, &darkgreen, &teal, &darkblue, &teal, &darkgreen, &green};
+    std::vector<Color*> colors = {&softpink, &teal, &white, &teal, &softpink};
 
     palette = new ContinuousFixedPalette(0, 100, colors, black);
     //palette = new RandomPalette(0, 100, black);

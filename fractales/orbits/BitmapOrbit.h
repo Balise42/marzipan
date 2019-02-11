@@ -4,6 +4,7 @@
 
 #include "Orbit.h"
 #include "CImg.h"
+#include <map>
 
 using namespace cimg_library;
 
@@ -16,10 +17,9 @@ public:
 
 private:
     CImg<unsigned char> * bitmap;
-    double** distances = new double*[900];
+    std::map<std::pair<int,int>,double> distances;
     double factor;
     double translation;
-    double precompute_distance(const int x, const  int y);
 };
 
 
