@@ -42,7 +42,7 @@ RasterWindow::RasterWindow(QWindow *parent) : QWindow(parent), backing_store(new
     //fractal = new ContinuousMandelbrot();
     fractal->set_maxiter(100);
 
-    std::vector<Color*> colors = {&white, &lightpink, &white, &lightgreen, &white, &lightpink, &white};
+    std::vector<Color*> colors = {&black, &violet, &pink, &yellow, &white};
 
     palette = new ContinuousFixedPalette(0, 100, colors, black);
     //palette = new RandomPalette(0, 100, black);
@@ -107,14 +107,14 @@ void RasterWindow::mouseReleaseEvent(QMouseEvent *event) {
     int yend = event->y();
 
 
-/*    int xtmp = xstart + int((yend - ystart)*((double)width())/((double)height()));
+    int xtmp = xstart + int((yend - ystart)*((double)width())/((double)height()));
     int ytmp = ystart + int((xend - xstart)*((double)height())/((double)width()));
 
     if (xtmp > xend) {
         xend = xtmp;
     } else {
         yend = ytmp;
-    }*/
+    }
 
     if (xstart > 0 && ystart > 0 && xend > xstart && yend > ystart) {
         fractal->zoom(width(), height(), xstart, ystart, xend, yend);

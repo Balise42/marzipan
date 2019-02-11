@@ -32,20 +32,18 @@ Fractal::Fractal() {
 }
 
 std::complex<double> Fractal::scale(unsigned int x, unsigned int y) {
-    double re = (right - left)*double(x)/double(width) + left;
-    double im = -((top - bottom)*double(y)/double(height) + bottom);
+    double re = left + double(x)/double(width) * (right - left);
+    double im = top + double(y)/double(height) * (bottom - top);
     return re + im*1i;
 }
 
 void Fractal::zoom(unsigned int width, unsigned int height, int startx, int starty, int endx, int endy) {
     this->width = width;
     this->height = height;
-    std::complex<double> topleft = scale(startx, endy);
-    std::complex<double> bottomright = scale(endx, starty);
+    std::complex<double> topleft = scale(startx, starty);
+    std::complex<double> bottomright = scale(endx, endy);
     left = topleft.real();
     top = topleft.imag();
     right = bottomright.real();
     bottom = bottomright.imag();
-    /*this->width = 900;
-    this->height = 600;*/
 }
