@@ -19,3 +19,8 @@ double OrbitMandelbrot::compute_value(std::complex<double> c) {
 
     return dist;
 }
+
+OrbitMandelbrot *OrbitMandelbrot::clone() {
+    auto * f = new OrbitMandelbrot(*this);
+    return f;
+}

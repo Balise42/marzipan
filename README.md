@@ -20,4 +20,4 @@ To build:
 
 CLI version: run `./marzipan`. It creates a default rendering in "plop.bmp". The parameters of that rendering can be adjusted with some options on the CLI, run `./marzipan --help` for a (very limited) set of options. The other rendering options are set at compile time in main.cpp.
 
-UI version: run `./marzipangui`. It creates a default rendering that can be ajusted at compile time in RasterWindow.cpp.
+UI version: run `./marzipangui`. It creates a default rendering that can be ajusted at compile time in RasterWidget.cpp.

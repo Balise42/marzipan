@@ -12,6 +12,7 @@ public:
     Fractal(unsigned int width, unsigned int height, double left, double right, double top, double bottom);
     virtual void zoom(unsigned int width, unsigned int height, int startx, int starty, int endx, int endy);
     std::complex<double> scale(unsigned int x, unsigned int y);
+    virtual Fractal * clone() = 0;
     void set_width(unsigned int width) {
         this->width = width;
     }
