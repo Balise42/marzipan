@@ -14,6 +14,8 @@ public:
             : Fractal(width, height, left, right, top, bottom) {}
 
     double compute_value(std::complex<double> c) override;
+
+    ContinuousMandelbrot * clone() override;
 };
 
 

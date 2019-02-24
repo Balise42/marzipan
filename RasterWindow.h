@@ -1,44 +1,30 @@
 #ifndef MARZIPAN_RASTERWINDOW_H
 #define MARZIPAN_RASTERWINDOW_H
 
-#include <qt5/QtGui/QtGui>
-#include <fractales/Fractal.h>
-#include <fractales/Mandelbrot.h>
-#include <graphics/Renderer.h>
+#include <QtWidgets/QMainWindow>
+#include "RasterWidget.h"
 
-class RasterWindow : public QWindow {
+class RasterWindow : public QMainWindow {
     Q_OBJECT
 public:
-    explicit RasterWindow(QWindow * parent = 0);
-    virtual void render(QPainter * painter);
-
-public slots:
-    void renderLater();
-    void renderNow();
-
-protected:
-    bool event(QEvent *event);
-    void resizeEvent(QResizeEvent *event);
-    void exposeEvent(QExposeEvent *event);
-    void mousePressEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
-    void keyReleaseEvent(QKeyEvent *);
+    RasterWindow();
 
 private:
-    QRect rect;
-    QBackingStore *backing_store;
+    QAction *undoAct;
+    QAction *redoAct;
+    RasterWidget * widget = new RasterWidget();
+    void createActions();
 
-    Fractal * fractal;
-    Palette * palette;
+#ifndef QT_NO_CONTEXTMENU
+    void contextMenuEvent(QContextMenuEvent *event) override;
+#endif // QT_NO_CONTEXTMENU
 
-    //TODO move this away from this class
-    int xstart = -1;
-    int ystart = -1;
+protected:
+    void keyReleaseEvent(QKeyEvent * event) override;
 
-    Renderer *renderer;
-
-    void paintEvent(QEvent *event);
-    void computeFractal();
+private slots:
+    void undo();
+    void redo();
 };
 
 

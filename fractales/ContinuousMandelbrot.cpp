@@ -15,3 +15,8 @@ double ContinuousMandelbrot::compute_value(std::complex<double> c) {
     return INT_MAX;
 }
 
+ContinuousMandelbrot *ContinuousMandelbrot::clone() {
+    auto f = new ContinuousMandelbrot(*this);
+    return f;
+}
+

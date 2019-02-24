@@ -23,6 +23,8 @@ public:
         this->orbits = o;
     }
 
+    OrbitMandelbrot * clone() override;
+
 private:
     std::vector<Orbit *> orbits;
 };
