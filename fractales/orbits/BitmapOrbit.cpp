@@ -27,7 +27,6 @@ double BitmapOrbit::getOrbitValue(double v) {
 
 BitmapOrbit::BitmapOrbit(CImg<unsigned char> *img, double max_value) {
     this->bitmap = img;
-
     CImg<unsigned char> * map = new CImg<unsigned char>(900, 600, 1, 3, 0);
 
     BitmapMapComputer bc;

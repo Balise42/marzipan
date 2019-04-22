@@ -18,6 +18,8 @@
 #include <QMenu>
 #include <QtWidgets/QFileDialog>
 #include <QtWidgets/QMessageBox>
+#include <iostream>
+#include <fstream>
 
 
 Color black(0, 0, 0);
@@ -188,3 +190,37 @@ void RasterWidget::saveImage() {
         QFile::copy("plop.bmp", fileName);
     }
 }
+
+void RasterWidget::saveParams() {
+    QString fileName = QFileDialog::getSaveFileName(this, "Save parameters", "", "Marzipan (*.mrz);;All Files (*)");
+    if (fileName.isEmpty()) {
+        return;
+    } else {
+        if (!fileName.endsWith(".mrz", Qt::CaseInsensitive)) {
+            fileName = fileName + ".mrz";
+        }
+        std::fstream file;
+        file.open(fileName.toStdString(), std::ios::out | std::ios::binary);
+        auto * fp = new FractalProto();
+        fractal->serialize(fp);
+        fp->SerializeToOstream(&file);
+        file.close();
+    }
+}
+
+void RasterWidget::loadParams() {
+    QString fileName = QFileDialog::getOpenFileName(this, "Load parameters", "", "Marzipan (*.mrz);;All Files (*)");
+    if (fileName.isEmpty()) {
+        return;
+    } else {
+        std::fstream file;
+        file.open(fileName.toStdString(), std::ios::in | std::ios::binary);
+        auto * fp = new FractalProto();
+        fp->ParseFromIstream(&file);
+        fractal->deserialize(fp);
+        computeFractal();
+        renderNow();
+        file.close();
+    }
+}
+

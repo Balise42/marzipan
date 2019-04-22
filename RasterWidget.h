@@ -18,6 +18,8 @@ public:
     void undo();
     void redo();
     void saveImage();
+    void saveParams();
+    void loadParams();
     void processKeyEvent(int key);
 
 public slots:

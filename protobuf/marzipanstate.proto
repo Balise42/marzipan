@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+message FractalProto {
+    double top = 1;
+    double bottom = 2;
+    double left = 3;
+    double right = 4;
+    uint32 width = 5;
+    uint32 height = 6;
+    uint32 maxiter = 7;
+}
+
+message OrbitFractalProto {
+    FractalProto fractal = 1;
+    repeated PointOrbit pointorbits = 2;
+}
+
+message PointOrbit {
+    double orbitX = 1;
+    double orbitY = 2;
+}
+
+message LineOrbit {
+    double a = 1;
+    double b = 1;
+    double c = 1;
+}
+
+message BitmapOrbit {
+
+}

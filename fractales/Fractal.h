@@ -3,6 +3,8 @@
 
 
 #include <complex>
+#undef Status
+#include <protobuf/marzipanstate.pb.h>
 
 class Fractal {
 
@@ -29,6 +31,9 @@ public:
 
     unsigned int width = 900;
     unsigned int height = 600;
+
+    void serialize(FractalProto * fp);
+    void deserialize(FractalProto * fp);
 
 protected:
     double bottom = -1;

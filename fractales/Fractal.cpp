@@ -1,5 +1,6 @@
 #include "Fractal.h"
 #include <gflags/gflags.h>
+#include <protobuf/marzipanstate.pb.h>
 
 DEFINE_uint32(width, 900, "Width of the generated image");
 DEFINE_uint32(height, 600, "Height of the generated image");
@@ -46,4 +47,23 @@ void Fractal::zoom(unsigned int width, unsigned int height, int startx, int star
     top = topleft.imag();
     right = bottomright.real();
     bottom = bottomright.imag();
+}
+
+void Fractal::serialize(FractalProto * fp) {
+    fp->set_bottom(bottom);
+    fp->set_height(height);
+    fp->set_left(left);
+    fp->set_right(right);
+    fp->set_width(width);
+    fp->set_top(top);
+}
+
+void Fractal::deserialize(FractalProto *fp) {
+    bottom = fp->bottom();
+    height = fp->height();
+    left = fp->left();
+    right = fp->right();
+    width = fp->width();
+    height = fp->height();
+    top = fp->top();
 }
