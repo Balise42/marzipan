@@ -16,6 +16,8 @@
 #include <fractales/orbits/LineOrbit.h>
 #include <fractales/orbits/BitmapOrbit.h>
 #include <QMenu>
+#include <QtWidgets/QFileDialog>
+#include <QtWidgets/QMessageBox>
 
 
 Color black(0, 0, 0);
@@ -168,5 +170,21 @@ void RasterWidget::redo() {
         redoStack.pop();
         computeFractal();
         renderNow();
+    }
+}
+
+// Implement basic save. Right now it just copies the "backing" image to the designated file. Good enough for now ;)
+void RasterWidget::saveImage() {
+    QString fileName = QFileDialog::getSaveFileName(this, "Save image", "", "BMP (*.bmp);;All Files (*)");
+    if (fileName.isEmpty()) {
+        return;
+    } else {
+        if (!fileName.endsWith(".bmp", Qt::CaseInsensitive)) {
+            fileName = fileName + ".bmp";
+        }
+        if (QFile::exists(fileName)) {
+            QFile::remove(fileName);
+        }
+        QFile::copy("plop.bmp", fileName);
     }
 }

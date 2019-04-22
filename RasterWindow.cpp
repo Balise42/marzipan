@@ -11,6 +11,10 @@ void RasterWindow::createActions() {
     redoAct = new QAction(tr("&Redo"), this);
     redoAct->setShortcuts(QKeySequence::Redo);
     connect(redoAct, &QAction::triggered, this, &RasterWindow::redo);
+
+    saveImageAct = new QAction(tr("&Save Image"), this);
+    saveImageAct->setShortcuts(QKeySequence::Save);
+    connect(saveImageAct, &QAction::triggered, this, &RasterWindow::saveImage);
 }
 
 RasterWindow::RasterWindow() {
@@ -23,6 +27,7 @@ RasterWindow::RasterWindow() {
 void RasterWindow::contextMenuEvent(QContextMenuEvent *event)
 {
     QMenu menu(this);
+    menu.addAction(saveImageAct);
     menu.addAction(undoAct);
     menu.addAction(redoAct);
     menu.exec(event->globalPos());
@@ -35,6 +40,11 @@ void RasterWindow::undo() {
 
 void RasterWindow::redo() {
     widget->redo();
+}
+
+void RasterWindow::saveImage()
+{
+    widget->saveImage();
 }
 
 void RasterWindow::keyReleaseEvent(QKeyEvent * event) {

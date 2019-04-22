@@ -17,6 +17,7 @@ public:
     void saveStateToStack(Fractal *pFractal);
     void undo();
     void redo();
+    void saveImage();
     void processKeyEvent(int key);
 
 public slots:

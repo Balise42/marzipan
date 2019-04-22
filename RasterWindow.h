@@ -12,6 +12,7 @@ public:
 private:
     QAction *undoAct;
     QAction *redoAct;
+    QAction *saveImageAct;
     RasterWidget * widget = new RasterWidget();
     void createActions();
 
@@ -25,6 +26,7 @@ protected:
 private slots:
     void undo();
     void redo();
+    void saveImage();
 };
 
 
