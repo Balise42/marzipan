@@ -12,6 +12,7 @@ Dependencies (must be installed on the system):
 * pthread
 * X11
 * gflags
+* protobuf (v3)
 
 To build:
 
