@@ -12,13 +12,14 @@ public:
 
     double getOrbitValue(double v) override;
 
+    OrbitProto * serialize() override;
+
+    static LineOrbit * deserialize(OrbitProto *op);
+
 private:
     //line is given by ax + by + c = 0
     double a, b, c;
     double sqrtab;
-    double factor;
-    double translation;
-
 };
 
 

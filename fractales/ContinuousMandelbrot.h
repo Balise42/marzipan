@@ -15,7 +15,11 @@ public:
 
     double compute_value(std::complex<double> c) override;
 
-    ContinuousMandelbrot * clone() override;
+    Fractal * clone() override;
+
+    FractalProto * serialize() override;
+
+    static ContinuousMandelbrot * deserialize(FractalProto *fp);
 };
 
 

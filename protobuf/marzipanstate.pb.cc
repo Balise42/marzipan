@@ -19,11 +19,68 @@
 #endif
 // @@protoc_insertion_point(includes)
 
+namespace protobuf_marzipanstate_2eproto {
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_marzipanstate_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_BitmapOrbitProto;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_marzipanstate_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_ContinuousFractalProto;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_marzipanstate_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_JuliaFractalProto;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_marzipanstate_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_LineOrbitProto;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_marzipanstate_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_MandelbrotFractalProto;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_marzipanstate_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_PointOrbitProto;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_marzipanstate_2eproto ::google::protobuf::internal::SCCInfo<1> scc_info_OrbitFractalProto;
+extern PROTOBUF_INTERNAL_EXPORT_protobuf_marzipanstate_2eproto ::google::protobuf::internal::SCCInfo<3> scc_info_OrbitProto;
+}  // namespace protobuf_marzipanstate_2eproto
 class FractalProtoDefaultTypeInternal {
  public:
   ::google::protobuf::internal::ExplicitlyConstructed<FractalProto>
       _instance;
+  const ::ContinuousFractalProto* continuous_;
+  const ::OrbitFractalProto* orbit_;
+  const ::JuliaFractalProto* julia_;
+  const ::MandelbrotFractalProto* mandelbrot_;
 } _FractalProto_default_instance_;
+class ContinuousFractalProtoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<ContinuousFractalProto>
+      _instance;
+} _ContinuousFractalProto_default_instance_;
+class MandelbrotFractalProtoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<MandelbrotFractalProto>
+      _instance;
+} _MandelbrotFractalProto_default_instance_;
+class OrbitFractalProtoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<OrbitFractalProto>
+      _instance;
+} _OrbitFractalProto_default_instance_;
+class JuliaFractalProtoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<JuliaFractalProto>
+      _instance;
+} _JuliaFractalProto_default_instance_;
+class OrbitProtoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<OrbitProto>
+      _instance;
+  const ::PointOrbitProto* pointorbit_;
+  const ::LineOrbitProto* lineorbit_;
+  const ::BitmapOrbitProto* bitmaporbit_;
+} _OrbitProto_default_instance_;
+class PointOrbitProtoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<PointOrbitProto>
+      _instance;
+} _PointOrbitProto_default_instance_;
+class LineOrbitProtoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<LineOrbitProto>
+      _instance;
+} _LineOrbitProto_default_instance_;
+class BitmapOrbitProtoDefaultTypeInternal {
+ public:
+  ::google::protobuf::internal::ExplicitlyConstructed<BitmapOrbitProto>
+      _instance;
+} _BitmapOrbitProto_default_instance_;
 namespace protobuf_marzipanstate_2eproto {
 static void InitDefaultsFractalProto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -36,20 +93,148 @@ static void InitDefaultsFractalProto() {
   ::FractalProto::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_FractalProto =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFractalProto}, {}};
+::google::protobuf::internal::SCCInfo<4> scc_info_FractalProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 4, InitDefaultsFractalProto}, {
+      &protobuf_marzipanstate_2eproto::scc_info_ContinuousFractalProto.base,
+      &protobuf_marzipanstate_2eproto::scc_info_OrbitFractalProto.base,
+      &protobuf_marzipanstate_2eproto::scc_info_JuliaFractalProto.base,
+      &protobuf_marzipanstate_2eproto::scc_info_MandelbrotFractalProto.base,}};
+
+static void InitDefaultsContinuousFractalProto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_ContinuousFractalProto_default_instance_;
+    new (ptr) ::ContinuousFractalProto();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::ContinuousFractalProto::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_ContinuousFractalProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsContinuousFractalProto}, {}};
+
+static void InitDefaultsMandelbrotFractalProto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_MandelbrotFractalProto_default_instance_;
+    new (ptr) ::MandelbrotFractalProto();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::MandelbrotFractalProto::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_MandelbrotFractalProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsMandelbrotFractalProto}, {}};
+
+static void InitDefaultsOrbitFractalProto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_OrbitFractalProto_default_instance_;
+    new (ptr) ::OrbitFractalProto();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::OrbitFractalProto::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<1> scc_info_OrbitFractalProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsOrbitFractalProto}, {
+      &protobuf_marzipanstate_2eproto::scc_info_OrbitProto.base,}};
+
+static void InitDefaultsJuliaFractalProto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_JuliaFractalProto_default_instance_;
+    new (ptr) ::JuliaFractalProto();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::JuliaFractalProto::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_JuliaFractalProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsJuliaFractalProto}, {}};
+
+static void InitDefaultsOrbitProto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_OrbitProto_default_instance_;
+    new (ptr) ::OrbitProto();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::OrbitProto::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<3> scc_info_OrbitProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsOrbitProto}, {
+      &protobuf_marzipanstate_2eproto::scc_info_PointOrbitProto.base,
+      &protobuf_marzipanstate_2eproto::scc_info_LineOrbitProto.base,
+      &protobuf_marzipanstate_2eproto::scc_info_BitmapOrbitProto.base,}};
+
+static void InitDefaultsPointOrbitProto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_PointOrbitProto_default_instance_;
+    new (ptr) ::PointOrbitProto();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::PointOrbitProto::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_PointOrbitProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsPointOrbitProto}, {}};
+
+static void InitDefaultsLineOrbitProto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_LineOrbitProto_default_instance_;
+    new (ptr) ::LineOrbitProto();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::LineOrbitProto::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_LineOrbitProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsLineOrbitProto}, {}};
+
+static void InitDefaultsBitmapOrbitProto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::_BitmapOrbitProto_default_instance_;
+    new (ptr) ::BitmapOrbitProto();
+    ::google::protobuf::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::BitmapOrbitProto::InitAsDefaultInstance();
+}
+
+::google::protobuf::internal::SCCInfo<0> scc_info_BitmapOrbitProto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsBitmapOrbitProto}, {}};
 
 void InitDefaults() {
   ::google::protobuf::internal::InitSCC(&scc_info_FractalProto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_ContinuousFractalProto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_MandelbrotFractalProto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_OrbitFractalProto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_JuliaFractalProto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_OrbitProto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_PointOrbitProto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_LineOrbitProto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_BitmapOrbitProto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[1];
+::google::protobuf::Metadata file_level_metadata[9];
 
 const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, _internal_metadata_),
   ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, top_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, bottom_),
@@ -57,13 +242,89 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUT
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, right_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, width_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, height_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, maxiter_),
+  offsetof(::FractalProtoDefaultTypeInternal, continuous_),
+  offsetof(::FractalProtoDefaultTypeInternal, orbit_),
+  offsetof(::FractalProtoDefaultTypeInternal, julia_),
+  offsetof(::FractalProtoDefaultTypeInternal, mandelbrot_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::FractalProto, implem_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::ContinuousFractalProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::MandelbrotFractalProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::OrbitFractalProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::OrbitFractalProto, orbits_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::JuliaFractalProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::OrbitProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::OrbitProto, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::OrbitProto, max_value_),
+  offsetof(::OrbitProtoDefaultTypeInternal, pointorbit_),
+  offsetof(::OrbitProtoDefaultTypeInternal, lineorbit_),
+  offsetof(::OrbitProtoDefaultTypeInternal, bitmaporbit_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::OrbitProto, orbit_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::PointOrbitProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::PointOrbitProto, orbitx_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::PointOrbitProto, orbity_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::LineOrbitProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::LineOrbitProto, a_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::LineOrbitProto, b_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::LineOrbitProto, c_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::BitmapOrbitProto, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::BitmapOrbitProto, bitmap_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::BitmapOrbitProto, width_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::BitmapOrbitProto, height_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::FractalProto)},
+  { 17, -1, sizeof(::ContinuousFractalProto)},
+  { 22, -1, sizeof(::MandelbrotFractalProto)},
+  { 27, -1, sizeof(::OrbitFractalProto)},
+  { 33, -1, sizeof(::JuliaFractalProto)},
+  { 38, -1, sizeof(::OrbitProto)},
+  { 48, -1, sizeof(::PointOrbitProto)},
+  { 55, -1, sizeof(::LineOrbitProto)},
+  { 63, -1, sizeof(::BitmapOrbitProto)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::_FractalProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_ContinuousFractalProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_MandelbrotFractalProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_OrbitFractalProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_JuliaFractalProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_OrbitProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_PointOrbitProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_LineOrbitProto_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&::_BitmapOrbitProto_default_instance_),
 };
 
 void protobuf_AssignDescriptors() {
@@ -81,19 +342,35 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 1);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 9);
 }
 
 void AddDescriptorsImpl() {
   InitDefaults();
   static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\023marzipanstate.proto\"g\n\014FractalProto\022\013\n"
-      "\003top\030\001 \001(\001\022\016\n\006bottom\030\002 \001(\001\022\014\n\004left\030\003 \001(\001"
-      "\022\r\n\005right\030\004 \001(\001\022\r\n\005width\030\005 \001(\r\022\016\n\006height"
-      "\030\006 \001(\rb\006proto3"
+      "\n\023marzipanstate.proto\"\252\002\n\014FractalProto\022\013"
+      "\n\003top\030\001 \001(\001\022\016\n\006bottom\030\002 \001(\001\022\014\n\004left\030\003 \001("
+      "\001\022\r\n\005right\030\004 \001(\001\022\r\n\005width\030\005 \001(\r\022\016\n\006heigh"
+      "t\030\006 \001(\r\022\017\n\007maxiter\030\007 \001(\r\022-\n\ncontinuous\030\020"
+      " \001(\0132\027.ContinuousFractalProtoH\000\022#\n\005orbit"
+      "\030\021 \001(\0132\022.OrbitFractalProtoH\000\022#\n\005julia\030\022 "
+      "\001(\0132\022.JuliaFractalProtoH\000\022-\n\nmandelbrot\030"
+      "\023 \001(\0132\027.MandelbrotFractalProtoH\000B\010\n\006impl"
+      "em\"\030\n\026ContinuousFractalProto\"\030\n\026Mandelbr"
+      "otFractalProto\"0\n\021OrbitFractalProto\022\033\n\006o"
+      "rbits\030\002 \003(\0132\013.OrbitProto\"\023\n\021JuliaFractal"
+      "Proto\"\240\001\n\nOrbitProto\022\021\n\tmax_value\030\001 \001(\001\022"
+      "&\n\npointOrbit\030\002 \001(\0132\020.PointOrbitProtoH\000\022"
+      "$\n\tlineOrbit\030\003 \001(\0132\017.LineOrbitProtoH\000\022(\n"
+      "\013bitmapOrbit\030\004 \001(\0132\021.BitmapOrbitProtoH\000B"
+      "\007\n\005orbit\"1\n\017PointOrbitProto\022\016\n\006orbitX\030\001 "
+      "\001(\001\022\016\n\006orbitY\030\002 \001(\001\"1\n\016LineOrbitProto\022\t\n"
+      "\001a\030\001 \001(\001\022\t\n\001b\030\002 \001(\001\022\t\n\001c\030\003 \001(\001\"A\n\020Bitmap"
+      "OrbitProto\022\016\n\006bitmap\030\001 \001(\014\022\r\n\005width\030\002 \001("
+      "\005\022\016\n\006height\030\003 \001(\005b\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 134);
+      descriptor, 785);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "marzipanstate.proto", &protobuf_RegisterTypes);
 }
@@ -113,6 +390,70 @@ struct StaticDescriptorInitializer {
 // ===================================================================
 
 void FractalProto::InitAsDefaultInstance() {
+  ::_FractalProto_default_instance_.continuous_ = const_cast< ::ContinuousFractalProto*>(
+      ::ContinuousFractalProto::internal_default_instance());
+  ::_FractalProto_default_instance_.orbit_ = const_cast< ::OrbitFractalProto*>(
+      ::OrbitFractalProto::internal_default_instance());
+  ::_FractalProto_default_instance_.julia_ = const_cast< ::JuliaFractalProto*>(
+      ::JuliaFractalProto::internal_default_instance());
+  ::_FractalProto_default_instance_.mandelbrot_ = const_cast< ::MandelbrotFractalProto*>(
+      ::MandelbrotFractalProto::internal_default_instance());
+}
+void FractalProto::set_allocated_continuous(::ContinuousFractalProto* continuous) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_implem();
+  if (continuous) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      continuous = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, continuous, submessage_arena);
+    }
+    set_has_continuous();
+    implem_.continuous_ = continuous;
+  }
+  // @@protoc_insertion_point(field_set_allocated:FractalProto.continuous)
+}
+void FractalProto::set_allocated_orbit(::OrbitFractalProto* orbit) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_implem();
+  if (orbit) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      orbit = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, orbit, submessage_arena);
+    }
+    set_has_orbit();
+    implem_.orbit_ = orbit;
+  }
+  // @@protoc_insertion_point(field_set_allocated:FractalProto.orbit)
+}
+void FractalProto::set_allocated_julia(::JuliaFractalProto* julia) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_implem();
+  if (julia) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      julia = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, julia, submessage_arena);
+    }
+    set_has_julia();
+    implem_.julia_ = julia;
+  }
+  // @@protoc_insertion_point(field_set_allocated:FractalProto.julia)
+}
+void FractalProto::set_allocated_mandelbrot(::MandelbrotFractalProto* mandelbrot) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_implem();
+  if (mandelbrot) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      mandelbrot = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, mandelbrot, submessage_arena);
+    }
+    set_has_mandelbrot();
+    implem_.mandelbrot_ = mandelbrot;
+  }
+  // @@protoc_insertion_point(field_set_allocated:FractalProto.mandelbrot)
 }
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int FractalProto::kTopFieldNumber;
@@ -121,6 +462,11 @@ const int FractalProto::kLeftFieldNumber;
 const int FractalProto::kRightFieldNumber;
 const int FractalProto::kWidthFieldNumber;
 const int FractalProto::kHeightFieldNumber;
+const int FractalProto::kMaxiterFieldNumber;
+const int FractalProto::kContinuousFieldNumber;
+const int FractalProto::kOrbitFieldNumber;
+const int FractalProto::kJuliaFieldNumber;
+const int FractalProto::kMandelbrotFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 FractalProto::FractalProto()
@@ -135,15 +481,38 @@ FractalProto::FractalProto(const FractalProto& from)
       _internal_metadata_(NULL) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&top_, &from.top_,
-    static_cast<size_t>(reinterpret_cast<char*>(&height_) -
-    reinterpret_cast<char*>(&top_)) + sizeof(height_));
+    static_cast<size_t>(reinterpret_cast<char*>(&maxiter_) -
+    reinterpret_cast<char*>(&top_)) + sizeof(maxiter_));
+  clear_has_implem();
+  switch (from.implem_case()) {
+    case kContinuous: {
+      mutable_continuous()->::ContinuousFractalProto::MergeFrom(from.continuous());
+      break;
+    }
+    case kOrbit: {
+      mutable_orbit()->::OrbitFractalProto::MergeFrom(from.orbit());
+      break;
+    }
+    case kJulia: {
+      mutable_julia()->::JuliaFractalProto::MergeFrom(from.julia());
+      break;
+    }
+    case kMandelbrot: {
+      mutable_mandelbrot()->::MandelbrotFractalProto::MergeFrom(from.mandelbrot());
+      break;
+    }
+    case IMPLEM_NOT_SET: {
+      break;
+    }
+  }
   // @@protoc_insertion_point(copy_constructor:FractalProto)
 }
 
 void FractalProto::SharedCtor() {
   ::memset(&top_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&top_)) + sizeof(height_));
+      reinterpret_cast<char*>(&maxiter_) -
+      reinterpret_cast<char*>(&top_)) + sizeof(maxiter_));
+  clear_has_implem();
 }
 
 FractalProto::~FractalProto() {
@@ -152,6 +521,9 @@ FractalProto::~FractalProto() {
 }
 
 void FractalProto::SharedDtor() {
+  if (has_implem()) {
+    clear_implem();
+  }
 }
 
 void FractalProto::SetCachedSize(int size) const {
@@ -168,6 +540,33 @@ const FractalProto& FractalProto::default_instance() {
 }
 
 
+void FractalProto::clear_implem() {
+// @@protoc_insertion_point(one_of_clear_start:FractalProto)
+  switch (implem_case()) {
+    case kContinuous: {
+      delete implem_.continuous_;
+      break;
+    }
+    case kOrbit: {
+      delete implem_.orbit_;
+      break;
+    }
+    case kJulia: {
+      delete implem_.julia_;
+      break;
+    }
+    case kMandelbrot: {
+      delete implem_.mandelbrot_;
+      break;
+    }
+    case IMPLEM_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = IMPLEM_NOT_SET;
+}
+
+
 void FractalProto::Clear() {
 // @@protoc_insertion_point(message_clear_start:FractalProto)
   ::google::protobuf::uint32 cached_has_bits = 0;
@@ -175,8 +574,9 @@ void FractalProto::Clear() {
   (void) cached_has_bits;
 
   ::memset(&top_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&height_) -
-      reinterpret_cast<char*>(&top_)) + sizeof(height_));
+      reinterpret_cast<char*>(&maxiter_) -
+      reinterpret_cast<char*>(&top_)) + sizeof(maxiter_));
+  clear_implem();
   _internal_metadata_.Clear();
 }
 
@@ -186,7 +586,7 @@ bool FractalProto::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:FractalProto)
   for (;;) {
-    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
     tag = p.first;
     if (!p.second) goto handle_unusual;
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
@@ -274,6 +674,68 @@ bool FractalProto::MergePartialFromCodedStream(
         break;
       }
 
+      // uint32 maxiter = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(56u /* 56 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_UINT32>(
+                 input, &maxiter_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .ContinuousFractalProto continuous = 16;
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(130u /* 130 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_continuous()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .OrbitFractalProto orbit = 17;
+      case 17: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(138u /* 138 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_orbit()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .JuliaFractalProto julia = 18;
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_julia()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .MandelbrotFractalProto mandelbrot = 19;
+      case 19: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(154u /* 154 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_mandelbrot()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -330,6 +792,35 @@ void FractalProto::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt32(6, this->height(), output);
   }
 
+  // uint32 maxiter = 7;
+  if (this->maxiter() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteUInt32(7, this->maxiter(), output);
+  }
+
+  // .ContinuousFractalProto continuous = 16;
+  if (has_continuous()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      16, this->_internal_continuous(), output);
+  }
+
+  // .OrbitFractalProto orbit = 17;
+  if (has_orbit()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      17, this->_internal_orbit(), output);
+  }
+
+  // .JuliaFractalProto julia = 18;
+  if (has_julia()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      18, this->_internal_julia(), output);
+  }
+
+  // .MandelbrotFractalProto mandelbrot = 19;
+  if (has_mandelbrot()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      19, this->_internal_mandelbrot(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -372,6 +863,39 @@ void FractalProto::SerializeWithCachedSizes(
   // uint32 height = 6;
   if (this->height() != 0) {
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(6, this->height(), target);
+  }
+
+  // uint32 maxiter = 7;
+  if (this->maxiter() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteUInt32ToArray(7, this->maxiter(), target);
+  }
+
+  // .ContinuousFractalProto continuous = 16;
+  if (has_continuous()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        16, this->_internal_continuous(), deterministic, target);
+  }
+
+  // .OrbitFractalProto orbit = 17;
+  if (has_orbit()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        17, this->_internal_orbit(), deterministic, target);
+  }
+
+  // .JuliaFractalProto julia = 18;
+  if (has_julia()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        18, this->_internal_julia(), deterministic, target);
+  }
+
+  // .MandelbrotFractalProto mandelbrot = 19;
+  if (has_mandelbrot()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        19, this->_internal_mandelbrot(), deterministic, target);
   }
 
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
@@ -425,6 +949,46 @@ size_t FractalProto::ByteSizeLong() const {
         this->height());
   }
 
+  // uint32 maxiter = 7;
+  if (this->maxiter() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::UInt32Size(
+        this->maxiter());
+  }
+
+  switch (implem_case()) {
+    // .ContinuousFractalProto continuous = 16;
+    case kContinuous: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *implem_.continuous_);
+      break;
+    }
+    // .OrbitFractalProto orbit = 17;
+    case kOrbit: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *implem_.orbit_);
+      break;
+    }
+    // .JuliaFractalProto julia = 18;
+    case kJulia: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *implem_.julia_);
+      break;
+    }
+    // .MandelbrotFractalProto mandelbrot = 19;
+    case kMandelbrot: {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *implem_.mandelbrot_);
+      break;
+    }
+    case IMPLEM_NOT_SET: {
+      break;
+    }
+  }
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -470,6 +1034,30 @@ void FractalProto::MergeFrom(const FractalProto& from) {
   if (from.height() != 0) {
     set_height(from.height());
   }
+  if (from.maxiter() != 0) {
+    set_maxiter(from.maxiter());
+  }
+  switch (from.implem_case()) {
+    case kContinuous: {
+      mutable_continuous()->::ContinuousFractalProto::MergeFrom(from.continuous());
+      break;
+    }
+    case kOrbit: {
+      mutable_orbit()->::OrbitFractalProto::MergeFrom(from.orbit());
+      break;
+    }
+    case kJulia: {
+      mutable_julia()->::JuliaFractalProto::MergeFrom(from.julia());
+      break;
+    }
+    case kMandelbrot: {
+      mutable_mandelbrot()->::MandelbrotFractalProto::MergeFrom(from.mandelbrot());
+      break;
+    }
+    case IMPLEM_NOT_SET: {
+      break;
+    }
+  }
 }
 
 void FractalProto::CopyFrom(const ::google::protobuf::Message& from) {
@@ -502,10 +1090,2084 @@ void FractalProto::InternalSwap(FractalProto* other) {
   swap(right_, other->right_);
   swap(width_, other->width_);
   swap(height_, other->height_);
+  swap(maxiter_, other->maxiter_);
+  swap(implem_, other->implem_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
   _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata FractalProto::GetMetadata() const {
+  protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void ContinuousFractalProto::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+ContinuousFractalProto::ContinuousFractalProto()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_marzipanstate_2eproto::scc_info_ContinuousFractalProto.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:ContinuousFractalProto)
+}
+ContinuousFractalProto::ContinuousFractalProto(const ContinuousFractalProto& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:ContinuousFractalProto)
+}
+
+void ContinuousFractalProto::SharedCtor() {
+}
+
+ContinuousFractalProto::~ContinuousFractalProto() {
+  // @@protoc_insertion_point(destructor:ContinuousFractalProto)
+  SharedDtor();
+}
+
+void ContinuousFractalProto::SharedDtor() {
+}
+
+void ContinuousFractalProto::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* ContinuousFractalProto::descriptor() {
+  ::protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const ContinuousFractalProto& ContinuousFractalProto::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_marzipanstate_2eproto::scc_info_ContinuousFractalProto.base);
+  return *internal_default_instance();
+}
+
+
+void ContinuousFractalProto::Clear() {
+// @@protoc_insertion_point(message_clear_start:ContinuousFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+bool ContinuousFractalProto::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:ContinuousFractalProto)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:ContinuousFractalProto)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:ContinuousFractalProto)
+  return false;
+#undef DO_
+}
+
+void ContinuousFractalProto::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:ContinuousFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:ContinuousFractalProto)
+}
+
+::google::protobuf::uint8* ContinuousFractalProto::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:ContinuousFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:ContinuousFractalProto)
+  return target;
+}
+
+size_t ContinuousFractalProto::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:ContinuousFractalProto)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void ContinuousFractalProto::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:ContinuousFractalProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  const ContinuousFractalProto* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const ContinuousFractalProto>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:ContinuousFractalProto)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:ContinuousFractalProto)
+    MergeFrom(*source);
+  }
+}
+
+void ContinuousFractalProto::MergeFrom(const ContinuousFractalProto& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:ContinuousFractalProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void ContinuousFractalProto::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:ContinuousFractalProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void ContinuousFractalProto::CopyFrom(const ContinuousFractalProto& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:ContinuousFractalProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ContinuousFractalProto::IsInitialized() const {
+  return true;
+}
+
+void ContinuousFractalProto::Swap(ContinuousFractalProto* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void ContinuousFractalProto::InternalSwap(ContinuousFractalProto* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata ContinuousFractalProto::GetMetadata() const {
+  protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void MandelbrotFractalProto::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+MandelbrotFractalProto::MandelbrotFractalProto()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_marzipanstate_2eproto::scc_info_MandelbrotFractalProto.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:MandelbrotFractalProto)
+}
+MandelbrotFractalProto::MandelbrotFractalProto(const MandelbrotFractalProto& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:MandelbrotFractalProto)
+}
+
+void MandelbrotFractalProto::SharedCtor() {
+}
+
+MandelbrotFractalProto::~MandelbrotFractalProto() {
+  // @@protoc_insertion_point(destructor:MandelbrotFractalProto)
+  SharedDtor();
+}
+
+void MandelbrotFractalProto::SharedDtor() {
+}
+
+void MandelbrotFractalProto::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* MandelbrotFractalProto::descriptor() {
+  ::protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const MandelbrotFractalProto& MandelbrotFractalProto::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_marzipanstate_2eproto::scc_info_MandelbrotFractalProto.base);
+  return *internal_default_instance();
+}
+
+
+void MandelbrotFractalProto::Clear() {
+// @@protoc_insertion_point(message_clear_start:MandelbrotFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+bool MandelbrotFractalProto::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:MandelbrotFractalProto)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:MandelbrotFractalProto)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:MandelbrotFractalProto)
+  return false;
+#undef DO_
+}
+
+void MandelbrotFractalProto::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:MandelbrotFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:MandelbrotFractalProto)
+}
+
+::google::protobuf::uint8* MandelbrotFractalProto::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:MandelbrotFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MandelbrotFractalProto)
+  return target;
+}
+
+size_t MandelbrotFractalProto::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:MandelbrotFractalProto)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void MandelbrotFractalProto::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:MandelbrotFractalProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  const MandelbrotFractalProto* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const MandelbrotFractalProto>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:MandelbrotFractalProto)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:MandelbrotFractalProto)
+    MergeFrom(*source);
+  }
+}
+
+void MandelbrotFractalProto::MergeFrom(const MandelbrotFractalProto& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:MandelbrotFractalProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void MandelbrotFractalProto::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:MandelbrotFractalProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void MandelbrotFractalProto::CopyFrom(const MandelbrotFractalProto& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:MandelbrotFractalProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MandelbrotFractalProto::IsInitialized() const {
+  return true;
+}
+
+void MandelbrotFractalProto::Swap(MandelbrotFractalProto* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void MandelbrotFractalProto::InternalSwap(MandelbrotFractalProto* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata MandelbrotFractalProto::GetMetadata() const {
+  protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void OrbitFractalProto::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int OrbitFractalProto::kOrbitsFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+OrbitFractalProto::OrbitFractalProto()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_marzipanstate_2eproto::scc_info_OrbitFractalProto.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:OrbitFractalProto)
+}
+OrbitFractalProto::OrbitFractalProto(const OrbitFractalProto& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      orbits_(from.orbits_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:OrbitFractalProto)
+}
+
+void OrbitFractalProto::SharedCtor() {
+}
+
+OrbitFractalProto::~OrbitFractalProto() {
+  // @@protoc_insertion_point(destructor:OrbitFractalProto)
+  SharedDtor();
+}
+
+void OrbitFractalProto::SharedDtor() {
+}
+
+void OrbitFractalProto::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* OrbitFractalProto::descriptor() {
+  ::protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const OrbitFractalProto& OrbitFractalProto::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_marzipanstate_2eproto::scc_info_OrbitFractalProto.base);
+  return *internal_default_instance();
+}
+
+
+void OrbitFractalProto::Clear() {
+// @@protoc_insertion_point(message_clear_start:OrbitFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  orbits_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool OrbitFractalProto::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:OrbitFractalProto)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .OrbitProto orbits = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+                input, add_orbits()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:OrbitFractalProto)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:OrbitFractalProto)
+  return false;
+#undef DO_
+}
+
+void OrbitFractalProto::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:OrbitFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .OrbitProto orbits = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->orbits_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2,
+      this->orbits(static_cast<int>(i)),
+      output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:OrbitFractalProto)
+}
+
+::google::protobuf::uint8* OrbitFractalProto::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:OrbitFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .OrbitProto orbits = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->orbits_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->orbits(static_cast<int>(i)), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:OrbitFractalProto)
+  return target;
+}
+
+size_t OrbitFractalProto::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:OrbitFractalProto)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated .OrbitProto orbits = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->orbits_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          this->orbits(static_cast<int>(i)));
+    }
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OrbitFractalProto::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:OrbitFractalProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OrbitFractalProto* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const OrbitFractalProto>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:OrbitFractalProto)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:OrbitFractalProto)
+    MergeFrom(*source);
+  }
+}
+
+void OrbitFractalProto::MergeFrom(const OrbitFractalProto& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:OrbitFractalProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  orbits_.MergeFrom(from.orbits_);
+}
+
+void OrbitFractalProto::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:OrbitFractalProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OrbitFractalProto::CopyFrom(const OrbitFractalProto& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:OrbitFractalProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OrbitFractalProto::IsInitialized() const {
+  return true;
+}
+
+void OrbitFractalProto::Swap(OrbitFractalProto* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void OrbitFractalProto::InternalSwap(OrbitFractalProto* other) {
+  using std::swap;
+  CastToBase(&orbits_)->InternalSwap(CastToBase(&other->orbits_));
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata OrbitFractalProto::GetMetadata() const {
+  protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void JuliaFractalProto::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+JuliaFractalProto::JuliaFractalProto()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_marzipanstate_2eproto::scc_info_JuliaFractalProto.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:JuliaFractalProto)
+}
+JuliaFractalProto::JuliaFractalProto(const JuliaFractalProto& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:JuliaFractalProto)
+}
+
+void JuliaFractalProto::SharedCtor() {
+}
+
+JuliaFractalProto::~JuliaFractalProto() {
+  // @@protoc_insertion_point(destructor:JuliaFractalProto)
+  SharedDtor();
+}
+
+void JuliaFractalProto::SharedDtor() {
+}
+
+void JuliaFractalProto::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* JuliaFractalProto::descriptor() {
+  ::protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const JuliaFractalProto& JuliaFractalProto::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_marzipanstate_2eproto::scc_info_JuliaFractalProto.base);
+  return *internal_default_instance();
+}
+
+
+void JuliaFractalProto::Clear() {
+// @@protoc_insertion_point(message_clear_start:JuliaFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _internal_metadata_.Clear();
+}
+
+bool JuliaFractalProto::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:JuliaFractalProto)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+  handle_unusual:
+    if (tag == 0) {
+      goto success;
+    }
+    DO_(::google::protobuf::internal::WireFormat::SkipField(
+          input, tag, _internal_metadata_.mutable_unknown_fields()));
+  }
+success:
+  // @@protoc_insertion_point(parse_success:JuliaFractalProto)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:JuliaFractalProto)
+  return false;
+#undef DO_
+}
+
+void JuliaFractalProto::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:JuliaFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:JuliaFractalProto)
+}
+
+::google::protobuf::uint8* JuliaFractalProto::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:JuliaFractalProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:JuliaFractalProto)
+  return target;
+}
+
+size_t JuliaFractalProto::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:JuliaFractalProto)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void JuliaFractalProto::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:JuliaFractalProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  const JuliaFractalProto* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const JuliaFractalProto>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:JuliaFractalProto)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:JuliaFractalProto)
+    MergeFrom(*source);
+  }
+}
+
+void JuliaFractalProto::MergeFrom(const JuliaFractalProto& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:JuliaFractalProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+}
+
+void JuliaFractalProto::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:JuliaFractalProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void JuliaFractalProto::CopyFrom(const JuliaFractalProto& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:JuliaFractalProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool JuliaFractalProto::IsInitialized() const {
+  return true;
+}
+
+void JuliaFractalProto::Swap(JuliaFractalProto* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void JuliaFractalProto::InternalSwap(JuliaFractalProto* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata JuliaFractalProto::GetMetadata() const {
+  protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void OrbitProto::InitAsDefaultInstance() {
+  ::_OrbitProto_default_instance_.pointorbit_ = const_cast< ::PointOrbitProto*>(
+      ::PointOrbitProto::internal_default_instance());
+  ::_OrbitProto_default_instance_.lineorbit_ = const_cast< ::LineOrbitProto*>(
+      ::LineOrbitProto::internal_default_instance());
+  ::_OrbitProto_default_instance_.bitmaporbit_ = const_cast< ::BitmapOrbitProto*>(
+      ::BitmapOrbitProto::internal_default_instance());
+}
+void OrbitProto::set_allocated_pointorbit(::PointOrbitProto* pointorbit) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_orbit();
+  if (pointorbit) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      pointorbit = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, pointorbit, submessage_arena);
+    }
+    set_has_pointorbit();
+    orbit_.pointorbit_ = pointorbit;
+  }
+  // @@protoc_insertion_point(field_set_allocated:OrbitProto.pointOrbit)
+}
+void OrbitProto::set_allocated_lineorbit(::LineOrbitProto* lineorbit) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_orbit();
+  if (lineorbit) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      lineorbit = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, lineorbit, submessage_arena);
+    }
+    set_has_lineorbit();
+    orbit_.lineorbit_ = lineorbit;
+  }
+  // @@protoc_insertion_point(field_set_allocated:OrbitProto.lineOrbit)
+}
+void OrbitProto::set_allocated_bitmaporbit(::BitmapOrbitProto* bitmaporbit) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  clear_orbit();
+  if (bitmaporbit) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      bitmaporbit = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, bitmaporbit, submessage_arena);
+    }
+    set_has_bitmaporbit();
+    orbit_.bitmaporbit_ = bitmaporbit;
+  }
+  // @@protoc_insertion_point(field_set_allocated:OrbitProto.bitmapOrbit)
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int OrbitProto::kMaxValueFieldNumber;
+const int OrbitProto::kPointOrbitFieldNumber;
+const int OrbitProto::kLineOrbitFieldNumber;
+const int OrbitProto::kBitmapOrbitFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+OrbitProto::OrbitProto()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_marzipanstate_2eproto::scc_info_OrbitProto.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:OrbitProto)
+}
+OrbitProto::OrbitProto(const OrbitProto& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  max_value_ = from.max_value_;
+  clear_has_orbit();
+  switch (from.orbit_case()) {
+    case kPointOrbit: {
+      mutable_pointorbit()->::PointOrbitProto::MergeFrom(from.pointorbit());
+      break;
+    }
+    case kLineOrbit: {
+      mutable_lineorbit()->::LineOrbitProto::MergeFrom(from.lineorbit());
+      break;
+    }
+    case kBitmapOrbit: {
+      mutable_bitmaporbit()->::BitmapOrbitProto::MergeFrom(from.bitmaporbit());
+      break;
+    }
+    case ORBIT_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:OrbitProto)
+}
+
+void OrbitProto::SharedCtor() {
+  max_value_ = 0;
+  clear_has_orbit();
+}
+
+OrbitProto::~OrbitProto() {
+  // @@protoc_insertion_point(destructor:OrbitProto)
+  SharedDtor();
+}
+
+void OrbitProto::SharedDtor() {
+  if (has_orbit()) {
+    clear_orbit();
+  }
+}
+
+void OrbitProto::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* OrbitProto::descriptor() {
+  ::protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const OrbitProto& OrbitProto::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_marzipanstate_2eproto::scc_info_OrbitProto.base);
+  return *internal_default_instance();
+}
+
+
+void OrbitProto::clear_orbit() {
+// @@protoc_insertion_point(one_of_clear_start:OrbitProto)
+  switch (orbit_case()) {
+    case kPointOrbit: {
+      delete orbit_.pointorbit_;
+      break;
+    }
+    case kLineOrbit: {
+      delete orbit_.lineorbit_;
+      break;
+    }
+    case kBitmapOrbit: {
+      delete orbit_.bitmaporbit_;
+      break;
+    }
+    case ORBIT_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = ORBIT_NOT_SET;
+}
+
+
+void OrbitProto::Clear() {
+// @@protoc_insertion_point(message_clear_start:OrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  max_value_ = 0;
+  clear_orbit();
+  _internal_metadata_.Clear();
+}
+
+bool OrbitProto::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:OrbitProto)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // double max_value = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(9u /* 9 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &max_value_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .PointOrbitProto pointOrbit = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_pointorbit()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .LineOrbitProto lineOrbit = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_lineorbit()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // .BitmapOrbitProto bitmapOrbit = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
+               input, mutable_bitmaporbit()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:OrbitProto)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:OrbitProto)
+  return false;
+#undef DO_
+}
+
+void OrbitProto::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:OrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double max_value = 1;
+  if (this->max_value() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->max_value(), output);
+  }
+
+  // .PointOrbitProto pointOrbit = 2;
+  if (has_pointorbit()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->_internal_pointorbit(), output);
+  }
+
+  // .LineOrbitProto lineOrbit = 3;
+  if (has_lineorbit()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, this->_internal_lineorbit(), output);
+  }
+
+  // .BitmapOrbitProto bitmapOrbit = 4;
+  if (has_bitmaporbit()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      4, this->_internal_bitmaporbit(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:OrbitProto)
+}
+
+::google::protobuf::uint8* OrbitProto::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:OrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double max_value = 1;
+  if (this->max_value() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->max_value(), target);
+  }
+
+  // .PointOrbitProto pointOrbit = 2;
+  if (has_pointorbit()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        2, this->_internal_pointorbit(), deterministic, target);
+  }
+
+  // .LineOrbitProto lineOrbit = 3;
+  if (has_lineorbit()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, this->_internal_lineorbit(), deterministic, target);
+  }
+
+  // .BitmapOrbitProto bitmapOrbit = 4;
+  if (has_bitmaporbit()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        4, this->_internal_bitmaporbit(), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:OrbitProto)
+  return target;
+}
+
+size_t OrbitProto::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:OrbitProto)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // double max_value = 1;
+  if (this->max_value() != 0) {
+    total_size += 1 + 8;
+  }
+
+  switch (orbit_case()) {
+    // .PointOrbitProto pointOrbit = 2;
+    case kPointOrbit: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *orbit_.pointorbit_);
+      break;
+    }
+    // .LineOrbitProto lineOrbit = 3;
+    case kLineOrbit: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *orbit_.lineorbit_);
+      break;
+    }
+    // .BitmapOrbitProto bitmapOrbit = 4;
+    case kBitmapOrbit: {
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::MessageSize(
+          *orbit_.bitmaporbit_);
+      break;
+    }
+    case ORBIT_NOT_SET: {
+      break;
+    }
+  }
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void OrbitProto::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:OrbitProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  const OrbitProto* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const OrbitProto>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:OrbitProto)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:OrbitProto)
+    MergeFrom(*source);
+  }
+}
+
+void OrbitProto::MergeFrom(const OrbitProto& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:OrbitProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.max_value() != 0) {
+    set_max_value(from.max_value());
+  }
+  switch (from.orbit_case()) {
+    case kPointOrbit: {
+      mutable_pointorbit()->::PointOrbitProto::MergeFrom(from.pointorbit());
+      break;
+    }
+    case kLineOrbit: {
+      mutable_lineorbit()->::LineOrbitProto::MergeFrom(from.lineorbit());
+      break;
+    }
+    case kBitmapOrbit: {
+      mutable_bitmaporbit()->::BitmapOrbitProto::MergeFrom(from.bitmaporbit());
+      break;
+    }
+    case ORBIT_NOT_SET: {
+      break;
+    }
+  }
+}
+
+void OrbitProto::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:OrbitProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void OrbitProto::CopyFrom(const OrbitProto& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:OrbitProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool OrbitProto::IsInitialized() const {
+  return true;
+}
+
+void OrbitProto::Swap(OrbitProto* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void OrbitProto::InternalSwap(OrbitProto* other) {
+  using std::swap;
+  swap(max_value_, other->max_value_);
+  swap(orbit_, other->orbit_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata OrbitProto::GetMetadata() const {
+  protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void PointOrbitProto::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int PointOrbitProto::kOrbitXFieldNumber;
+const int PointOrbitProto::kOrbitYFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+PointOrbitProto::PointOrbitProto()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_marzipanstate_2eproto::scc_info_PointOrbitProto.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:PointOrbitProto)
+}
+PointOrbitProto::PointOrbitProto(const PointOrbitProto& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&orbitx_, &from.orbitx_,
+    static_cast<size_t>(reinterpret_cast<char*>(&orbity_) -
+    reinterpret_cast<char*>(&orbitx_)) + sizeof(orbity_));
+  // @@protoc_insertion_point(copy_constructor:PointOrbitProto)
+}
+
+void PointOrbitProto::SharedCtor() {
+  ::memset(&orbitx_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&orbity_) -
+      reinterpret_cast<char*>(&orbitx_)) + sizeof(orbity_));
+}
+
+PointOrbitProto::~PointOrbitProto() {
+  // @@protoc_insertion_point(destructor:PointOrbitProto)
+  SharedDtor();
+}
+
+void PointOrbitProto::SharedDtor() {
+}
+
+void PointOrbitProto::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* PointOrbitProto::descriptor() {
+  ::protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const PointOrbitProto& PointOrbitProto::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_marzipanstate_2eproto::scc_info_PointOrbitProto.base);
+  return *internal_default_instance();
+}
+
+
+void PointOrbitProto::Clear() {
+// @@protoc_insertion_point(message_clear_start:PointOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&orbitx_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&orbity_) -
+      reinterpret_cast<char*>(&orbitx_)) + sizeof(orbity_));
+  _internal_metadata_.Clear();
+}
+
+bool PointOrbitProto::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:PointOrbitProto)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // double orbitX = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(9u /* 9 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &orbitx_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double orbitY = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(17u /* 17 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &orbity_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:PointOrbitProto)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:PointOrbitProto)
+  return false;
+#undef DO_
+}
+
+void PointOrbitProto::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:PointOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double orbitX = 1;
+  if (this->orbitx() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->orbitx(), output);
+  }
+
+  // double orbitY = 2;
+  if (this->orbity() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->orbity(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:PointOrbitProto)
+}
+
+::google::protobuf::uint8* PointOrbitProto::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:PointOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double orbitX = 1;
+  if (this->orbitx() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->orbitx(), target);
+  }
+
+  // double orbitY = 2;
+  if (this->orbity() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->orbity(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:PointOrbitProto)
+  return target;
+}
+
+size_t PointOrbitProto::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:PointOrbitProto)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // double orbitX = 1;
+  if (this->orbitx() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double orbitY = 2;
+  if (this->orbity() != 0) {
+    total_size += 1 + 8;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void PointOrbitProto::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:PointOrbitProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  const PointOrbitProto* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const PointOrbitProto>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:PointOrbitProto)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:PointOrbitProto)
+    MergeFrom(*source);
+  }
+}
+
+void PointOrbitProto::MergeFrom(const PointOrbitProto& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:PointOrbitProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.orbitx() != 0) {
+    set_orbitx(from.orbitx());
+  }
+  if (from.orbity() != 0) {
+    set_orbity(from.orbity());
+  }
+}
+
+void PointOrbitProto::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:PointOrbitProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void PointOrbitProto::CopyFrom(const PointOrbitProto& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:PointOrbitProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool PointOrbitProto::IsInitialized() const {
+  return true;
+}
+
+void PointOrbitProto::Swap(PointOrbitProto* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void PointOrbitProto::InternalSwap(PointOrbitProto* other) {
+  using std::swap;
+  swap(orbitx_, other->orbitx_);
+  swap(orbity_, other->orbity_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata PointOrbitProto::GetMetadata() const {
+  protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void LineOrbitProto::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int LineOrbitProto::kAFieldNumber;
+const int LineOrbitProto::kBFieldNumber;
+const int LineOrbitProto::kCFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+LineOrbitProto::LineOrbitProto()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_marzipanstate_2eproto::scc_info_LineOrbitProto.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:LineOrbitProto)
+}
+LineOrbitProto::LineOrbitProto(const LineOrbitProto& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::memcpy(&a_, &from.a_,
+    static_cast<size_t>(reinterpret_cast<char*>(&c_) -
+    reinterpret_cast<char*>(&a_)) + sizeof(c_));
+  // @@protoc_insertion_point(copy_constructor:LineOrbitProto)
+}
+
+void LineOrbitProto::SharedCtor() {
+  ::memset(&a_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&c_) -
+      reinterpret_cast<char*>(&a_)) + sizeof(c_));
+}
+
+LineOrbitProto::~LineOrbitProto() {
+  // @@protoc_insertion_point(destructor:LineOrbitProto)
+  SharedDtor();
+}
+
+void LineOrbitProto::SharedDtor() {
+}
+
+void LineOrbitProto::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* LineOrbitProto::descriptor() {
+  ::protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const LineOrbitProto& LineOrbitProto::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_marzipanstate_2eproto::scc_info_LineOrbitProto.base);
+  return *internal_default_instance();
+}
+
+
+void LineOrbitProto::Clear() {
+// @@protoc_insertion_point(message_clear_start:LineOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&a_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&c_) -
+      reinterpret_cast<char*>(&a_)) + sizeof(c_));
+  _internal_metadata_.Clear();
+}
+
+bool LineOrbitProto::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:LineOrbitProto)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // double a = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(9u /* 9 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &a_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double b = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(17u /* 17 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &b_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double c = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(25u /* 25 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &c_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:LineOrbitProto)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:LineOrbitProto)
+  return false;
+#undef DO_
+}
+
+void LineOrbitProto::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:LineOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double a = 1;
+  if (this->a() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(1, this->a(), output);
+  }
+
+  // double b = 2;
+  if (this->b() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(2, this->b(), output);
+  }
+
+  // double c = 3;
+  if (this->c() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->c(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:LineOrbitProto)
+}
+
+::google::protobuf::uint8* LineOrbitProto::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:LineOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // double a = 1;
+  if (this->a() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(1, this->a(), target);
+  }
+
+  // double b = 2;
+  if (this->b() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(2, this->b(), target);
+  }
+
+  // double c = 3;
+  if (this->c() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->c(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:LineOrbitProto)
+  return target;
+}
+
+size_t LineOrbitProto::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:LineOrbitProto)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // double a = 1;
+  if (this->a() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double b = 2;
+  if (this->b() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double c = 3;
+  if (this->c() != 0) {
+    total_size += 1 + 8;
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void LineOrbitProto::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:LineOrbitProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  const LineOrbitProto* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const LineOrbitProto>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:LineOrbitProto)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:LineOrbitProto)
+    MergeFrom(*source);
+  }
+}
+
+void LineOrbitProto::MergeFrom(const LineOrbitProto& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:LineOrbitProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.a() != 0) {
+    set_a(from.a());
+  }
+  if (from.b() != 0) {
+    set_b(from.b());
+  }
+  if (from.c() != 0) {
+    set_c(from.c());
+  }
+}
+
+void LineOrbitProto::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:LineOrbitProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void LineOrbitProto::CopyFrom(const LineOrbitProto& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:LineOrbitProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool LineOrbitProto::IsInitialized() const {
+  return true;
+}
+
+void LineOrbitProto::Swap(LineOrbitProto* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void LineOrbitProto::InternalSwap(LineOrbitProto* other) {
+  using std::swap;
+  swap(a_, other->a_);
+  swap(b_, other->b_);
+  swap(c_, other->c_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata LineOrbitProto::GetMetadata() const {
+  protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+
+// ===================================================================
+
+void BitmapOrbitProto::InitAsDefaultInstance() {
+}
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int BitmapOrbitProto::kBitmapFieldNumber;
+const int BitmapOrbitProto::kWidthFieldNumber;
+const int BitmapOrbitProto::kHeightFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+BitmapOrbitProto::BitmapOrbitProto()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  ::google::protobuf::internal::InitSCC(
+      &protobuf_marzipanstate_2eproto::scc_info_BitmapOrbitProto.base);
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:BitmapOrbitProto)
+}
+BitmapOrbitProto::BitmapOrbitProto(const BitmapOrbitProto& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  bitmap_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.bitmap().size() > 0) {
+    bitmap_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.bitmap_);
+  }
+  ::memcpy(&width_, &from.width_,
+    static_cast<size_t>(reinterpret_cast<char*>(&height_) -
+    reinterpret_cast<char*>(&width_)) + sizeof(height_));
+  // @@protoc_insertion_point(copy_constructor:BitmapOrbitProto)
+}
+
+void BitmapOrbitProto::SharedCtor() {
+  bitmap_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&width_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&height_) -
+      reinterpret_cast<char*>(&width_)) + sizeof(height_));
+}
+
+BitmapOrbitProto::~BitmapOrbitProto() {
+  // @@protoc_insertion_point(destructor:BitmapOrbitProto)
+  SharedDtor();
+}
+
+void BitmapOrbitProto::SharedDtor() {
+  bitmap_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void BitmapOrbitProto::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const ::google::protobuf::Descriptor* BitmapOrbitProto::descriptor() {
+  ::protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
+  return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const BitmapOrbitProto& BitmapOrbitProto::default_instance() {
+  ::google::protobuf::internal::InitSCC(&protobuf_marzipanstate_2eproto::scc_info_BitmapOrbitProto.base);
+  return *internal_default_instance();
+}
+
+
+void BitmapOrbitProto::Clear() {
+// @@protoc_insertion_point(message_clear_start:BitmapOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  bitmap_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&width_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&height_) -
+      reinterpret_cast<char*>(&width_)) + sizeof(height_));
+  _internal_metadata_.Clear();
+}
+
+bool BitmapOrbitProto::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:BitmapOrbitProto)
+  for (;;) {
+    ::std::pair<::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // bytes bitmap = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadBytes(
+                input, this->mutable_bitmap()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 width = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &width_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 height = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &height_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:BitmapOrbitProto)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:BitmapOrbitProto)
+  return false;
+#undef DO_
+}
+
+void BitmapOrbitProto::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:BitmapOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes bitmap = 1;
+  if (this->bitmap().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteBytesMaybeAliased(
+      1, this->bitmap(), output);
+  }
+
+  // int32 width = 2;
+  if (this->width() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->width(), output);
+  }
+
+  // int32 height = 3;
+  if (this->height() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->height(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:BitmapOrbitProto)
+}
+
+::google::protobuf::uint8* BitmapOrbitProto::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:BitmapOrbitProto)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // bytes bitmap = 1;
+  if (this->bitmap().size() > 0) {
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteBytesToArray(
+        1, this->bitmap(), target);
+  }
+
+  // int32 width = 2;
+  if (this->width() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->width(), target);
+  }
+
+  // int32 height = 3;
+  if (this->height() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->height(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:BitmapOrbitProto)
+  return target;
+}
+
+size_t BitmapOrbitProto::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:BitmapOrbitProto)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // bytes bitmap = 1;
+  if (this->bitmap().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::BytesSize(
+        this->bitmap());
+  }
+
+  // int32 width = 2;
+  if (this->width() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->width());
+  }
+
+  // int32 height = 3;
+  if (this->height() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->height());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void BitmapOrbitProto::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:BitmapOrbitProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  const BitmapOrbitProto* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const BitmapOrbitProto>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:BitmapOrbitProto)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:BitmapOrbitProto)
+    MergeFrom(*source);
+  }
+}
+
+void BitmapOrbitProto::MergeFrom(const BitmapOrbitProto& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:BitmapOrbitProto)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.bitmap().size() > 0) {
+
+    bitmap_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.bitmap_);
+  }
+  if (from.width() != 0) {
+    set_width(from.width());
+  }
+  if (from.height() != 0) {
+    set_height(from.height());
+  }
+}
+
+void BitmapOrbitProto::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:BitmapOrbitProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void BitmapOrbitProto::CopyFrom(const BitmapOrbitProto& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:BitmapOrbitProto)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BitmapOrbitProto::IsInitialized() const {
+  return true;
+}
+
+void BitmapOrbitProto::Swap(BitmapOrbitProto* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void BitmapOrbitProto::InternalSwap(BitmapOrbitProto* other) {
+  using std::swap;
+  bitmap_.Swap(&other->bitmap_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(width_, other->width_);
+  swap(height_, other->height_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+}
+
+::google::protobuf::Metadata BitmapOrbitProto::GetMetadata() const {
   protobuf_marzipanstate_2eproto::protobuf_AssignDescriptorsOnce();
   return ::protobuf_marzipanstate_2eproto::file_level_metadata[kIndexInFileMessages];
 }
@@ -516,6 +3178,30 @@ namespace google {
 namespace protobuf {
 template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::FractalProto* Arena::CreateMaybeMessage< ::FractalProto >(Arena* arena) {
   return Arena::CreateInternal< ::FractalProto >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::ContinuousFractalProto* Arena::CreateMaybeMessage< ::ContinuousFractalProto >(Arena* arena) {
+  return Arena::CreateInternal< ::ContinuousFractalProto >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::MandelbrotFractalProto* Arena::CreateMaybeMessage< ::MandelbrotFractalProto >(Arena* arena) {
+  return Arena::CreateInternal< ::MandelbrotFractalProto >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::OrbitFractalProto* Arena::CreateMaybeMessage< ::OrbitFractalProto >(Arena* arena) {
+  return Arena::CreateInternal< ::OrbitFractalProto >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::JuliaFractalProto* Arena::CreateMaybeMessage< ::JuliaFractalProto >(Arena* arena) {
+  return Arena::CreateInternal< ::JuliaFractalProto >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::OrbitProto* Arena::CreateMaybeMessage< ::OrbitProto >(Arena* arena) {
+  return Arena::CreateInternal< ::OrbitProto >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::PointOrbitProto* Arena::CreateMaybeMessage< ::PointOrbitProto >(Arena* arena) {
+  return Arena::CreateInternal< ::PointOrbitProto >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::LineOrbitProto* Arena::CreateMaybeMessage< ::LineOrbitProto >(Arena* arena) {
+  return Arena::CreateInternal< ::LineOrbitProto >(arena);
+}
+template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::BitmapOrbitProto* Arena::CreateMaybeMessage< ::BitmapOrbitProto >(Arena* arena) {
+  return Arena::CreateInternal< ::BitmapOrbitProto >(arena);
 }
 }  // namespace protobuf
 }  // namespace google

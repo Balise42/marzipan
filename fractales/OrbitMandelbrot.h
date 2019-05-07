@@ -1,3 +1,9 @@
+#include <utility>
+
+#include <utility>
+
+#include <utility>
+
 #ifndef MARZIPAN_ORBITMANDELBROT_H
 #define MARZIPAN_ORBITMANDELBROT_H
 
@@ -11,19 +17,23 @@ public:
     double compute_value(std::complex<double> c) override;
 
     explicit OrbitMandelbrot(std::vector<Orbit *> o) : ContinuousMandelbrot() {
-        this->orbits = o;
+        this->orbits = std::move(o);
     }
 
     OrbitMandelbrot(std::vector<Orbit *> o, unsigned int width, unsigned int height) : ContinuousMandelbrot(width, height) {
-        this->orbits = o;
+        this->orbits = std::move(o);
     }
 
     OrbitMandelbrot(std::vector<Orbit *> o, unsigned int width, unsigned int height, double left, double right, double top, double bottom)
             : ContinuousMandelbrot(width, height, left, right, top, bottom) {
-        this->orbits = o;
+        this->orbits = std::move(o);
     }
 
-    OrbitMandelbrot * clone() override;
+    Fractal * clone() override;
+
+    FractalProto * serialize() override;
+
+    static OrbitMandelbrot * deserialize(FractalProto * ofp);
 
 private:
     std::vector<Orbit *> orbits;

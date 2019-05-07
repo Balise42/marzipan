@@ -32,8 +32,7 @@ public:
     unsigned int width = 900;
     unsigned int height = 600;
 
-    void serialize(FractalProto * fp);
-    void deserialize(FractalProto * fp);
+    virtual FractalProto * serialize();
 
 protected:
     double bottom = -1;

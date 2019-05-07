@@ -15,8 +15,17 @@ double ContinuousMandelbrot::compute_value(std::complex<double> c) {
     return INT_MAX;
 }
 
-ContinuousMandelbrot *ContinuousMandelbrot::clone() {
-    auto f = new ContinuousMandelbrot(*this);
-    return f;
+Fractal *ContinuousMandelbrot::clone() {
+    return new ContinuousMandelbrot(*this);
 }
 
+FractalProto * ContinuousMandelbrot::serialize() {
+    auto fp = Fractal::serialize();
+    fp->set_allocated_continuous(new ContinuousFractalProto());
+    return fp;
+}
+
+ContinuousMandelbrot * ContinuousMandelbrot::deserialize(FractalProto *fp) {
+    auto mandel = new ContinuousMandelbrot(fp->width(), fp->height(), fp->left(), fp->right(), fp->top(), fp->bottom());
+    mandel->set_maxiter(fp->maxiter());
+}

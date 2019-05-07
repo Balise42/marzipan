@@ -32,3 +32,18 @@ LineOrbit::LineOrbit(double a, double b, double c, double max_value) {
     this->factor = (max_value - minDist)/(maxDist - minDist);
     this->translation = minDist;
 }
+
+OrbitProto *LineOrbit::serialize() {
+    auto ret = new OrbitProto();
+    ret->set_max_value(max_value);
+    auto lop = new LineOrbitProto();
+    lop->set_a(a);
+    lop->set_b(b);
+    lop->set_c(c);
+    ret->set_allocated_lineorbit(lop);
+    return ret;
+}
+
+LineOrbit *LineOrbit::deserialize(OrbitProto *op) {
+    return new LineOrbit(op->lineorbit().a(), op->lineorbit().b(), op->lineorbit().c(), op->max_value());
+}

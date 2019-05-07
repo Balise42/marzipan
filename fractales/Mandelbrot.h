@@ -21,6 +21,12 @@ public:
     std::vector<int> compute_histo();
 
     double compute_value(std::complex<double> z) override;
+
+    Fractal * clone() override;
+
+    FractalProto * serialize() override;
+
+    static Mandelbrot * deserialize(FractalProto *fp);
 };
 
 

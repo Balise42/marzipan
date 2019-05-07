@@ -49,16 +49,19 @@ void Fractal::zoom(unsigned int width, unsigned int height, int startx, int star
     bottom = bottomright.imag();
 }
 
-void Fractal::serialize(FractalProto * fp) {
+FractalProto * Fractal::serialize() {
+    auto fp = new FractalProto();
     fp->set_bottom(bottom);
     fp->set_height(height);
     fp->set_left(left);
     fp->set_right(right);
     fp->set_width(width);
     fp->set_top(top);
+    fp->set_maxiter(maxiter);
+    return fp;
 }
 
-void Fractal::deserialize(FractalProto *fp) {
+/*void Fractal::deserialize(FractalProto *fp) {
     bottom = fp->bottom();
     height = fp->height();
     left = fp->left();
@@ -66,4 +69,4 @@ void Fractal::deserialize(FractalProto *fp) {
     width = fp->width();
     height = fp->height();
     top = fp->top();
-}
+}*/

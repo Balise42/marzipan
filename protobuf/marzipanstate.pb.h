@@ -38,19 +38,51 @@ namespace protobuf_marzipanstate_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[1];
+  static const ::google::protobuf::internal::ParseTable schema[9];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
 };
 void AddDescriptors();
 }  // namespace protobuf_marzipanstate_2eproto
+class BitmapOrbitProto;
+class BitmapOrbitProtoDefaultTypeInternal;
+extern BitmapOrbitProtoDefaultTypeInternal _BitmapOrbitProto_default_instance_;
+class ContinuousFractalProto;
+class ContinuousFractalProtoDefaultTypeInternal;
+extern ContinuousFractalProtoDefaultTypeInternal _ContinuousFractalProto_default_instance_;
 class FractalProto;
 class FractalProtoDefaultTypeInternal;
 extern FractalProtoDefaultTypeInternal _FractalProto_default_instance_;
+class JuliaFractalProto;
+class JuliaFractalProtoDefaultTypeInternal;
+extern JuliaFractalProtoDefaultTypeInternal _JuliaFractalProto_default_instance_;
+class LineOrbitProto;
+class LineOrbitProtoDefaultTypeInternal;
+extern LineOrbitProtoDefaultTypeInternal _LineOrbitProto_default_instance_;
+class MandelbrotFractalProto;
+class MandelbrotFractalProtoDefaultTypeInternal;
+extern MandelbrotFractalProtoDefaultTypeInternal _MandelbrotFractalProto_default_instance_;
+class OrbitFractalProto;
+class OrbitFractalProtoDefaultTypeInternal;
+extern OrbitFractalProtoDefaultTypeInternal _OrbitFractalProto_default_instance_;
+class OrbitProto;
+class OrbitProtoDefaultTypeInternal;
+extern OrbitProtoDefaultTypeInternal _OrbitProto_default_instance_;
+class PointOrbitProto;
+class PointOrbitProtoDefaultTypeInternal;
+extern PointOrbitProtoDefaultTypeInternal _PointOrbitProto_default_instance_;
 namespace google {
 namespace protobuf {
+template<> ::BitmapOrbitProto* Arena::CreateMaybeMessage<::BitmapOrbitProto>(Arena*);
+template<> ::ContinuousFractalProto* Arena::CreateMaybeMessage<::ContinuousFractalProto>(Arena*);
 template<> ::FractalProto* Arena::CreateMaybeMessage<::FractalProto>(Arena*);
+template<> ::JuliaFractalProto* Arena::CreateMaybeMessage<::JuliaFractalProto>(Arena*);
+template<> ::LineOrbitProto* Arena::CreateMaybeMessage<::LineOrbitProto>(Arena*);
+template<> ::MandelbrotFractalProto* Arena::CreateMaybeMessage<::MandelbrotFractalProto>(Arena*);
+template<> ::OrbitFractalProto* Arena::CreateMaybeMessage<::OrbitFractalProto>(Arena*);
+template<> ::OrbitProto* Arena::CreateMaybeMessage<::OrbitProto>(Arena*);
+template<> ::PointOrbitProto* Arena::CreateMaybeMessage<::PointOrbitProto>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 
@@ -84,6 +116,14 @@ class FractalProto : public ::google::protobuf::Message /* @@protoc_insertion_po
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
   static const FractalProto& default_instance();
+
+  enum ImplemCase {
+    kContinuous = 16,
+    kOrbit = 17,
+    kJulia = 18,
+    kMandelbrot = 19,
+    IMPLEM_NOT_SET = 0,
+  };
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
   static inline const FractalProto* internal_default_instance() {
@@ -179,8 +219,71 @@ class FractalProto : public ::google::protobuf::Message /* @@protoc_insertion_po
   ::google::protobuf::uint32 height() const;
   void set_height(::google::protobuf::uint32 value);
 
+  // uint32 maxiter = 7;
+  void clear_maxiter();
+  static const int kMaxiterFieldNumber = 7;
+  ::google::protobuf::uint32 maxiter() const;
+  void set_maxiter(::google::protobuf::uint32 value);
+
+  // .ContinuousFractalProto continuous = 16;
+  bool has_continuous() const;
+  void clear_continuous();
+  static const int kContinuousFieldNumber = 16;
+  private:
+  const ::ContinuousFractalProto& _internal_continuous() const;
+  public:
+  const ::ContinuousFractalProto& continuous() const;
+  ::ContinuousFractalProto* release_continuous();
+  ::ContinuousFractalProto* mutable_continuous();
+  void set_allocated_continuous(::ContinuousFractalProto* continuous);
+
+  // .OrbitFractalProto orbit = 17;
+  bool has_orbit() const;
+  void clear_orbit();
+  static const int kOrbitFieldNumber = 17;
+  private:
+  const ::OrbitFractalProto& _internal_orbit() const;
+  public:
+  const ::OrbitFractalProto& orbit() const;
+  ::OrbitFractalProto* release_orbit();
+  ::OrbitFractalProto* mutable_orbit();
+  void set_allocated_orbit(::OrbitFractalProto* orbit);
+
+  // .JuliaFractalProto julia = 18;
+  bool has_julia() const;
+  void clear_julia();
+  static const int kJuliaFieldNumber = 18;
+  private:
+  const ::JuliaFractalProto& _internal_julia() const;
+  public:
+  const ::JuliaFractalProto& julia() const;
+  ::JuliaFractalProto* release_julia();
+  ::JuliaFractalProto* mutable_julia();
+  void set_allocated_julia(::JuliaFractalProto* julia);
+
+  // .MandelbrotFractalProto mandelbrot = 19;
+  bool has_mandelbrot() const;
+  void clear_mandelbrot();
+  static const int kMandelbrotFieldNumber = 19;
+  private:
+  const ::MandelbrotFractalProto& _internal_mandelbrot() const;
+  public:
+  const ::MandelbrotFractalProto& mandelbrot() const;
+  ::MandelbrotFractalProto* release_mandelbrot();
+  ::MandelbrotFractalProto* mutable_mandelbrot();
+  void set_allocated_mandelbrot(::MandelbrotFractalProto* mandelbrot);
+
+  void clear_implem();
+  ImplemCase implem_case() const;
   // @@protoc_insertion_point(class_scope:FractalProto)
  private:
+  void set_has_continuous();
+  void set_has_orbit();
+  void set_has_julia();
+  void set_has_mandelbrot();
+
+  inline bool has_implem() const;
+  inline void clear_has_implem();
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   double top_;
@@ -189,6 +292,927 @@ class FractalProto : public ::google::protobuf::Message /* @@protoc_insertion_po
   double right_;
   ::google::protobuf::uint32 width_;
   ::google::protobuf::uint32 height_;
+  ::google::protobuf::uint32 maxiter_;
+  union ImplemUnion {
+    ImplemUnion() {}
+    ::ContinuousFractalProto* continuous_;
+    ::OrbitFractalProto* orbit_;
+    ::JuliaFractalProto* julia_;
+    ::MandelbrotFractalProto* mandelbrot_;
+  } implem_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class ContinuousFractalProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:ContinuousFractalProto) */ {
+ public:
+  ContinuousFractalProto();
+  virtual ~ContinuousFractalProto();
+
+  ContinuousFractalProto(const ContinuousFractalProto& from);
+
+  inline ContinuousFractalProto& operator=(const ContinuousFractalProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ContinuousFractalProto(ContinuousFractalProto&& from) noexcept
+    : ContinuousFractalProto() {
+    *this = ::std::move(from);
+  }
+
+  inline ContinuousFractalProto& operator=(ContinuousFractalProto&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ContinuousFractalProto& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const ContinuousFractalProto* internal_default_instance() {
+    return reinterpret_cast<const ContinuousFractalProto*>(
+               &_ContinuousFractalProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  void Swap(ContinuousFractalProto* other);
+  friend void swap(ContinuousFractalProto& a, ContinuousFractalProto& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ContinuousFractalProto* New() const final {
+    return CreateMaybeMessage<ContinuousFractalProto>(NULL);
+  }
+
+  ContinuousFractalProto* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<ContinuousFractalProto>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const ContinuousFractalProto& from);
+  void MergeFrom(const ContinuousFractalProto& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ContinuousFractalProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:ContinuousFractalProto)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class MandelbrotFractalProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:MandelbrotFractalProto) */ {
+ public:
+  MandelbrotFractalProto();
+  virtual ~MandelbrotFractalProto();
+
+  MandelbrotFractalProto(const MandelbrotFractalProto& from);
+
+  inline MandelbrotFractalProto& operator=(const MandelbrotFractalProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  MandelbrotFractalProto(MandelbrotFractalProto&& from) noexcept
+    : MandelbrotFractalProto() {
+    *this = ::std::move(from);
+  }
+
+  inline MandelbrotFractalProto& operator=(MandelbrotFractalProto&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const MandelbrotFractalProto& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const MandelbrotFractalProto* internal_default_instance() {
+    return reinterpret_cast<const MandelbrotFractalProto*>(
+               &_MandelbrotFractalProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  void Swap(MandelbrotFractalProto* other);
+  friend void swap(MandelbrotFractalProto& a, MandelbrotFractalProto& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline MandelbrotFractalProto* New() const final {
+    return CreateMaybeMessage<MandelbrotFractalProto>(NULL);
+  }
+
+  MandelbrotFractalProto* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<MandelbrotFractalProto>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const MandelbrotFractalProto& from);
+  void MergeFrom(const MandelbrotFractalProto& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(MandelbrotFractalProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:MandelbrotFractalProto)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class OrbitFractalProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:OrbitFractalProto) */ {
+ public:
+  OrbitFractalProto();
+  virtual ~OrbitFractalProto();
+
+  OrbitFractalProto(const OrbitFractalProto& from);
+
+  inline OrbitFractalProto& operator=(const OrbitFractalProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  OrbitFractalProto(OrbitFractalProto&& from) noexcept
+    : OrbitFractalProto() {
+    *this = ::std::move(from);
+  }
+
+  inline OrbitFractalProto& operator=(OrbitFractalProto&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const OrbitFractalProto& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const OrbitFractalProto* internal_default_instance() {
+    return reinterpret_cast<const OrbitFractalProto*>(
+               &_OrbitFractalProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  void Swap(OrbitFractalProto* other);
+  friend void swap(OrbitFractalProto& a, OrbitFractalProto& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OrbitFractalProto* New() const final {
+    return CreateMaybeMessage<OrbitFractalProto>(NULL);
+  }
+
+  OrbitFractalProto* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<OrbitFractalProto>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const OrbitFractalProto& from);
+  void MergeFrom(const OrbitFractalProto& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OrbitFractalProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .OrbitProto orbits = 2;
+  int orbits_size() const;
+  void clear_orbits();
+  static const int kOrbitsFieldNumber = 2;
+  ::OrbitProto* mutable_orbits(int index);
+  ::google::protobuf::RepeatedPtrField< ::OrbitProto >*
+      mutable_orbits();
+  const ::OrbitProto& orbits(int index) const;
+  ::OrbitProto* add_orbits();
+  const ::google::protobuf::RepeatedPtrField< ::OrbitProto >&
+      orbits() const;
+
+  // @@protoc_insertion_point(class_scope:OrbitFractalProto)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::OrbitProto > orbits_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class JuliaFractalProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:JuliaFractalProto) */ {
+ public:
+  JuliaFractalProto();
+  virtual ~JuliaFractalProto();
+
+  JuliaFractalProto(const JuliaFractalProto& from);
+
+  inline JuliaFractalProto& operator=(const JuliaFractalProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  JuliaFractalProto(JuliaFractalProto&& from) noexcept
+    : JuliaFractalProto() {
+    *this = ::std::move(from);
+  }
+
+  inline JuliaFractalProto& operator=(JuliaFractalProto&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const JuliaFractalProto& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const JuliaFractalProto* internal_default_instance() {
+    return reinterpret_cast<const JuliaFractalProto*>(
+               &_JuliaFractalProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  void Swap(JuliaFractalProto* other);
+  friend void swap(JuliaFractalProto& a, JuliaFractalProto& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline JuliaFractalProto* New() const final {
+    return CreateMaybeMessage<JuliaFractalProto>(NULL);
+  }
+
+  JuliaFractalProto* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<JuliaFractalProto>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const JuliaFractalProto& from);
+  void MergeFrom(const JuliaFractalProto& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(JuliaFractalProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:JuliaFractalProto)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class OrbitProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:OrbitProto) */ {
+ public:
+  OrbitProto();
+  virtual ~OrbitProto();
+
+  OrbitProto(const OrbitProto& from);
+
+  inline OrbitProto& operator=(const OrbitProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  OrbitProto(OrbitProto&& from) noexcept
+    : OrbitProto() {
+    *this = ::std::move(from);
+  }
+
+  inline OrbitProto& operator=(OrbitProto&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const OrbitProto& default_instance();
+
+  enum OrbitCase {
+    kPointOrbit = 2,
+    kLineOrbit = 3,
+    kBitmapOrbit = 4,
+    ORBIT_NOT_SET = 0,
+  };
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const OrbitProto* internal_default_instance() {
+    return reinterpret_cast<const OrbitProto*>(
+               &_OrbitProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(OrbitProto* other);
+  friend void swap(OrbitProto& a, OrbitProto& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline OrbitProto* New() const final {
+    return CreateMaybeMessage<OrbitProto>(NULL);
+  }
+
+  OrbitProto* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<OrbitProto>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const OrbitProto& from);
+  void MergeFrom(const OrbitProto& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(OrbitProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // double max_value = 1;
+  void clear_max_value();
+  static const int kMaxValueFieldNumber = 1;
+  double max_value() const;
+  void set_max_value(double value);
+
+  // .PointOrbitProto pointOrbit = 2;
+  bool has_pointorbit() const;
+  void clear_pointorbit();
+  static const int kPointOrbitFieldNumber = 2;
+  private:
+  const ::PointOrbitProto& _internal_pointorbit() const;
+  public:
+  const ::PointOrbitProto& pointorbit() const;
+  ::PointOrbitProto* release_pointorbit();
+  ::PointOrbitProto* mutable_pointorbit();
+  void set_allocated_pointorbit(::PointOrbitProto* pointorbit);
+
+  // .LineOrbitProto lineOrbit = 3;
+  bool has_lineorbit() const;
+  void clear_lineorbit();
+  static const int kLineOrbitFieldNumber = 3;
+  private:
+  const ::LineOrbitProto& _internal_lineorbit() const;
+  public:
+  const ::LineOrbitProto& lineorbit() const;
+  ::LineOrbitProto* release_lineorbit();
+  ::LineOrbitProto* mutable_lineorbit();
+  void set_allocated_lineorbit(::LineOrbitProto* lineorbit);
+
+  // .BitmapOrbitProto bitmapOrbit = 4;
+  bool has_bitmaporbit() const;
+  void clear_bitmaporbit();
+  static const int kBitmapOrbitFieldNumber = 4;
+  private:
+  const ::BitmapOrbitProto& _internal_bitmaporbit() const;
+  public:
+  const ::BitmapOrbitProto& bitmaporbit() const;
+  ::BitmapOrbitProto* release_bitmaporbit();
+  ::BitmapOrbitProto* mutable_bitmaporbit();
+  void set_allocated_bitmaporbit(::BitmapOrbitProto* bitmaporbit);
+
+  void clear_orbit();
+  OrbitCase orbit_case() const;
+  // @@protoc_insertion_point(class_scope:OrbitProto)
+ private:
+  void set_has_pointorbit();
+  void set_has_lineorbit();
+  void set_has_bitmaporbit();
+
+  inline bool has_orbit() const;
+  inline void clear_has_orbit();
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  double max_value_;
+  union OrbitUnion {
+    OrbitUnion() {}
+    ::PointOrbitProto* pointorbit_;
+    ::LineOrbitProto* lineorbit_;
+    ::BitmapOrbitProto* bitmaporbit_;
+  } orbit_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  ::google::protobuf::uint32 _oneof_case_[1];
+
+  friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class PointOrbitProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:PointOrbitProto) */ {
+ public:
+  PointOrbitProto();
+  virtual ~PointOrbitProto();
+
+  PointOrbitProto(const PointOrbitProto& from);
+
+  inline PointOrbitProto& operator=(const PointOrbitProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  PointOrbitProto(PointOrbitProto&& from) noexcept
+    : PointOrbitProto() {
+    *this = ::std::move(from);
+  }
+
+  inline PointOrbitProto& operator=(PointOrbitProto&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const PointOrbitProto& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const PointOrbitProto* internal_default_instance() {
+    return reinterpret_cast<const PointOrbitProto*>(
+               &_PointOrbitProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(PointOrbitProto* other);
+  friend void swap(PointOrbitProto& a, PointOrbitProto& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline PointOrbitProto* New() const final {
+    return CreateMaybeMessage<PointOrbitProto>(NULL);
+  }
+
+  PointOrbitProto* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<PointOrbitProto>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const PointOrbitProto& from);
+  void MergeFrom(const PointOrbitProto& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(PointOrbitProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // double orbitX = 1;
+  void clear_orbitx();
+  static const int kOrbitXFieldNumber = 1;
+  double orbitx() const;
+  void set_orbitx(double value);
+
+  // double orbitY = 2;
+  void clear_orbity();
+  static const int kOrbitYFieldNumber = 2;
+  double orbity() const;
+  void set_orbity(double value);
+
+  // @@protoc_insertion_point(class_scope:PointOrbitProto)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  double orbitx_;
+  double orbity_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class LineOrbitProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:LineOrbitProto) */ {
+ public:
+  LineOrbitProto();
+  virtual ~LineOrbitProto();
+
+  LineOrbitProto(const LineOrbitProto& from);
+
+  inline LineOrbitProto& operator=(const LineOrbitProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  LineOrbitProto(LineOrbitProto&& from) noexcept
+    : LineOrbitProto() {
+    *this = ::std::move(from);
+  }
+
+  inline LineOrbitProto& operator=(LineOrbitProto&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const LineOrbitProto& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const LineOrbitProto* internal_default_instance() {
+    return reinterpret_cast<const LineOrbitProto*>(
+               &_LineOrbitProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  void Swap(LineOrbitProto* other);
+  friend void swap(LineOrbitProto& a, LineOrbitProto& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline LineOrbitProto* New() const final {
+    return CreateMaybeMessage<LineOrbitProto>(NULL);
+  }
+
+  LineOrbitProto* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<LineOrbitProto>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const LineOrbitProto& from);
+  void MergeFrom(const LineOrbitProto& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(LineOrbitProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // double a = 1;
+  void clear_a();
+  static const int kAFieldNumber = 1;
+  double a() const;
+  void set_a(double value);
+
+  // double b = 2;
+  void clear_b();
+  static const int kBFieldNumber = 2;
+  double b() const;
+  void set_b(double value);
+
+  // double c = 3;
+  void clear_c();
+  static const int kCFieldNumber = 3;
+  double c() const;
+  void set_c(double value);
+
+  // @@protoc_insertion_point(class_scope:LineOrbitProto)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  double a_;
+  double b_;
+  double c_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class BitmapOrbitProto : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:BitmapOrbitProto) */ {
+ public:
+  BitmapOrbitProto();
+  virtual ~BitmapOrbitProto();
+
+  BitmapOrbitProto(const BitmapOrbitProto& from);
+
+  inline BitmapOrbitProto& operator=(const BitmapOrbitProto& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  BitmapOrbitProto(BitmapOrbitProto&& from) noexcept
+    : BitmapOrbitProto() {
+    *this = ::std::move(from);
+  }
+
+  inline BitmapOrbitProto& operator=(BitmapOrbitProto&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const BitmapOrbitProto& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const BitmapOrbitProto* internal_default_instance() {
+    return reinterpret_cast<const BitmapOrbitProto*>(
+               &_BitmapOrbitProto_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  void Swap(BitmapOrbitProto* other);
+  friend void swap(BitmapOrbitProto& a, BitmapOrbitProto& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline BitmapOrbitProto* New() const final {
+    return CreateMaybeMessage<BitmapOrbitProto>(NULL);
+  }
+
+  BitmapOrbitProto* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<BitmapOrbitProto>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const BitmapOrbitProto& from);
+  void MergeFrom(const BitmapOrbitProto& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(BitmapOrbitProto* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // bytes bitmap = 1;
+  void clear_bitmap();
+  static const int kBitmapFieldNumber = 1;
+  const ::std::string& bitmap() const;
+  void set_bitmap(const ::std::string& value);
+  #if LANG_CXX11
+  void set_bitmap(::std::string&& value);
+  #endif
+  void set_bitmap(const char* value);
+  void set_bitmap(const void* value, size_t size);
+  ::std::string* mutable_bitmap();
+  ::std::string* release_bitmap();
+  void set_allocated_bitmap(::std::string* bitmap);
+
+  // int32 width = 2;
+  void clear_width();
+  static const int kWidthFieldNumber = 2;
+  ::google::protobuf::int32 width() const;
+  void set_width(::google::protobuf::int32 value);
+
+  // int32 height = 3;
+  void clear_height();
+  static const int kHeightFieldNumber = 3;
+  ::google::protobuf::int32 height() const;
+  void set_height(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:BitmapOrbitProto)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr bitmap_;
+  ::google::protobuf::int32 width_;
+  ::google::protobuf::int32 height_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_marzipanstate_2eproto::TableStruct;
 };
@@ -287,9 +1311,592 @@ inline void FractalProto::set_height(::google::protobuf::uint32 value) {
   // @@protoc_insertion_point(field_set:FractalProto.height)
 }
 
+// uint32 maxiter = 7;
+inline void FractalProto::clear_maxiter() {
+  maxiter_ = 0u;
+}
+inline ::google::protobuf::uint32 FractalProto::maxiter() const {
+  // @@protoc_insertion_point(field_get:FractalProto.maxiter)
+  return maxiter_;
+}
+inline void FractalProto::set_maxiter(::google::protobuf::uint32 value) {
+  
+  maxiter_ = value;
+  // @@protoc_insertion_point(field_set:FractalProto.maxiter)
+}
+
+// .ContinuousFractalProto continuous = 16;
+inline bool FractalProto::has_continuous() const {
+  return implem_case() == kContinuous;
+}
+inline void FractalProto::set_has_continuous() {
+  _oneof_case_[0] = kContinuous;
+}
+inline void FractalProto::clear_continuous() {
+  if (has_continuous()) {
+    delete implem_.continuous_;
+    clear_has_implem();
+  }
+}
+inline const ::ContinuousFractalProto& FractalProto::_internal_continuous() const {
+  return *implem_.continuous_;
+}
+inline ::ContinuousFractalProto* FractalProto::release_continuous() {
+  // @@protoc_insertion_point(field_release:FractalProto.continuous)
+  if (has_continuous()) {
+    clear_has_implem();
+      ::ContinuousFractalProto* temp = implem_.continuous_;
+    implem_.continuous_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::ContinuousFractalProto& FractalProto::continuous() const {
+  // @@protoc_insertion_point(field_get:FractalProto.continuous)
+  return has_continuous()
+      ? *implem_.continuous_
+      : *reinterpret_cast< ::ContinuousFractalProto*>(&::_ContinuousFractalProto_default_instance_);
+}
+inline ::ContinuousFractalProto* FractalProto::mutable_continuous() {
+  if (!has_continuous()) {
+    clear_implem();
+    set_has_continuous();
+    implem_.continuous_ = CreateMaybeMessage< ::ContinuousFractalProto >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:FractalProto.continuous)
+  return implem_.continuous_;
+}
+
+// .OrbitFractalProto orbit = 17;
+inline bool FractalProto::has_orbit() const {
+  return implem_case() == kOrbit;
+}
+inline void FractalProto::set_has_orbit() {
+  _oneof_case_[0] = kOrbit;
+}
+inline void FractalProto::clear_orbit() {
+  if (has_orbit()) {
+    delete implem_.orbit_;
+    clear_has_implem();
+  }
+}
+inline const ::OrbitFractalProto& FractalProto::_internal_orbit() const {
+  return *implem_.orbit_;
+}
+inline ::OrbitFractalProto* FractalProto::release_orbit() {
+  // @@protoc_insertion_point(field_release:FractalProto.orbit)
+  if (has_orbit()) {
+    clear_has_implem();
+      ::OrbitFractalProto* temp = implem_.orbit_;
+    implem_.orbit_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::OrbitFractalProto& FractalProto::orbit() const {
+  // @@protoc_insertion_point(field_get:FractalProto.orbit)
+  return has_orbit()
+      ? *implem_.orbit_
+      : *reinterpret_cast< ::OrbitFractalProto*>(&::_OrbitFractalProto_default_instance_);
+}
+inline ::OrbitFractalProto* FractalProto::mutable_orbit() {
+  if (!has_orbit()) {
+    clear_implem();
+    set_has_orbit();
+    implem_.orbit_ = CreateMaybeMessage< ::OrbitFractalProto >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:FractalProto.orbit)
+  return implem_.orbit_;
+}
+
+// .JuliaFractalProto julia = 18;
+inline bool FractalProto::has_julia() const {
+  return implem_case() == kJulia;
+}
+inline void FractalProto::set_has_julia() {
+  _oneof_case_[0] = kJulia;
+}
+inline void FractalProto::clear_julia() {
+  if (has_julia()) {
+    delete implem_.julia_;
+    clear_has_implem();
+  }
+}
+inline const ::JuliaFractalProto& FractalProto::_internal_julia() const {
+  return *implem_.julia_;
+}
+inline ::JuliaFractalProto* FractalProto::release_julia() {
+  // @@protoc_insertion_point(field_release:FractalProto.julia)
+  if (has_julia()) {
+    clear_has_implem();
+      ::JuliaFractalProto* temp = implem_.julia_;
+    implem_.julia_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::JuliaFractalProto& FractalProto::julia() const {
+  // @@protoc_insertion_point(field_get:FractalProto.julia)
+  return has_julia()
+      ? *implem_.julia_
+      : *reinterpret_cast< ::JuliaFractalProto*>(&::_JuliaFractalProto_default_instance_);
+}
+inline ::JuliaFractalProto* FractalProto::mutable_julia() {
+  if (!has_julia()) {
+    clear_implem();
+    set_has_julia();
+    implem_.julia_ = CreateMaybeMessage< ::JuliaFractalProto >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:FractalProto.julia)
+  return implem_.julia_;
+}
+
+// .MandelbrotFractalProto mandelbrot = 19;
+inline bool FractalProto::has_mandelbrot() const {
+  return implem_case() == kMandelbrot;
+}
+inline void FractalProto::set_has_mandelbrot() {
+  _oneof_case_[0] = kMandelbrot;
+}
+inline void FractalProto::clear_mandelbrot() {
+  if (has_mandelbrot()) {
+    delete implem_.mandelbrot_;
+    clear_has_implem();
+  }
+}
+inline const ::MandelbrotFractalProto& FractalProto::_internal_mandelbrot() const {
+  return *implem_.mandelbrot_;
+}
+inline ::MandelbrotFractalProto* FractalProto::release_mandelbrot() {
+  // @@protoc_insertion_point(field_release:FractalProto.mandelbrot)
+  if (has_mandelbrot()) {
+    clear_has_implem();
+      ::MandelbrotFractalProto* temp = implem_.mandelbrot_;
+    implem_.mandelbrot_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::MandelbrotFractalProto& FractalProto::mandelbrot() const {
+  // @@protoc_insertion_point(field_get:FractalProto.mandelbrot)
+  return has_mandelbrot()
+      ? *implem_.mandelbrot_
+      : *reinterpret_cast< ::MandelbrotFractalProto*>(&::_MandelbrotFractalProto_default_instance_);
+}
+inline ::MandelbrotFractalProto* FractalProto::mutable_mandelbrot() {
+  if (!has_mandelbrot()) {
+    clear_implem();
+    set_has_mandelbrot();
+    implem_.mandelbrot_ = CreateMaybeMessage< ::MandelbrotFractalProto >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:FractalProto.mandelbrot)
+  return implem_.mandelbrot_;
+}
+
+inline bool FractalProto::has_implem() const {
+  return implem_case() != IMPLEM_NOT_SET;
+}
+inline void FractalProto::clear_has_implem() {
+  _oneof_case_[0] = IMPLEM_NOT_SET;
+}
+inline FractalProto::ImplemCase FractalProto::implem_case() const {
+  return FractalProto::ImplemCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// ContinuousFractalProto
+
+// -------------------------------------------------------------------
+
+// MandelbrotFractalProto
+
+// -------------------------------------------------------------------
+
+// OrbitFractalProto
+
+// repeated .OrbitProto orbits = 2;
+inline int OrbitFractalProto::orbits_size() const {
+  return orbits_.size();
+}
+inline void OrbitFractalProto::clear_orbits() {
+  orbits_.Clear();
+}
+inline ::OrbitProto* OrbitFractalProto::mutable_orbits(int index) {
+  // @@protoc_insertion_point(field_mutable:OrbitFractalProto.orbits)
+  return orbits_.Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField< ::OrbitProto >*
+OrbitFractalProto::mutable_orbits() {
+  // @@protoc_insertion_point(field_mutable_list:OrbitFractalProto.orbits)
+  return &orbits_;
+}
+inline const ::OrbitProto& OrbitFractalProto::orbits(int index) const {
+  // @@protoc_insertion_point(field_get:OrbitFractalProto.orbits)
+  return orbits_.Get(index);
+}
+inline ::OrbitProto* OrbitFractalProto::add_orbits() {
+  // @@protoc_insertion_point(field_add:OrbitFractalProto.orbits)
+  return orbits_.Add();
+}
+inline const ::google::protobuf::RepeatedPtrField< ::OrbitProto >&
+OrbitFractalProto::orbits() const {
+  // @@protoc_insertion_point(field_list:OrbitFractalProto.orbits)
+  return orbits_;
+}
+
+// -------------------------------------------------------------------
+
+// JuliaFractalProto
+
+// -------------------------------------------------------------------
+
+// OrbitProto
+
+// double max_value = 1;
+inline void OrbitProto::clear_max_value() {
+  max_value_ = 0;
+}
+inline double OrbitProto::max_value() const {
+  // @@protoc_insertion_point(field_get:OrbitProto.max_value)
+  return max_value_;
+}
+inline void OrbitProto::set_max_value(double value) {
+  
+  max_value_ = value;
+  // @@protoc_insertion_point(field_set:OrbitProto.max_value)
+}
+
+// .PointOrbitProto pointOrbit = 2;
+inline bool OrbitProto::has_pointorbit() const {
+  return orbit_case() == kPointOrbit;
+}
+inline void OrbitProto::set_has_pointorbit() {
+  _oneof_case_[0] = kPointOrbit;
+}
+inline void OrbitProto::clear_pointorbit() {
+  if (has_pointorbit()) {
+    delete orbit_.pointorbit_;
+    clear_has_orbit();
+  }
+}
+inline const ::PointOrbitProto& OrbitProto::_internal_pointorbit() const {
+  return *orbit_.pointorbit_;
+}
+inline ::PointOrbitProto* OrbitProto::release_pointorbit() {
+  // @@protoc_insertion_point(field_release:OrbitProto.pointOrbit)
+  if (has_pointorbit()) {
+    clear_has_orbit();
+      ::PointOrbitProto* temp = orbit_.pointorbit_;
+    orbit_.pointorbit_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::PointOrbitProto& OrbitProto::pointorbit() const {
+  // @@protoc_insertion_point(field_get:OrbitProto.pointOrbit)
+  return has_pointorbit()
+      ? *orbit_.pointorbit_
+      : *reinterpret_cast< ::PointOrbitProto*>(&::_PointOrbitProto_default_instance_);
+}
+inline ::PointOrbitProto* OrbitProto::mutable_pointorbit() {
+  if (!has_pointorbit()) {
+    clear_orbit();
+    set_has_pointorbit();
+    orbit_.pointorbit_ = CreateMaybeMessage< ::PointOrbitProto >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:OrbitProto.pointOrbit)
+  return orbit_.pointorbit_;
+}
+
+// .LineOrbitProto lineOrbit = 3;
+inline bool OrbitProto::has_lineorbit() const {
+  return orbit_case() == kLineOrbit;
+}
+inline void OrbitProto::set_has_lineorbit() {
+  _oneof_case_[0] = kLineOrbit;
+}
+inline void OrbitProto::clear_lineorbit() {
+  if (has_lineorbit()) {
+    delete orbit_.lineorbit_;
+    clear_has_orbit();
+  }
+}
+inline const ::LineOrbitProto& OrbitProto::_internal_lineorbit() const {
+  return *orbit_.lineorbit_;
+}
+inline ::LineOrbitProto* OrbitProto::release_lineorbit() {
+  // @@protoc_insertion_point(field_release:OrbitProto.lineOrbit)
+  if (has_lineorbit()) {
+    clear_has_orbit();
+      ::LineOrbitProto* temp = orbit_.lineorbit_;
+    orbit_.lineorbit_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::LineOrbitProto& OrbitProto::lineorbit() const {
+  // @@protoc_insertion_point(field_get:OrbitProto.lineOrbit)
+  return has_lineorbit()
+      ? *orbit_.lineorbit_
+      : *reinterpret_cast< ::LineOrbitProto*>(&::_LineOrbitProto_default_instance_);
+}
+inline ::LineOrbitProto* OrbitProto::mutable_lineorbit() {
+  if (!has_lineorbit()) {
+    clear_orbit();
+    set_has_lineorbit();
+    orbit_.lineorbit_ = CreateMaybeMessage< ::LineOrbitProto >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:OrbitProto.lineOrbit)
+  return orbit_.lineorbit_;
+}
+
+// .BitmapOrbitProto bitmapOrbit = 4;
+inline bool OrbitProto::has_bitmaporbit() const {
+  return orbit_case() == kBitmapOrbit;
+}
+inline void OrbitProto::set_has_bitmaporbit() {
+  _oneof_case_[0] = kBitmapOrbit;
+}
+inline void OrbitProto::clear_bitmaporbit() {
+  if (has_bitmaporbit()) {
+    delete orbit_.bitmaporbit_;
+    clear_has_orbit();
+  }
+}
+inline const ::BitmapOrbitProto& OrbitProto::_internal_bitmaporbit() const {
+  return *orbit_.bitmaporbit_;
+}
+inline ::BitmapOrbitProto* OrbitProto::release_bitmaporbit() {
+  // @@protoc_insertion_point(field_release:OrbitProto.bitmapOrbit)
+  if (has_bitmaporbit()) {
+    clear_has_orbit();
+      ::BitmapOrbitProto* temp = orbit_.bitmaporbit_;
+    orbit_.bitmaporbit_ = NULL;
+    return temp;
+  } else {
+    return NULL;
+  }
+}
+inline const ::BitmapOrbitProto& OrbitProto::bitmaporbit() const {
+  // @@protoc_insertion_point(field_get:OrbitProto.bitmapOrbit)
+  return has_bitmaporbit()
+      ? *orbit_.bitmaporbit_
+      : *reinterpret_cast< ::BitmapOrbitProto*>(&::_BitmapOrbitProto_default_instance_);
+}
+inline ::BitmapOrbitProto* OrbitProto::mutable_bitmaporbit() {
+  if (!has_bitmaporbit()) {
+    clear_orbit();
+    set_has_bitmaporbit();
+    orbit_.bitmaporbit_ = CreateMaybeMessage< ::BitmapOrbitProto >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:OrbitProto.bitmapOrbit)
+  return orbit_.bitmaporbit_;
+}
+
+inline bool OrbitProto::has_orbit() const {
+  return orbit_case() != ORBIT_NOT_SET;
+}
+inline void OrbitProto::clear_has_orbit() {
+  _oneof_case_[0] = ORBIT_NOT_SET;
+}
+inline OrbitProto::OrbitCase OrbitProto::orbit_case() const {
+  return OrbitProto::OrbitCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// PointOrbitProto
+
+// double orbitX = 1;
+inline void PointOrbitProto::clear_orbitx() {
+  orbitx_ = 0;
+}
+inline double PointOrbitProto::orbitx() const {
+  // @@protoc_insertion_point(field_get:PointOrbitProto.orbitX)
+  return orbitx_;
+}
+inline void PointOrbitProto::set_orbitx(double value) {
+  
+  orbitx_ = value;
+  // @@protoc_insertion_point(field_set:PointOrbitProto.orbitX)
+}
+
+// double orbitY = 2;
+inline void PointOrbitProto::clear_orbity() {
+  orbity_ = 0;
+}
+inline double PointOrbitProto::orbity() const {
+  // @@protoc_insertion_point(field_get:PointOrbitProto.orbitY)
+  return orbity_;
+}
+inline void PointOrbitProto::set_orbity(double value) {
+  
+  orbity_ = value;
+  // @@protoc_insertion_point(field_set:PointOrbitProto.orbitY)
+}
+
+// -------------------------------------------------------------------
+
+// LineOrbitProto
+
+// double a = 1;
+inline void LineOrbitProto::clear_a() {
+  a_ = 0;
+}
+inline double LineOrbitProto::a() const {
+  // @@protoc_insertion_point(field_get:LineOrbitProto.a)
+  return a_;
+}
+inline void LineOrbitProto::set_a(double value) {
+  
+  a_ = value;
+  // @@protoc_insertion_point(field_set:LineOrbitProto.a)
+}
+
+// double b = 2;
+inline void LineOrbitProto::clear_b() {
+  b_ = 0;
+}
+inline double LineOrbitProto::b() const {
+  // @@protoc_insertion_point(field_get:LineOrbitProto.b)
+  return b_;
+}
+inline void LineOrbitProto::set_b(double value) {
+  
+  b_ = value;
+  // @@protoc_insertion_point(field_set:LineOrbitProto.b)
+}
+
+// double c = 3;
+inline void LineOrbitProto::clear_c() {
+  c_ = 0;
+}
+inline double LineOrbitProto::c() const {
+  // @@protoc_insertion_point(field_get:LineOrbitProto.c)
+  return c_;
+}
+inline void LineOrbitProto::set_c(double value) {
+  
+  c_ = value;
+  // @@protoc_insertion_point(field_set:LineOrbitProto.c)
+}
+
+// -------------------------------------------------------------------
+
+// BitmapOrbitProto
+
+// bytes bitmap = 1;
+inline void BitmapOrbitProto::clear_bitmap() {
+  bitmap_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& BitmapOrbitProto::bitmap() const {
+  // @@protoc_insertion_point(field_get:BitmapOrbitProto.bitmap)
+  return bitmap_.GetNoArena();
+}
+inline void BitmapOrbitProto::set_bitmap(const ::std::string& value) {
+  
+  bitmap_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:BitmapOrbitProto.bitmap)
+}
+#if LANG_CXX11
+inline void BitmapOrbitProto::set_bitmap(::std::string&& value) {
+  
+  bitmap_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:BitmapOrbitProto.bitmap)
+}
+#endif
+inline void BitmapOrbitProto::set_bitmap(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  bitmap_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:BitmapOrbitProto.bitmap)
+}
+inline void BitmapOrbitProto::set_bitmap(const void* value, size_t size) {
+  
+  bitmap_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:BitmapOrbitProto.bitmap)
+}
+inline ::std::string* BitmapOrbitProto::mutable_bitmap() {
+  
+  // @@protoc_insertion_point(field_mutable:BitmapOrbitProto.bitmap)
+  return bitmap_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* BitmapOrbitProto::release_bitmap() {
+  // @@protoc_insertion_point(field_release:BitmapOrbitProto.bitmap)
+  
+  return bitmap_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void BitmapOrbitProto::set_allocated_bitmap(::std::string* bitmap) {
+  if (bitmap != NULL) {
+    
+  } else {
+    
+  }
+  bitmap_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), bitmap);
+  // @@protoc_insertion_point(field_set_allocated:BitmapOrbitProto.bitmap)
+}
+
+// int32 width = 2;
+inline void BitmapOrbitProto::clear_width() {
+  width_ = 0;
+}
+inline ::google::protobuf::int32 BitmapOrbitProto::width() const {
+  // @@protoc_insertion_point(field_get:BitmapOrbitProto.width)
+  return width_;
+}
+inline void BitmapOrbitProto::set_width(::google::protobuf::int32 value) {
+  
+  width_ = value;
+  // @@protoc_insertion_point(field_set:BitmapOrbitProto.width)
+}
+
+// int32 height = 3;
+inline void BitmapOrbitProto::clear_height() {
+  height_ = 0;
+}
+inline ::google::protobuf::int32 BitmapOrbitProto::height() const {
+  // @@protoc_insertion_point(field_get:BitmapOrbitProto.height)
+  return height_;
+}
+inline void BitmapOrbitProto::set_height(::google::protobuf::int32 value) {
+  
+  height_ = value;
+  // @@protoc_insertion_point(field_set:BitmapOrbitProto.height)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

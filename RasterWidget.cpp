@@ -48,10 +48,10 @@ RasterWidget::RasterWidget(QWidget *parent) : QWidget(parent) {
 
     //Orbit * o = new LineOrbit(1, 0, -2, 100);
     CImg<unsigned char> img("/home/isa/projets/marzipan/marzipan.bmp");
-    //std::vector<Orbit *> o = {new BitmapOrbit(&img, 100)};
+    std::vector<Orbit *> o = {new BitmapOrbit(&img, 100)};
     //std::vector<Orbit *> o = {new PointOrbit(0.5, -0.25, 100)};
-    //fractal = new OrbitMandelbrot(o);
-    fractal = new ContinuousMandelbrot();
+    fractal = new OrbitMandelbrot(o);
+    //fractal = new ContinuousMandelbrot();
     fractal->set_maxiter(100);
 
     //std::vector<Color*> colors = {&black, &yellow, &white, &yellow, &black};
@@ -201,8 +201,7 @@ void RasterWidget::saveParams() {
         }
         std::fstream file;
         file.open(fileName.toStdString(), std::ios::out | std::ios::binary);
-        auto * fp = new FractalProto();
-        fractal->serialize(fp);
+        auto * fp = fractal->serialize();
         fp->SerializeToOstream(&file);
         file.close();
     }
@@ -215,9 +214,15 @@ void RasterWidget::loadParams() {
     } else {
         std::fstream file;
         file.open(fileName.toStdString(), std::ios::in | std::ios::binary);
-        auto * fp = new FractalProto();
+        auto *fp = new FractalProto();
         fp->ParseFromIstream(&file);
-        fractal->deserialize(fp);
+        if (fp->has_orbit()) {
+            fractal = OrbitMandelbrot::deserialize(fp);
+        } else if (fp->has_continuous()) {
+            fractal = ContinuousMandelbrot::deserialize(fp);
+        } else if (fp->has_mandelbrot()) {
+            fractal = Mandelbrot::deserialize(fp);
+        }
         computeFractal();
         renderNow();
         file.close();

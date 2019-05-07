@@ -8,24 +8,49 @@ message FractalProto {
     uint32 width = 5;
     uint32 height = 6;
     uint32 maxiter = 7;
+    oneof implem {
+        ContinuousFractalProto continuous = 16;
+        OrbitFractalProto orbit = 17;
+        JuliaFractalProto julia = 18;
+        MandelbrotFractalProto mandelbrot = 19;
+    }
+}
+
+message ContinuousFractalProto {
+}
+
+message MandelbrotFractalProto {
 }
 
 message OrbitFractalProto {
-    FractalProto fractal = 1;
-    repeated PointOrbit pointorbits = 2;
+    repeated OrbitProto orbits = 2;
 }
 
-message PointOrbit {
+message JuliaFractalProto {
+}
+
+message OrbitProto {
+    double max_value = 1;
+    oneof orbit {
+        PointOrbitProto pointOrbit = 2;
+        LineOrbitProto lineOrbit = 3;
+        BitmapOrbitProto bitmapOrbit = 4;
+    }
+}
+
+message PointOrbitProto {
     double orbitX = 1;
     double orbitY = 2;
 }
 
-message LineOrbit {
+message LineOrbitProto {
     double a = 1;
-    double b = 1;
-    double c = 1;
+    double b = 2;
+    double c = 3;
 }
 
-message BitmapOrbit {
-
+message BitmapOrbitProto {
+    bytes bitmap = 1;
+    int32 width = 2;
+    int32 height = 3;
 }

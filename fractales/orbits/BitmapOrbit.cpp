@@ -1,6 +1,7 @@
 
 #include <iostream>
 #include <fractales/orbits/util/BitmapMapComputer.h>
+#undef Status
 #include "BitmapOrbit.h"
 
 double BitmapOrbit::getOrbitFastValue(std::complex<double> z) {
@@ -26,6 +27,7 @@ double BitmapOrbit::getOrbitValue(double v) {
 }
 
 BitmapOrbit::BitmapOrbit(CImg<unsigned char> *img, double max_value) {
+    this->max_value = max_value;
     this->bitmap = img;
     CImg<unsigned char> * map = new CImg<unsigned char>(900, 600, 1, 3, 0);
 
@@ -44,4 +46,23 @@ BitmapOrbit::BitmapOrbit(CImg<unsigned char> *img, double max_value) {
 
     this->factor = (max_value - minDist) / (maxDist - minDist);
     this->translation = minDist;
+}
+
+OrbitProto * BitmapOrbit::serialize() {
+    auto bitmapOrbitProto = new BitmapOrbitProto();
+    size_t size = bitmap->size() * sizeof(unsigned char);
+    const char * data = (char *)(malloc(size));
+    memcpy((void *)data, (void *)(bitmap->_data), size);
+    bitmapOrbitProto->set_bitmap(data);
+    bitmapOrbitProto->set_width(bitmap->width());
+    bitmapOrbitProto->set_height(bitmap->height());
+    auto res = new OrbitProto();
+    res->set_max_value(max_value);
+    res->set_allocated_bitmaporbit(bitmapOrbitProto);
+    return res;
+}
+
+BitmapOrbit * BitmapOrbit::deserialize(OrbitProto *op) {
+    auto * img = new CImg<unsigned char>((unsigned char *) op->bitmaporbit().bitmap().c_str(), (unsigned int)(op->bitmaporbit().width()), (unsigned int)(op->bitmaporbit().height()), 1, 3);
+    return new BitmapOrbit(img, op->max_value());
 }

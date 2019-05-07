@@ -27,3 +27,18 @@ std::vector<int> Mandelbrot::compute_histo() {
     }
     return v;
 }
+
+Fractal * Mandelbrot::clone() {
+    return new Mandelbrot(*this);
+}
+
+FractalProto * Mandelbrot::serialize() {
+    auto fp = Fractal::serialize();
+    fp->set_allocated_mandelbrot(new MandelbrotFractalProto());
+    return fp;
+}
+
+Mandelbrot * Mandelbrot::deserialize(FractalProto *fp) {
+    auto mandel = new Mandelbrot(fp->width(), fp->height(), fp->left(), fp->right(), fp->top(), fp->bottom());
+    mandel->set_maxiter(fp->maxiter());
+}
