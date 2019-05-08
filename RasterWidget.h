@@ -27,7 +27,6 @@ public slots:
 
 protected:
     bool event(QEvent *event);
-    void resizeEvent(QResizeEvent *event);
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
 

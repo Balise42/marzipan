@@ -47,8 +47,9 @@ Color softpink(255, 221, 244);
 RasterWidget::RasterWidget(QWidget *parent) : QWidget(parent) {
 
     //Orbit * o = new LineOrbit(1, 0, -2, 100);
-    CImg<unsigned char> img("/home/isa/projets/marzipan/marzipan.bmp");
-    std::vector<Orbit *> o = {new BitmapOrbit(&img, 100)};
+    //CImg<unsigned char> img("/home/isa/projets/marzipan/marzipan.bmp");
+    auto img = new CImg<unsigned char>("/home/isa/projets/marzipan/marzipan.bmp");
+    std::vector<Orbit *> o = {new BitmapOrbit(img, 100)};
     //std::vector<Orbit *> o = {new PointOrbit(0.5, -0.25, 100)};
     fractal = new OrbitMandelbrot(o);
     //fractal = new ContinuousMandelbrot();
@@ -62,10 +63,6 @@ RasterWidget::RasterWidget(QWidget *parent) : QWidget(parent) {
     //palette = new RandomPalette(0, 100, black);
     renderer = new LinearRenderer();
     computeFractal();
-}
-
-void RasterWidget::resizeEvent(QResizeEvent *resizeEvent) {
-    //backing_store->resize(resizeEvent->size());
 }
 
 void RasterWidget::renderNow() {
