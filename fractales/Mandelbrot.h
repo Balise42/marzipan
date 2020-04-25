@@ -7,6 +7,7 @@
 #include "graphics/ImageCanvas.h"
 #include "graphics/palette/Palette.h"
 #include "Fractal.h"
+#include "MpComplex.h"
 
 class Mandelbrot : public Fractal {
 
@@ -20,7 +21,7 @@ public:
 
     std::vector<int> compute_histo();
 
-    double compute_value(std::complex<double> z) override;
+    double compute_value(MpComplex z) override;
 
     Fractal * clone() override;
 

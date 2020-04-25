@@ -4,12 +4,13 @@
 
 #define R 1000
 
-double ContinuousMandelbrot::compute_value(std::complex<double> c) {
-    std::complex<double> z = 0 + 0i;
+double ContinuousMandelbrot::compute_value(MpComplex c) {
+    MpComplex z(0, 0);
     for (int i = 0; i<maxiter; i++) {
-        z = std::pow(z, 2) + c;
-        if(abs(z) > R) {
-            return i+1 - log(log(std::abs(z)))/log(2);
+        z = z.square() + c;
+        mpfr::mpreal absz = z.abs();
+        if(absz > R) {
+            return static_cast<double>(i + 1 - log(log(absz)) / log(2));
         }
     }
     return INT_MAX;

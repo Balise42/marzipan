@@ -14,7 +14,7 @@
 
 class OrbitMandelbrot : public ContinuousMandelbrot {
 public:
-    double compute_value(std::complex<double> c) override;
+    double compute_value(MpComplex c) override;
 
     explicit OrbitMandelbrot(std::vector<Orbit *> o) : ContinuousMandelbrot() {
         this->orbits = std::move(o);

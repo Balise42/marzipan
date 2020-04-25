@@ -4,7 +4,8 @@
 #include <fractales/orbits/PointOrbit.h>
 #include <fractales/orbits/LineOrbit.h>
 
-double OrbitMandelbrot::compute_value(std::complex<double> c) {
+double OrbitMandelbrot::compute_value(MpComplex cMP) {
+    std::complex<double> c = cMP.toComplex();
     double dist = INT_MAX;
     int i = 0;
     std::complex<double> z = 0 + 0i;

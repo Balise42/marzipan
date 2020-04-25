@@ -5,7 +5,6 @@
 #include <graphics/QuadtreeRenderer.h>
 #include <graphics/palette/HistoPalette.h>
 #include <QtGui/QWindow>
-#include <fractales/MartinMandelbrot.h>
 #include <graphics/LinearRenderer.h>
 #include <fractales/ContinuousMandelbrot.h>
 #include <graphics/palette/ContinuousPalette.h>
@@ -48,11 +47,11 @@ RasterWidget::RasterWidget(QWidget *parent) : QWidget(parent) {
 
     //Orbit * o = new LineOrbit(1, 0, -2, 100);
     //CImg<unsigned char> img("/home/isa/projets/marzipan/marzipan.bmp");
-    auto img = new CImg<unsigned char>("/home/isa/projets/marzipan/marzipan.bmp");
-    std::vector<Orbit *> o = {new BitmapOrbit(img, 100)};
+    //auto img = new CImg<unsigned char>("/home/isa/projets/marzipan/marzipan.bmp");
+    //std::vector<Orbit *> o = {new BitmapOrbit(img, 100)};
     //std::vector<Orbit *> o = {new PointOrbit(0.5, -0.25, 100)};
-    fractal = new OrbitMandelbrot(o);
-    //fractal = new ContinuousMandelbrot();
+    //fractal = new OrbitMandelbrot(o);
+    fractal = new ContinuousMandelbrot();
     fractal->set_maxiter(100);
 
     //std::vector<Color*> colors = {&black, &yellow, &white, &yellow, &black};

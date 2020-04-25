@@ -1,13 +1,16 @@
 #include <complex>
 #include "Mandelbrot.h"
+#include "MpComplex.h"
 
 
-double Mandelbrot::compute_value(std::complex<double> c) {
+double Mandelbrot::compute_value(MpComplex c) {
     int i = 0;
-    std::complex<double> z = 0 + 0i;
-    while (std::norm(std::pow(z, 2) + c) < 4 && i < maxiter) {
-        z = std::pow(z, 2) + c;
+    MpComplex z(0, 0);
+    MpComplex nextZ = z.square() + c;
+    while (nextZ.norm() < 4 && i < maxiter) {
+        z = nextZ + c;
         i = i+1;
+        nextZ = z.square() + c;
     }
     if (i == maxiter) {
         i = INT_MAX;

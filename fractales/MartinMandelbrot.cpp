@@ -27,7 +27,8 @@ void MartinMandelbrot::compute_seed(std::complex<double> s) {
     }
 }
 
-double MartinMandelbrot::compute_value(std::complex<double> z) {
+double MartinMandelbrot::compute_value(MpComplex zMP) {
+    std::complex<double> z = zMP.toComplex();
     std::complex<double> delta = z - X;
     if (std::norm(delta) != 0 && std::norm(std::pow(delta, 3)) * 1000 > std::norm(std::pow(delta,2))) {
         compute_seed(z);

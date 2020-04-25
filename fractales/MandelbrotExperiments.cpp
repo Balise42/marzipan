@@ -2,7 +2,8 @@
 #include <climits>
 #include "MandelbrotExperiments.h"
 
-double MandelbrotExperiments::compute_value(std::complex<double> c) {
+double MandelbrotExperiments::compute_value(MpComplex cMp) {
+    std::complex<double> c = cMp.toComplex();
     double R = 20.0;
 
     std::complex<double> z = 0 + 0i;

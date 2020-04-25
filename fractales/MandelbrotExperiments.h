@@ -6,7 +6,7 @@
 #include "Fractal.h"
 
 class MandelbrotExperiments : public Fractal {
-    double compute_value(std::complex<double> c) override;
+    double compute_value(MpComplex c) override;
 };
 
 

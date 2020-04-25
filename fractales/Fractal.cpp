@@ -32,17 +32,17 @@ Fractal::Fractal() {
     this->maxiter = FLAGS_iter;
 }
 
-std::complex<double> Fractal::scale(unsigned int x, unsigned int y) {
-    double re = left + double(x)/double(width) * (right - left);
-    double im = top + double(y)/double(height) * (bottom - top);
-    return re + im*1i;
+MpComplex Fractal::scale(unsigned int x, unsigned int y) {
+    mpfr::mpreal re = left + mpfr::mpreal(x)/mpfr::mpreal(width) * (right - left);
+    mpfr::mpreal im = top + mpfr::mpreal(y)/mpfr::mpreal(height) * (bottom - top);
+    return MpComplex(re, im);
 }
 
 void Fractal::zoom(unsigned int width, unsigned int height, int startx, int starty, int endx, int endy) {
     this->width = width;
     this->height = height;
-    std::complex<double> topleft = scale(startx, starty);
-    std::complex<double> bottomright = scale(endx, endy);
+    MpComplex topleft = scale(startx, starty);
+    MpComplex bottomright = scale(endx, endy);
     left = topleft.real();
     top = topleft.imag();
     right = bottomright.real();
@@ -50,13 +50,14 @@ void Fractal::zoom(unsigned int width, unsigned int height, int startx, int star
 }
 
 FractalProto * Fractal::serialize() {
+    // TODO fix serialization (because right now i'm losing all my precision with mpfr - just serializing double instead!)
     auto fp = new FractalProto();
-    fp->set_bottom(bottom);
+    fp->set_bottom(static_cast<double>(bottom));
     fp->set_height(height);
-    fp->set_left(left);
-    fp->set_right(right);
+    fp->set_left(static_cast<double>(left));
+    fp->set_right(static_cast<double>(right));
     fp->set_width(width);
-    fp->set_top(top);
+    fp->set_top(static_cast<double>(top));
     fp->set_maxiter(maxiter);
     return fp;
 }
